@@ -1,0 +1,61 @@
+﻿
+.up-spinner-text {
+    background-image: url('spiner.svg');
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center;
+    /*padding-left: 20px;*/
+}
+.up-spinner-select {
+    background-image: url('spiner.svg');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center;
+    /*padding-left: 20px;*/
+}
+.up-spinner-btn {
+    background-image: url('spiner.svg');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center;
+    /*padding-left: 20px;*/
+}
+
+.up-ring-text {
+    background-image: url('ring-alt.svg');
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center;
+    padding-left: 20px;
+}
+
+.up-ring-btn {
+    background-image: url('ring-alt.svg');
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: center;
+    padding-left: 30px;
+}
+
+.up-spin-text {
+    background-image: url('spin.svg');
+    background-size: 10%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: left;
+    padding-left: 20px;
+}
+
+.up-spin-btn {
+    background-image: url('spin.svg');
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: left;
+    padding-left: 30px;
+}
