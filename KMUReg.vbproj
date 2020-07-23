@@ -129,9 +129,7 @@
       <HintPath>..\Helal_HIS\Helal_HIS\Helal_HIS\bin\Telerik.Web.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
@@ -156,6 +154,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\KMUReg.sql" />
     <Content Include="Content\Spinner\ring-alt.svg" />
     <Content Include="Content\Spinner\spin.svg" />
     <Content Include="Content\Spinner\spiner.svg" />

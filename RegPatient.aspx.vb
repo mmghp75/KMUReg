@@ -1,6 +1,4 @@
 ﻿Imports KMUReg.SharedMethodClass
-'Test MMGh
-
 Public Class RegPatient
     Inherits System.Web.UI.Page
 
