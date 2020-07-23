@@ -64,98 +64,16 @@ Partial Public Class dbDataContext
 		OnCreated
 	End Sub
 	
-	Public ReadOnly Property tblShamsiMiladis() As System.Data.Linq.Table(Of tblShamsiMiladi)
-		Get
-			Return Me.GetTable(Of tblShamsiMiladi)
-		End Get
-	End Property
-	
 	Public ReadOnly Property tblUsers() As System.Data.Linq.Table(Of tblUser)
 		Get
 			Return Me.GetTable(Of tblUser)
 		End Get
 	End Property
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblShamsiMiladi")>  _
-Partial Public Class tblShamsiMiladi
 	
-	Private _Miladi As Date
-	
-	Private _Shamsi As String
-	
-	Private _Shamsi_YearOf As Integer
-	
-	Private _Shamsi_MonthOf As Integer
-	
-	Private _Shamsi_DayOf As Integer
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Miladi", DbType:="DateTime NOT NULL")>  _
-	Public Property Miladi() As Date
+	Public ReadOnly Property tblShamsiMiladis() As System.Data.Linq.Table(Of tblShamsiMiladi)
 		Get
-			Return Me._Miladi
+			Return Me.GetTable(Of tblShamsiMiladi)
 		End Get
-		Set
-			If ((Me._Miladi = value)  _
-						= false) Then
-				Me._Miladi = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi", DbType:="NVarChar(20) NOT NULL", CanBeNull:=false)>  _
-	Public Property Shamsi() As String
-		Get
-			Return Me._Shamsi
-		End Get
-		Set
-			If (String.Equals(Me._Shamsi, value) = false) Then
-				Me._Shamsi = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_YearOf", DbType:="Int NOT NULL")>  _
-	Public Property Shamsi_YearOf() As Integer
-		Get
-			Return Me._Shamsi_YearOf
-		End Get
-		Set
-			If ((Me._Shamsi_YearOf = value)  _
-						= false) Then
-				Me._Shamsi_YearOf = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_MonthOf", DbType:="Int NOT NULL")>  _
-	Public Property Shamsi_MonthOf() As Integer
-		Get
-			Return Me._Shamsi_MonthOf
-		End Get
-		Set
-			If ((Me._Shamsi_MonthOf = value)  _
-						= false) Then
-				Me._Shamsi_MonthOf = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_DayOf", DbType:="Int NOT NULL")>  _
-	Public Property Shamsi_DayOf() As Integer
-		Get
-			Return Me._Shamsi_DayOf
-		End Get
-		Set
-			If ((Me._Shamsi_DayOf = value)  _
-						= false) Then
-				Me._Shamsi_DayOf = value
-			End If
-		End Set
 	End Property
 End Class
 
@@ -397,4 +315,86 @@ Partial Public Class tblUser
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
 	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblShamsiMiladi")>  _
+Partial Public Class tblShamsiMiladi
+	
+	Private _Miladi As Date
+	
+	Private _Shamsi As String
+	
+	Private _Shamsi_YearOf As Integer
+	
+	Private _Shamsi_MonthOf As Integer
+	
+	Private _Shamsi_DayOf As Integer
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Miladi", DbType:="DateTime NOT NULL")>  _
+	Public Property Miladi() As Date
+		Get
+			Return Me._Miladi
+		End Get
+		Set
+			If ((Me._Miladi = value)  _
+						= false) Then
+				Me._Miladi = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi", DbType:="NVarChar(20) NOT NULL", CanBeNull:=false)>  _
+	Public Property Shamsi() As String
+		Get
+			Return Me._Shamsi
+		End Get
+		Set
+			If (String.Equals(Me._Shamsi, value) = false) Then
+				Me._Shamsi = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_YearOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_YearOf() As Integer
+		Get
+			Return Me._Shamsi_YearOf
+		End Get
+		Set
+			If ((Me._Shamsi_YearOf = value)  _
+						= false) Then
+				Me._Shamsi_YearOf = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_MonthOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_MonthOf() As Integer
+		Get
+			Return Me._Shamsi_MonthOf
+		End Get
+		Set
+			If ((Me._Shamsi_MonthOf = value)  _
+						= false) Then
+				Me._Shamsi_MonthOf = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_DayOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_DayOf() As Integer
+		Get
+			Return Me._Shamsi_DayOf
+		End Get
+		Set
+			If ((Me._Shamsi_DayOf = value)  _
+						= false) Then
+				Me._Shamsi_DayOf = value
+			End If
+		End Set
+	End Property
 End Class

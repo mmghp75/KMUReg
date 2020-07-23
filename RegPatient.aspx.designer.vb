@@ -1706,13 +1706,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label33 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''cblNewWorstSoreL control.
+    '''rblNewWorstSoreL control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cblNewWorstSoreL As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents rblNewWorstSoreL As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
     '''Label45 control.
@@ -1724,13 +1724,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label45 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''cblNewWorstSoreR control.
+    '''rblNewWorstSoreR control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cblNewWorstSoreR As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents rblNewWorstSoreR As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
     '''btnCancelSore02 control.

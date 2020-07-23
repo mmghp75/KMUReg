@@ -409,12 +409,8 @@ Public Class RegPatient
         For Each oItem As ListItem In cblNewSoreR.Items
             oItem.Selected = False
         Next
-        For Each oItem As ListItem In cblNewWorstSoreL.Items
-            oItem.Selected = False
-        Next
-        For Each oItem As ListItem In cblNewWorstSoreR.Items
-            oItem.Selected = False
-        Next
+        rblNewWorstSoreL.SelectedIndex = -1
+        rblNewWorstSoreR.SelectedIndex = -1
         txtDuration09.Text = ""
         dpNewInfect.Clear()
         For Each oItem As ListItem In cblNewInfectL.Items

@@ -561,7 +561,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی‌های قبلی پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label28" />
                                         <asp:CheckBoxList runat="server" ID="cblSurgL" CssClass="form-control" RepeatColumns="5">
@@ -574,7 +574,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی‌های قبلی پای‌راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label29" />
                                         <asp:CheckBoxList runat="server" CssClass="form-control" ID="cblSurgR" RepeatColumns="5">
@@ -797,28 +797,28 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* شدیدترین‌زخم‌پای‌چپ:" runat="server" Font-Bold="true" CssClass="input-group-addon" ID="Label33" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewWorstSoreL" CssClass="form-control" RepeatColumns="1" Style="height: auto;">
+                                        <asp:RadioButtonList runat="server" ID="rblNewWorstSoreL" CssClass="form-control" RepeatColumns="1" Style="height: auto;">
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله صفر: پا شدیدا مستعد ایجاد زخم می‌باشد، ولی هنوز زخمی ایجاد نشده است" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله1: زخم سطحی است" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله2: زخم عمقی با درگیری ماهیچه، تاندون و مفصل و بدون درگیری استخوانی. ممکن است دچار عفونت نیز بشود" Value="3" />
-                                            <asp:ListItem Text="&nbsp;&nbsp;مرحله3: زخم عمقی با درگیری استخوانی. احتاملاً استئومیلیت وجود دارد و ممکن است آبسه نیز تشکیل شود" Value="4" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;مرحله3: زخم عمقی با درگیری استخوانی. احتمالاً استئومیلیت وجود دارد و ممکن است آبسه نیز تشکیل شود" Value="4" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله4: گانگرن موضعی درانگشتان، جلوی پا یا پاشنه تشکیل شده است" Value="5" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله5: گانگرن شدیدکه ممکن است به آمپوتاسیون و قطع عضو منجر شود" Value="6" />
-                                        </asp:CheckBoxList>
+                                        </asp:RadioButtonList>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-xs-12 text-right">
                                     <div class="input-group">
                                         <asp:Label Text="* شدیدترین‌زخم‌پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label45" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewWorstSoreR" RepeatColumns="1" CssClass="form-control" Style="height: auto;">
+                                        <asp:RadioButtonList runat="server" ID="rblNewWorstSoreR" RepeatColumns="1" CssClass="form-control" Style="height: auto;">
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله صفر: پا شدیدا مستعد ایجاد زخم می‌باشد، ولی هنوز زخمی ایجاد نشده است" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله1: زخم سطحی است" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله2: زخم عمقی با درگیری ماهیچه، تاندون و مفصل و بدون درگیری استخوانی. ممکن است دچار عفونت نیز بشود" Value="3" />
-                                            <asp:ListItem Text="&nbsp;&nbsp;مرحله3: زخم عمقی با درگیری استخوانی. احتاملاً استئومیلیت وجود دارد و ممکن است آبسه نیز تشکیل شود" Value="4" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;مرحله3: زخم عمقی با درگیری استخوانی. احتمالاً استئومیلیت وجود دارد و ممکن است آبسه نیز تشکیل شود" Value="4" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله4: گانگرن موضعی درانگشتان، جلوی پا یا پاشنه تشکیل شده است" Value="5" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله5: گانگرن شدیدکه ممکن است به آمپوتاسیون و قطع عضو منجر شود" Value="6" />
-                                        </asp:CheckBoxList>
+                                        </asp:RadioButtonList>
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -937,7 +937,7 @@
                                     </div>
                                 </div>
 
-                            <div class="clearfix"></div>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelSwell01" Text="انصراف" CssClass="btn-danger" />
