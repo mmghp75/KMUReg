@@ -201,6 +201,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="RegPatient.aspx" />
+    <Content Include="Resources\RWCTRLW01.dll" />
     <Content Include="Scripts\animo.js" />
     <Content Include="Scripts\bootstrap-notify.min.js" />
     <Content Include="Scripts\bootstrap.min.js" />
