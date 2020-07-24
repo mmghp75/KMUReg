@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="RegPatient.aspx.vb" Inherits="KMUReg.RegPatient" %>
 
-<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <%@ Register Assembly="RWCTRLW01" Namespace="Rayavaran.RWControls" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphead" runat="server">
