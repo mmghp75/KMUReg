@@ -173,3 +173,7 @@ ul.viewer-toolbar > li, .viewer-toolbar > ul > li, .viewer-toolbar > ul > li + l
     direction: ltr;
 }
 /*End DateTimePicker*/
+
+body {
+    padding-right: 0px !important;
+}
