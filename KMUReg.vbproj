@@ -253,6 +253,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\CollapsePanelGroup.vb" />
     <Compile Include="Class\MyFuncS.vb" />
     <Compile Include="Class\PrintHelper.vb" />
     <Compile Include="Class\PublicModule.vb" />

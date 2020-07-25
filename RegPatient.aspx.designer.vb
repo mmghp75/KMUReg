@@ -23,6 +23,15 @@ Partial Public Class RegPatient
     Protected WithEvents hfNewPanelVisibility As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
+    '''hfExpanedPanelIds control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hfExpanedPanelIds As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''pnlDemographic control.
     '''</summary>
     '''<remarks>
@@ -30,15 +39,6 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlDemographic As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''lblNewAppointment control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblNewAppointment As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''divDemographicMessage control.
@@ -248,13 +248,22 @@ Partial Public Class RegPatient
     Protected WithEvents pnlHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Label1 control.
+    '''lblHistoryTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblHistoryTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''collapseHistoryMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents collapseHistoryMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''div1 control.
@@ -419,13 +428,22 @@ Partial Public Class RegPatient
     Protected WithEvents pnlPhysicalExam As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Label5 control.
+    '''lblPhysicalExamTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label5 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblPhysicalExamTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''collapsePhysicalExam control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents collapsePhysicalExam As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''div2 control.
@@ -545,13 +563,22 @@ Partial Public Class RegPatient
     Protected WithEvents pnlLabResults As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Label12 control.
+    '''lblLabResultsTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblLabResultsTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''collapseLabResults control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents collapseLabResults As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''div3 control.
@@ -680,13 +707,22 @@ Partial Public Class RegPatient
     Protected WithEvents pnlPrescription As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Label13 control.
+    '''lblPrescriptionTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblPrescriptionTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''collapsePrescription control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents collapsePrescription As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''div4 control.

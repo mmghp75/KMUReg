@@ -299,4 +299,32 @@ var firstInput = $('#" & firstControlIdInPanel & "');
 
         Return oPC.GetYear(Miladi) & "/" & oPC.GetMonth(Miladi) & "/" & oPC.GetDayOfMonth(Miladi)
     End Function
+
+    Public Shared Sub ExpandPanel(sender As Object, groupedPanelList As CollapsePanelGroup(), expandingPanelIds As String())
+        'باز نگه داشتن پنل های مورد نظر و بسته کردن باقی آن ها
+        If sender Is Nothing OrElse Not groupedPanelList.Any Then
+            Return
+        End If
+
+        'Collapse all groupedPanelList
+        For Each item In groupedPanelList
+            If item.TitleControl.Attributes("aria-expanded") IsNot Nothing Then
+                item.TitleControl.Attributes.Remove("aria-expanded")
+            End If
+
+            If item.CollapsableControl.Attributes("Class") IsNot Nothing AndAlso item.CollapsableControl.Attributes("Class").Contains("collapse in") Then
+                item.CollapsableControl.Attributes("Class") = item.CollapsableControl.Attributes("Class").Replace("collapse in", "collapse")
+            End If
+        Next
+
+        If expandingPanelIds.Any Then
+            For Each item In expandingPanelIds
+                Dim foundGroupedPanel = groupedPanelList.FirstOrDefault(Function(x) x.PanelBlock.ID = item)
+                If foundGroupedPanel IsNot Nothing Then
+                    foundGroupedPanel.TitleControl.Attributes.Add("aria-expanded", "true")
+                    foundGroupedPanel.CollapsableControl.Attributes("Class") = foundGroupedPanel.CollapsableControl.Attributes("Class").Replace(" collapse", " collapse in")
+                End If
+            Next
+        End If
+    End Sub
 End Class

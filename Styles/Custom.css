@@ -177,3 +177,10 @@ ul.viewer-toolbar > li, .viewer-toolbar > ul > li, .viewer-toolbar > ul > li + l
 body {
     padding-right: 0px !important;
 }
+
+.my-MouseCursorDefault {
+    cursor: default;
+}
+.my-Titr {
+    font-family: B Titr;
+}

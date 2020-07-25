@@ -3,7 +3,7 @@ Public Class RegPatient
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        Dim value = hfExpanedPanelIds.Value
     End Sub
     Private Sub cbxSore01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore01.CheckedChanged
         If cbxSore01.Checked Then
@@ -15,6 +15,8 @@ Public Class RegPatient
             pnlSore01.CssClass = "modal fade in"
             pnlSore01Back.Visible = True
         End If
+
+        GetStep2Panels()
     End Sub
     Private Sub cbxLaser01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxLaser01.CheckedChanged
         If cbxLaser01.Checked Then
@@ -97,7 +99,20 @@ Public Class RegPatient
         pnlSore01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing Then cbxSore01.Checked = False
+
+        GetStep2Panels()
     End Sub
+
+    Private Sub GetStep2Panels()
+        Dim panels = {
+            New CollapsePanelGroup(pnlHistory, lblHistoryTitle, collapseHistoryMessage),
+            New CollapsePanelGroup(pnlPhysicalExam, lblPhysicalExamTitle, collapsePhysicalExam),
+            New CollapsePanelGroup(pnlLabResults, lblLabResultsTitle, collapseLabResults),
+            New CollapsePanelGroup(pnlPrescription, lblPrescriptionTitle, collapsePrescription)
+        }
+        ExpandPanel(Me, panels, hfExpanedPanelIds.Value.Split(" "))
+    End Sub
+
     Private Sub btnOKLaser01_Click(sender As Object, e As EventArgs) Handles btnOKLaser01.Click
         If lblLaser01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
@@ -301,6 +316,8 @@ Public Class RegPatient
         pnlPrescription.Visible = True
         pnlMainFooter.Visible = True
         btnCancel_Click(Nothing, Nothing)
+
+        hfExpanedPanelIds.Value = "pnlHistory"
     End Sub
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         'History
