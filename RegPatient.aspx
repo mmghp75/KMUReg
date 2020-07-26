@@ -66,7 +66,7 @@
                         <div class="col-xs-3 text-right" style="margin-bottom: 10px">
                             <div class="input-group">
                                 <asp:Label Text="* جنسیت:" Class="input-group-addon" runat="server" ID="Label4" Font-Bold="true" />
-                                <asp:RadioButtonList runat="server" Class="form-control" ID="rblGender" RepeatColumns="2">
+                                <asp:RadioButtonList runat="server" Class="form-control my-inline-table" RepeatLayout="Flow" ID="rblGender" RepeatColumns="2">
                                     <asp:ListItem Text="&nbsp;&nbsp;مذکر" Value="1" />
                                     <asp:ListItem Text="&nbsp;&nbsp;مؤنث" Value="2" Style="margin-right: 5px;" />
                                 </asp:RadioButtonList>
@@ -90,7 +90,7 @@
                         <div class="col-xs-3 text-right">
                             <div class="input-group">
                                 <asp:Label Text="وضعیت‌تأهل:" CssClass="input-group-addon" runat="server" ID="Label7" Font-Bold="true" />
-                                <asp:RadioButtonList runat="server" ID="rbMarriage" CssClass="form-control" RepeatColumns="2">
+                                <asp:RadioButtonList runat="server" ID="rbMarriage" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
                                     <asp:ListItem Text="&nbsp;&nbsp;متأهل" Value="1" Style="margin-right: 10px;" />
                                     <asp:ListItem Text="&nbsp;&nbsp;مجرد" Value="2" Style="margin-right: 10px;" />
                                 </asp:RadioButtonList>
@@ -105,9 +105,9 @@
                         <div class="clearfix">
                         </div>
                         <div class="col-xs-9 text-right" style="margin-bottom: 10px">
-                            <div class="input-group">
+                            <div class="input-group" >
                                 <asp:Label Text="سطح‌تحصیلات:" CssClass="input-group-addon " runat="server" ID="Label8" Font-Bold="true" />
-                                <asp:RadioButtonList runat="server" ID="rbEducation" CssClass="form-control " RepeatColumns="8">
+                                <asp:RadioButtonList runat="server" ID="rbEducation" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="8">
                                     <asp:ListItem Text="&nbsp;&nbsp;بی‌سواد" Value="1" />
                                     <asp:ListItem Text="&nbsp;&nbsp;ابتدایی" Value="2" Style="margin-right: 10px;" />
                                     <asp:ListItem Text="&nbsp;&nbsp;سیکل" Value="3" Style="margin-right: 10px;" />
@@ -162,7 +162,7 @@
                             <div class="col-xs-4 text-right">
                                 <div class="input-group">
                                     <asp:Label Text="* نوع‌دیابت:" CssClass="input-group-addon" runat="server" ID="Label2" Font-Bold="true" />
-                                    <asp:RadioButtonList runat="server" CssClass="form-control" ID="rblDiabetTypeOf" RepeatColumns="3">
+                                    <asp:RadioButtonList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="rblDiabetTypeOf" RepeatColumns="3">
                                         <asp:ListItem Text="نوع 1" Value="1" />
                                         <asp:ListItem Text="نوع 2" Value="2" Style="margin-right: 20px;" />
                                         <asp:ListItem Text="حاملگی" Value="3" Style="margin-right: 20px;" />
@@ -194,14 +194,14 @@
                                 <asp:CheckBox ID="cbxGangrene01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control"></asp:CheckBox>
                             </div>
                             <div class="col-xs-2 text-right" style="margin-bottom: 10px">
-                                <asp:CheckBox ID="cbxAmp01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control"></asp:CheckBox>
+                                <asp:CheckBox ID="cbxAmp01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control" ></asp:CheckBox>
                             </div>
                             <div class="clearfix">
                             </div>
                             <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                 <div class="input-group">
                                     <asp:Label Text="بیماری‌زمینه‌ای:" CssClass="input-group-addon" runat="server" ID="Label3" Font-Bold="true" />
-                                    <asp:CheckBoxList runat="server" ID="rblDesease" CssClass="form-control" RepeatColumns="7" Style="height: auto">
+                                    <asp:CheckBoxList runat="server" ID="rblDesease" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="7" Style="height: auto">
                                         <asp:ListItem Text="&nbsp;&nbsp;قلبی‌عروقی" Value="1" />
                                         <asp:ListItem Text="&nbsp;&nbsp;رتینوپاتی(بیماری‌های‌چشمی)" Value="2" />
                                         <asp:ListItem Text="&nbsp;&nbsp;مزمن‌کلیوی" Value="3" Style="margin-right: 30px;" />
@@ -267,7 +267,7 @@
                             <div class="col-xs-4 text-right" style="margin-bottom: 10px">
                                 <div class="input-group">
                                     <asp:Label Text="نوروپاتی:" CssClass="input-group-addon" runat="server" ID="Label9" Font-Bold="true" />
-                                    <asp:CheckBoxList runat="server" CssClass="form-control" ID="cblNeuropathy" RepeatColumns="2">
+                                    <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow"  ID="cblNeuropathy" RepeatColumns="2">
                                         <asp:ListItem Text="&nbsp;&nbsp;پای‌چپ" Value="1" Style="margin-right: 10px;" />
                                         <asp:ListItem Text="&nbsp;&nbsp;پای‌راست" Value="2" Style="margin-right: 10px;" />
                                     </asp:CheckBoxList>
@@ -276,7 +276,7 @@
                             <div class="col-xs-4 text-right" style="margin-bottom: 10px">
                                 <div class="input-group">
                                     <asp:Label Text="خشکی‌پا:" runat="server" CssClass="input-group-addon" ID="Label11" Font-Bold="true" />
-                                    <asp:RadioButtonList runat="server" CssClass="form-control" ID="rblDry" RepeatColumns="3">
+                                    <asp:RadioButtonList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="rblDry" RepeatColumns="3">
                                         <asp:ListItem Text="&nbsp;&nbsp;کم" Value="1" Style="margin-right: 10px;" />
                                         <asp:ListItem Text="&nbsp;&nbsp;متوسط" Value="2" Style="margin-right: 10px;" />
                                         <asp:ListItem Text="&nbsp;&nbsp;زیاد" Value="3" Style="margin-right: 10px;" />
@@ -286,7 +286,7 @@
                             <div class="col-xs-4 text-right">
                                 <div class="input-group">
                                     <asp:Label Text="حرارت‌پا:" CssClass="input-group-addon" runat="server" ID="Label10" Font-Bold="true" />
-                                    <asp:RadioButtonList runat="server" CssClass="form-control" ID="rblTemp" RepeatColumns="3">
+                                    <asp:RadioButtonList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="rblTemp" RepeatColumns="3">
                                         <asp:ListItem Text="&nbsp;&nbsp;کم" Value="1" Style="margin-right: 10px;" />
                                         <asp:ListItem Text="&nbsp;&nbsp;متوسط" Value="2" Style="margin-right: 10px;" />
                                         <asp:ListItem Text="&nbsp;&nbsp;زیاد" Value="3" Style="margin-right: 10px;" />
@@ -408,7 +408,7 @@
                                         <asp:Label Text=" داروهای‌تجویزی:" runat="server" ID="Label21" Font-Bold="true" />
                                     </div>
                                     <div class="col-xs-11 text-right">
-                                        <asp:CheckBoxList runat="server" ID="cblDrugs" RepeatColumns="5">
+                                        <asp:CheckBoxList runat="server" ID="cblDrugs" CssClass="my-inline-table" RepeatLayout="Flow"  RepeatColumns="5">
                                             <asp:ListItem Text="&nbsp;&nbsp;پماد فنیتوئین" Value="1" Style="margin-right: 30px;" />
                                         </asp:CheckBoxList>
                                     </div>
@@ -457,7 +457,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های قبلی در پای چپ:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label16" />
-                                        <asp:CheckBoxList runat="server" ID="cblSoreLocationL01" CssClass="form-control" RepeatColumns="4">
+                                        <asp:CheckBoxList runat="server" ID="cblSoreLocationL01" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="4">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 20px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
@@ -469,7 +469,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های قبلی در پای راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label17" />
-                                        <asp:CheckBoxList runat="server" CssClass="form-control" ID="cblSoreLocationR01" RepeatColumns="4">
+                                        <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow"  ID="cblSoreLocationR01" RepeatColumns="4">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 20px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
@@ -512,7 +512,7 @@
                                 <div class="col-xs-12 text-right">
                                     <div class="input-group">
                                         <asp:Label Text="* محل لیزرتراپی‌های قبلی:" CssClass="input-group-addon" runat="server" ID="Label20" />
-                                        <asp:CheckBoxList runat="server" ID="cblLaser" CssClass="form-control" RepeatColumns="2">
+                                        <asp:CheckBoxList runat="server" ID="cblLaser" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="2">
                                             <asp:ListItem Text="&nbsp;&nbsp;پای چپ" Value="1" Style="margin-right: 50px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;پای راست" Value="2" Style="margin-right: 50px;" />
                                         </asp:CheckBoxList>
@@ -554,7 +554,7 @@
                                 <div class="col-xs-12 text-right">
                                     <div class="input-group">
                                         <asp:Label Text="* محل دبریدمان‌های قبلی:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label18" />
-                                        <asp:CheckBoxList runat="server" ID="cblDebrid" CssClass="form-control" RepeatColumns="5">
+                                        <asp:CheckBoxList runat="server" ID="cblDebrid" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="5">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 10px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 10px;" />
@@ -600,7 +600,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی‌های قبلی پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label28" />
-                                        <asp:CheckBoxList runat="server" ID="cblSurgL" CssClass="form-control" RepeatColumns="5">
+                                        <asp:CheckBoxList runat="server" ID="cblSurgL" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="5">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
@@ -613,7 +613,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی‌های قبلی پای‌راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label29" />
-                                        <asp:CheckBoxList runat="server" CssClass="form-control" ID="cblSurgR" RepeatColumns="5">
+                                        <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow"  ID="cblSurgR" RepeatColumns="5">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
@@ -658,7 +658,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text=" محل گانگرن‌های قبلی:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label32" />
-                                        <asp:CheckBoxList runat="server" ID="cblGang" CssClass="form-control" RepeatColumns="2">
+                                        <asp:CheckBoxList runat="server" ID="cblGang" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="2">
                                             <asp:ListItem Text="&nbsp;&nbsp;پای چپ" Value="1" Style="margin-right: 50px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;پای راست" Value="2" Style="margin-right: 50px;" />
                                         </asp:CheckBoxList>
@@ -700,7 +700,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px;">
                                     <div class="input-group">
                                         <asp:Label Text="* محل آمپوتاسیون‌های قبلی پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label36" />
-                                        <asp:CheckBoxList runat="server" ID="cblAmpL" CssClass="form-control" RepeatColumns="3" Style="height: auto">
+                                        <asp:CheckBoxList runat="server" ID="cblAmpL" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="3" Style="height: auto">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
@@ -714,7 +714,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل آمپوتاسیون‌های قبلی پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label37" />
-                                        <asp:CheckBoxList runat="server" ID="cblAmpR" CssClass="form-control" RepeatColumns="3" Style="height: auto">
+                                        <asp:CheckBoxList runat="server" ID="cblAmpR" CssClass="form-control my-inline-table" RepeatLayout="Flow"  RepeatColumns="3" Style="height: auto">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
@@ -807,7 +807,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label26" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewSoreL" RepeatColumns="5" CssClass="form-control">
+                                        <asp:CheckBoxList runat="server" ID="cblNewSoreL" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow" >
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
@@ -820,7 +820,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label30" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewSoreR" RepeatColumns="5" CssClass="form-control">
+                                        <asp:CheckBoxList runat="server" ID="cblNewSoreR" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow" >
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
@@ -833,7 +833,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* شدیدترین‌زخم‌پای‌چپ:" runat="server" Font-Bold="true" CssClass="input-group-addon" ID="Label33" />
-                                        <asp:RadioButtonList runat="server" ID="rblNewWorstSoreL" CssClass="form-control" RepeatColumns="1" Style="height: auto;">
+                                        <asp:RadioButtonList runat="server" ID="rblNewWorstSoreL" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="1" Style="height: auto;">
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله صفر: پا شدیدا مستعد ایجاد زخم می‌باشد، ولی هنوز زخمی ایجاد نشده است" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله1: زخم سطحی است" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله2: زخم عمقی با درگیری ماهیچه، تاندون و مفصل و بدون درگیری استخوانی. ممکن است دچار عفونت نیز بشود" Value="3" />
@@ -847,7 +847,7 @@
                                 <div class="col-xs-12 text-right">
                                     <div class="input-group">
                                         <asp:Label Text="* شدیدترین‌زخم‌پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label45" />
-                                        <asp:RadioButtonList runat="server" ID="rblNewWorstSoreR" RepeatColumns="1" CssClass="form-control" Style="height: auto;">
+                                        <asp:RadioButtonList runat="server" ID="rblNewWorstSoreR" RepeatColumns="1" CssClass="form-control my-inline-table" RepeatLayout="Flow" Style="height: auto;">
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله صفر: پا شدیدا مستعد ایجاد زخم می‌باشد، ولی هنوز زخمی ایجاد نشده است" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله1: زخم سطحی است" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مرحله2: زخم عمقی با درگیری ماهیچه، تاندون و مفصل و بدون درگیری استخوانی. ممکن است دچار عفونت نیز بشود" Value="3" />
@@ -892,7 +892,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل‌عفونت‌پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label38" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewInfectL" RepeatColumns="5" CssClass="form-control">
+                                        <asp:CheckBoxList runat="server" ID="cblNewInfectL" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow" >
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 10px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 10px;" />
@@ -905,7 +905,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل‌عفونت‌پای‌راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label39" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewInfectR" RepeatColumns="5" CssClass="form-control">
+                                        <asp:CheckBoxList runat="server" ID="cblNewInfectR" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow" >
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 10px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 10px;" />
@@ -950,7 +950,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل تورم،تاول و قرمزی‌های پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label42" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewSwellL" RepeatColumns="5" CssClass="form-control">
+                                        <asp:CheckBoxList runat="server" ID="cblNewSwellL" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow" >
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
@@ -963,7 +963,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل تورم،تاول و قرمزی‌های پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label43" />
-                                        <asp:CheckBoxList runat="server" ID="cblNewSwellR" RepeatColumns="5" CssClass="form-control">
+                                        <asp:CheckBoxList runat="server" ID="cblNewSwellR" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow" >
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />

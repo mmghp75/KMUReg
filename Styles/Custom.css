@@ -184,3 +184,7 @@ body {
 .my-Titr {
     font-family: B Titr;
 }
+
+.my-inline-table {
+    display: inline-table !important;
+}
