@@ -3,7 +3,13 @@ Public Class RegPatient
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim value = hfExpanedPanelIds.Value
+        'Dim value = hfExpanedPanelIds.Value
+        'If hfActivePanelId.Value = "PhysicalExam" Then
+        'End If
+        If Me.IsPostBack Then
+            hfActivePanelId.Value = Request.Form(hfActivePanelId.UniqueID)
+            'MsgBox(hfActivePanelId.Value)
+        End If
     End Sub
     Private Sub cbxSore01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore01.CheckedChanged
         If cbxSore01.Checked Then
@@ -14,9 +20,11 @@ Public Class RegPatient
             pnlSore01.Attributes("aria-hidden") = "false"
             pnlSore01.CssClass = "modal fade in"
             pnlSore01Back.Visible = True
+
+            hfActivePanelId.Value = "History"
         End If
 
-        GetStep2Panels()
+        'GetStep2Panels()
     End Sub
     Private Sub cbxLaser01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxLaser01.CheckedChanged
         If cbxLaser01.Checked Then
@@ -27,6 +35,8 @@ Public Class RegPatient
             pnlLaser01.Attributes("aria-hidden") = "false"
             pnlLaser01.CssClass = "modal fade in"
             pnlLaser01Back.Visible = True
+
+            hfActivePanelId.Value = "History"
         End If
     End Sub
     Private Sub cbxDebrid01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxDebrid01.CheckedChanged
@@ -38,6 +48,8 @@ Public Class RegPatient
             pnlDebrid01.Attributes("aria-hidden") = "false"
             pnlDebrid01.CssClass = "modal fade in"
             pnlDebrid01Back.Visible = True
+
+            hfActivePanelId.Value = "History"
         End If
     End Sub
     Private Sub cbxGangrene01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGangrene01.CheckedChanged
@@ -49,6 +61,8 @@ Public Class RegPatient
             pnlGang01.Attributes("aria-hidden") = "false"
             pnlGang01.CssClass = "modal fade in"
             pnlGang01Back.Visible = True
+
+            hfActivePanelId.Value = "History"
         End If
     End Sub
     Private Sub cbxSurgery01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurgery01.CheckedChanged
@@ -60,6 +74,8 @@ Public Class RegPatient
             pnlSurg01.Attributes("aria-hidden") = "false"
             pnlSurg01.CssClass = "modal fade in"
             pnlSurg01Back.Visible = True
+
+            hfActivePanelId.Value = "History"
         End If
     End Sub
     Private Sub cbxAmp01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxAmp01.CheckedChanged
@@ -71,6 +87,8 @@ Public Class RegPatient
             pnlAmp01.Attributes("aria-hidden") = "false"
             pnlAmp01.CssClass = "modal fade in"
             pnlAmp01Back.Visible = True
+
+            hfActivePanelId.Value = "History"
         End If
     End Sub
     Private Sub cbxInPatient01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxInPatient.CheckedChanged
@@ -82,6 +100,8 @@ Public Class RegPatient
             pnlInPatient01.Attributes("aria-hidden") = "false"
             pnlInPatient01.CssClass = "modal fade in"
             pnlInPatient01Back.Visible = True
+
+            hfActivePanelId.Value = "History"
         End If
     End Sub
     Private Sub btnOKSore01_Click(sender As Object, e As EventArgs) Handles btnOKSore01.Click
@@ -100,18 +120,18 @@ Public Class RegPatient
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing Then cbxSore01.Checked = False
 
-        GetStep2Panels()
+        'GetStep2Panels()
     End Sub
 
-    Private Sub GetStep2Panels()
-        Dim panels = {
-            New CollapsePanelGroup(pnlHistory, lblHistoryTitle, collapseHistoryMessage),
-            New CollapsePanelGroup(pnlPhysicalExam, lblPhysicalExamTitle, collapsePhysicalExam),
-            New CollapsePanelGroup(pnlLabResults, lblLabResultsTitle, collapseLabResults),
-            New CollapsePanelGroup(pnlPrescription, lblPrescriptionTitle, collapsePrescription)
-        }
-        ExpandPanel(Me, panels, hfExpanedPanelIds.Value.Split(" "))
-    End Sub
+    'Private Sub GetStep2Panels()
+    '    Dim panels = {
+    '        New CollapsePanelGroup(pnlHistory, lblHistoryTitle, collapseHistoryMessage),
+    '        New CollapsePanelGroup(pnlPhysicalExam, lblPhysicalExamTitle, collapsePhysicalExam),
+    '        New CollapsePanelGroup(pnlLabResults, lblLabResultsTitle, collapseLabResults),
+    '        New CollapsePanelGroup(pnlPrescription, lblPrescriptionTitle, collapsePrescription)
+    '    }
+    '    ExpandPanel(Me, panels, hfExpanedPanelIds.Value.Split(" "))
+    'End Sub
 
     Private Sub btnOKLaser01_Click(sender As Object, e As EventArgs) Handles btnOKLaser01.Click
         If lblLaser01MSG.Text = "" Then
@@ -218,6 +238,8 @@ Public Class RegPatient
             pnlSore02.Attributes("aria-hidden") = "false"
             pnlSore02.CssClass = "modal fade in"
             pnlSore02Back.Visible = True
+
+            hfActivePanelId.Value = "PhysicalExam"
         End If
     End Sub
     Private Sub cbxInfect01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxInfect01.CheckedChanged
@@ -229,6 +251,8 @@ Public Class RegPatient
             pnlInfect01.Attributes("aria-hidden") = "false"
             pnlInfect01.CssClass = "modal fade in"
             pnlInfect01Back.Visible = True
+
+            hfActivePanelId.Value = "PhysicalExam"
         End If
     End Sub
     Private Sub cbxSwell01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSwell01.CheckedChanged
@@ -240,6 +264,8 @@ Public Class RegPatient
             pnlSwell01.Attributes("aria-hidden") = "false"
             pnlSwell01.CssClass = "modal fade in"
             pnlSwell01Back.Visible = True
+
+            hfActivePanelId.Value = "PhysicalExam"
         End If
     End Sub
     Private Sub btnOKSore02_Click(sender As Object, e As EventArgs) Handles btnOKSore02.Click
@@ -311,15 +337,21 @@ Public Class RegPatient
         pnlDemographicFooter.Visible = False
 
         pnlHistory.Visible = True
-        pnlPhysicalExam.Visible = True
-        pnlLabResults.Visible = True
-        pnlPrescription.Visible = True
-        pnlMainFooter.Visible = True
-        btnCancel_Click(Nothing, Nothing)
+        'pnlPhysicalExam.Visible = True
+        'pnlLabResults.Visible = True
+        'pnlPrescription.Visible = True
+        pnlHistoryFooter.Visible = True
+        pnlPages.Visible = True
 
-        hfExpanedPanelIds.Value = "pnlHistory"
+        btnCancelHistory_Click(Nothing, Nothing)
+        btnCancelPhysicalExam_Click(Nothing, Nothing)
+        btnCacelLabResults_Click(Nothing, Nothing)
+        btnCancelPrescription_Click(Nothing, Nothing)
+
+        'hfExpanedPanelIds.Value = "pnlHistory"
+        hfActivePanelId.Value = "History"
     End Sub
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancelHistory_Click(sender As Object, e As EventArgs) Handles btnCAncelHistory.Click
         'History
         rblDiabetTypeOf.SelectedIndex = -1
         txtDateOf01.Text = ""
@@ -334,41 +366,6 @@ Public Class RegPatient
         cbxAlcohol.Checked = False
         cbxSigarret.Checked = False
         cbxInPatient.Checked = False
-
-        'Physical Exam
-        txtCC.Text = ""
-        cbxSore02.Checked = False
-        cbxInfect01.Checked = False
-        cbxSwell01.Checked = False
-        For Each oItem As ListItem In cblNeuropathy.Items
-            oItem.Selected = False
-        Next
-        rblDry.SelectedIndex = -1
-        rblTemp.SelectedIndex = -1
-
-        'Lab Results
-        txtFBS.Text = ""
-        txtA1C.Text = ""
-        dpDateOf02.Clear()
-        txtSystol.Text = ""
-        txtDyastol.Text = ""
-        txtO2.Text = ""
-        txtHR.Text = ""
-        txtRR.Text = ""
-        dpDateOf03.Clear()
-
-        'Prescriptions
-        cbxNeedAmp.Checked = False
-        cbxNeedCover.Checked = False
-        cbxNeedDebrid.Checked = False
-        cbxNeedEducation.Checked = False
-        cbxNeedRehab.Checked = False
-        cbxNeedShoe.Checked = False
-        cbxNeedSurg.Checked = False
-        cbxNeedVisit.Checked = False
-        For Each oItem As ListItem In cblDrugs.Items
-            oItem.Selected = False
-        Next
 
         'Modal Panels
         txtDuration01.Text = ""
@@ -414,6 +411,22 @@ Public Class RegPatient
         dpLastInPatient01.Clear()
         txtSurg01Cause.Text = ""
 
+        hfActivePanelId.Value = "History"
+    End Sub
+    Private Sub btnCancelPhysicalExam_Click(sender As Object, e As EventArgs) Handles btnCancelPhysicalExam.Click
+        'Physical Exam
+        txtCC.Text = ""
+        cbxSore02.Checked = False
+        cbxInfect01.Checked = False
+        cbxSwell01.Checked = False
+        For Each oItem As ListItem In cblNeuropathy.Items
+            oItem.Selected = False
+        Next
+        rblDry.SelectedIndex = -1
+        rblTemp.SelectedIndex = -1
+
+
+        'Modal Panels
         txtDuration08.Text = ""
         dpNewSore.Clear()
         txtNewSoreCountOfL.Text = ""
@@ -444,14 +457,53 @@ Public Class RegPatient
             oItem.Selected = False
         Next
 
+        hfActivePanelId.Value = "PhysicalExam"
+    End Sub
+    Private Sub btnCacelLabResults_Click(sender As Object, e As EventArgs) Handles btnCacelLabResults.Click
+        'Lab Results
+        txtFBS.Text = ""
+        txtA1C.Text = ""
+        dpDateOf02.Clear()
+        txtSystol.Text = ""
+        txtDyastol.Text = ""
+        txtO2.Text = ""
+        txtHR.Text = ""
+        txtRR.Text = ""
+        dpDateOf03.Clear()
 
+        hfActivePanelId.Value = "LabResults"
+    End Sub
+    Private Sub btnCancelPrescription_Click(sender As Object, e As EventArgs) Handles btnCancelPrescription.Click
+        'Prescriptions
+        cbxNeedAmp.Checked = False
+        cbxNeedCover.Checked = False
+        cbxNeedDebrid.Checked = False
+        cbxNeedEducation.Checked = False
+        cbxNeedRehab.Checked = False
+        cbxNeedShoe.Checked = False
+        cbxNeedSurg.Checked = False
+        cbxNeedVisit.Checked = False
+        For Each oItem As ListItem In cblDrugs.Items
+            oItem.Selected = False
+        Next
+        txtFreeText.Text = ""
+
+        hfActivePanelId.Value = "Prescription"
+        Dim oScript As String = "var selectedTab = $(""#<%=hfActivePanelId.ClientID%>"");" & vbCrLf &
+                                "var tabId = selectedTab.val() != """" ? selectedTab.val() : ""PhysicalExam"";" & vbCrLf &
+                                "$('#dvTab a[href=""#' + tabId + '""]').tab('show');" & vbCrLf &
+                                "$(""#dvTab a"").click(function () {" & vbCrLf &
+                                "    selectedTab.val($(this).attr(""href"").substring(1));" & vbCrLf &
+                                "});"
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "ActiveLastTab", oScript, True)
     End Sub
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
         pnlHistory.Visible = False
         pnlPhysicalExam.Visible = False
-        pnlLabResults.Visible = False
-        pnlPrescription.Visible = False
-        pnlMainFooter.Visible = False
+        'pnlLabResults.Visible = False
+        'pnlPrescription.Visible = False
+        pnlHistoryFooter.Visible = False
+        pnlPages.Visible = False
 
         pnlDemographic.Visible = True
         pnlDemographicFooter.Visible = True

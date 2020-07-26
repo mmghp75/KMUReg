@@ -159,6 +159,7 @@
     <Content Include="Content\Spinner\spin.svg" />
     <Content Include="Content\Spinner\spiner.svg" />
     <Content Include="Content\Spinner\Spinner.css" />
+    <Content Include="Fonts\Far_Mitra.svg" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Fonts\Roya.svg" />
     <Content Include="Images\glyphicons-halflings-white.png" />
@@ -216,6 +217,22 @@
     <None Include="db.dbml.layout">
       <DependentUpon>db.dbml</DependentUpon>
     </None>
+    <Content Include="Fonts\B Nazanin.eot" />
+    <Content Include="Fonts\B Nazanin.otf" />
+    <Content Include="Fonts\B Nazanin.ttf" />
+    <Content Include="Fonts\B Nazanin.woff" />
+    <Content Include="Fonts\B Roya.eot" />
+    <Content Include="Fonts\B Roya.otf" />
+    <Content Include="Fonts\B Roya.ttf" />
+    <Content Include="Fonts\B Roya.woff" />
+    <Content Include="Fonts\B Titr Bold.eot" />
+    <Content Include="Fonts\B Titr Bold.otf" />
+    <Content Include="Fonts\B Titr Bold.ttf" />
+    <Content Include="Fonts\B Titr Bold.woff" />
+    <Content Include="Fonts\Far_Mitra.eot" />
+    <Content Include="Fonts\Far_Mitra.ttf" />
+    <Content Include="Fonts\Far_Mitra.woff" />
+    <Content Include="Fonts\FarMitra.otf" />
     <None Include="My Project\PublishProfiles\FolderProfile.pubxml" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

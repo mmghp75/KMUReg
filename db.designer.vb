@@ -22,7 +22,7 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="KMUReg")>  _
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="KMUReg_Demographic")>  _
 Partial Public Class dbDataContext
 	Inherits System.Data.Linq.DataContext
 	
@@ -37,10 +37,46 @@ Partial Public Class dbDataContext
     End Sub
   Partial Private Sub DeletetblUser(instance As tblUser)
     End Sub
+  Partial Private Sub InserttblHistory(instance As tblHistory)
+    End Sub
+  Partial Private Sub UpdatetblHistory(instance As tblHistory)
+    End Sub
+  Partial Private Sub DeletetblHistory(instance As tblHistory)
+    End Sub
+  Partial Private Sub InserttblLabResult(instance As tblLabResult)
+    End Sub
+  Partial Private Sub UpdatetblLabResult(instance As tblLabResult)
+    End Sub
+  Partial Private Sub DeletetblLabResult(instance As tblLabResult)
+    End Sub
+  Partial Private Sub InserttblPhysicalExam(instance As tblPhysicalExam)
+    End Sub
+  Partial Private Sub UpdatetblPhysicalExam(instance As tblPhysicalExam)
+    End Sub
+  Partial Private Sub DeletetblPhysicalExam(instance As tblPhysicalExam)
+    End Sub
+  Partial Private Sub InserttblPrescription(instance As tblPrescription)
+    End Sub
+  Partial Private Sub UpdatetblPrescription(instance As tblPrescription)
+    End Sub
+  Partial Private Sub DeletetblPrescription(instance As tblPrescription)
+    End Sub
+  Partial Private Sub InserttblRegistery(instance As tblRegistery)
+    End Sub
+  Partial Private Sub UpdatetblRegistery(instance As tblRegistery)
+    End Sub
+  Partial Private Sub DeletetblRegistery(instance As tblRegistery)
+    End Sub
+  Partial Private Sub InserttblDemographic(instance As tblDemographic)
+    End Sub
+  Partial Private Sub UpdatetblDemographic(instance As tblDemographic)
+    End Sub
+  Partial Private Sub DeletetblDemographic(instance As tblDemographic)
+    End Sub
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.System.Configuration.ConfigurationManager.ConnectionStrings("KMURegConnectionString").ConnectionString, mappingSource)
+		MyBase.New(Global.System.Configuration.ConfigurationManager.ConnectionStrings("KMUReg_DemographicConnectionString").ConnectionString, mappingSource)
 		OnCreated
 	End Sub
 	
@@ -73,6 +109,54 @@ Partial Public Class dbDataContext
 	Public ReadOnly Property tblShamsiMiladis() As System.Data.Linq.Table(Of tblShamsiMiladi)
 		Get
 			Return Me.GetTable(Of tblShamsiMiladi)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblShamsiMiladi1s() As System.Data.Linq.Table(Of tblShamsiMiladi1)
+		Get
+			Return Me.GetTable(Of tblShamsiMiladi1)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblHistories() As System.Data.Linq.Table(Of tblHistory)
+		Get
+			Return Me.GetTable(Of tblHistory)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblLabResults() As System.Data.Linq.Table(Of tblLabResult)
+		Get
+			Return Me.GetTable(Of tblLabResult)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblPhysicalExams() As System.Data.Linq.Table(Of tblPhysicalExam)
+		Get
+			Return Me.GetTable(Of tblPhysicalExam)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblPrescriptions() As System.Data.Linq.Table(Of tblPrescription)
+		Get
+			Return Me.GetTable(Of tblPrescription)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblRegisteries() As System.Data.Linq.Table(Of tblRegistery)
+		Get
+			Return Me.GetTable(Of tblRegistery)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblDemographics() As System.Data.Linq.Table(Of tblDemographic)
+		Get
+			Return Me.GetTable(Of tblDemographic)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblShamsiMiladi2s() As System.Data.Linq.Table(Of tblShamsiMiladi2)
+		Get
+			Return Me.GetTable(Of tblShamsiMiladi2)
 		End Get
 	End Property
 End Class
@@ -319,6 +403,2712 @@ End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblShamsiMiladi")>  _
 Partial Public Class tblShamsiMiladi
+	
+	Private _Miladi As Date
+	
+	Private _Shamsi As String
+	
+	Private _Shamsi_YearOf As Integer
+	
+	Private _Shamsi_MonthOf As Integer
+	
+	Private _Shamsi_DayOf As Integer
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Miladi", DbType:="DateTime NOT NULL")>  _
+	Public Property Miladi() As Date
+		Get
+			Return Me._Miladi
+		End Get
+		Set
+			If ((Me._Miladi = value)  _
+						= false) Then
+				Me._Miladi = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi", DbType:="NVarChar(20) NOT NULL", CanBeNull:=false)>  _
+	Public Property Shamsi() As String
+		Get
+			Return Me._Shamsi
+		End Get
+		Set
+			If (String.Equals(Me._Shamsi, value) = false) Then
+				Me._Shamsi = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_YearOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_YearOf() As Integer
+		Get
+			Return Me._Shamsi_YearOf
+		End Get
+		Set
+			If ((Me._Shamsi_YearOf = value)  _
+						= false) Then
+				Me._Shamsi_YearOf = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_MonthOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_MonthOf() As Integer
+		Get
+			Return Me._Shamsi_MonthOf
+		End Get
+		Set
+			If ((Me._Shamsi_MonthOf = value)  _
+						= false) Then
+				Me._Shamsi_MonthOf = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_DayOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_DayOf() As Integer
+		Get
+			Return Me._Shamsi_DayOf
+		End Get
+		Set
+			If ((Me._Shamsi_DayOf = value)  _
+						= false) Then
+				Me._Shamsi_DayOf = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblShamsiMiladi")>  _
+Partial Public Class tblShamsiMiladi1
+	
+	Private _Miladi As Date
+	
+	Private _Shamsi As String
+	
+	Private _Shamsi_YearOf As Integer
+	
+	Private _Shamsi_MonthOf As Integer
+	
+	Private _Shamsi_DayOf As Integer
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Miladi", DbType:="DateTime NOT NULL")>  _
+	Public Property Miladi() As Date
+		Get
+			Return Me._Miladi
+		End Get
+		Set
+			If ((Me._Miladi = value)  _
+						= false) Then
+				Me._Miladi = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi", DbType:="NVarChar(20) NOT NULL", CanBeNull:=false)>  _
+	Public Property Shamsi() As String
+		Get
+			Return Me._Shamsi
+		End Get
+		Set
+			If (String.Equals(Me._Shamsi, value) = false) Then
+				Me._Shamsi = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_YearOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_YearOf() As Integer
+		Get
+			Return Me._Shamsi_YearOf
+		End Get
+		Set
+			If ((Me._Shamsi_YearOf = value)  _
+						= false) Then
+				Me._Shamsi_YearOf = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_MonthOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_MonthOf() As Integer
+		Get
+			Return Me._Shamsi_MonthOf
+		End Get
+		Set
+			If ((Me._Shamsi_MonthOf = value)  _
+						= false) Then
+				Me._Shamsi_MonthOf = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shamsi_DayOf", DbType:="Int NOT NULL")>  _
+	Public Property Shamsi_DayOf() As Integer
+		Get
+			Return Me._Shamsi_DayOf
+		End Get
+		Set
+			If ((Me._Shamsi_DayOf = value)  _
+						= false) Then
+				Me._Shamsi_DayOf = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblHistory")>  _
+Partial Public Class tblHistory
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _DiabetTypeLU As Integer
+	
+	Private _StartDateOf As Date
+	
+	Private _Sore As Boolean
+	
+	Private _SoreDateOf As System.Nullable(Of Date)
+	
+	Private _SoreLocationLeft As String
+	
+	Private _SoreLocationRight As String
+	
+	Private _Laser As Boolean
+	
+	Private _LaserDateOf As System.Nullable(Of Date)
+	
+	Private _LaserLocation As String
+	
+	Private _Debrid As Boolean
+	
+	Private _DebridDateOf As System.Nullable(Of Date)
+	
+	Private _DebridLocation As String
+	
+	Private _Surgery As Boolean
+	
+	Private _SurgeryDateOf As System.Nullable(Of Date)
+	
+	Private _SurgeryLocationLeft As String
+	
+	Private _SurgeryLocationRight As String
+	
+	Private _Gangrene As Boolean
+	
+	Private _GangreneDateOf As System.Nullable(Of Date)
+	
+	Private _GangreneLocation As String
+	
+	Private _Amputation As Boolean
+	
+	Private _AmputationDateOf As System.Nullable(Of Date)
+	
+	Private _AmputationLocation As String
+	
+	Private _Diseases As String
+	
+	Private _Alcohol As Boolean
+	
+	Private _Sigarret As Boolean
+	
+	Private _InPatient As Boolean
+	
+	Private _InPatientDateOf As System.Nullable(Of Date)
+	
+	Private _InPatientReason As String
+	
+	Private _RegisteryID As Integer
+	
+	Private _tblRegistery As EntityRef(Of tblRegistery)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnDiabetTypeLUChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnDiabetTypeLUChanged()
+    End Sub
+    Partial Private Sub OnStartDateOfChanging(value As Date)
+    End Sub
+    Partial Private Sub OnStartDateOfChanged()
+    End Sub
+    Partial Private Sub OnSoreChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnSoreChanged()
+    End Sub
+    Partial Private Sub OnSoreDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnSoreDateOfChanged()
+    End Sub
+    Partial Private Sub OnSoreLocationLeftChanging(value As String)
+    End Sub
+    Partial Private Sub OnSoreLocationLeftChanged()
+    End Sub
+    Partial Private Sub OnSoreLocationRightChanging(value As String)
+    End Sub
+    Partial Private Sub OnSoreLocationRightChanged()
+    End Sub
+    Partial Private Sub OnLaserChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnLaserChanged()
+    End Sub
+    Partial Private Sub OnLaserDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnLaserDateOfChanged()
+    End Sub
+    Partial Private Sub OnLaserLocationChanging(value As String)
+    End Sub
+    Partial Private Sub OnLaserLocationChanged()
+    End Sub
+    Partial Private Sub OnDebridChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnDebridChanged()
+    End Sub
+    Partial Private Sub OnDebridDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDebridDateOfChanged()
+    End Sub
+    Partial Private Sub OnDebridLocationChanging(value As String)
+    End Sub
+    Partial Private Sub OnDebridLocationChanged()
+    End Sub
+    Partial Private Sub OnSurgeryChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnSurgeryChanged()
+    End Sub
+    Partial Private Sub OnSurgeryDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnSurgeryDateOfChanged()
+    End Sub
+    Partial Private Sub OnSurgeryLocationLeftChanging(value As String)
+    End Sub
+    Partial Private Sub OnSurgeryLocationLeftChanged()
+    End Sub
+    Partial Private Sub OnSurgeryLocationRightChanging(value As String)
+    End Sub
+    Partial Private Sub OnSurgeryLocationRightChanged()
+    End Sub
+    Partial Private Sub OnGangreneChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnGangreneChanged()
+    End Sub
+    Partial Private Sub OnGangreneDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnGangreneDateOfChanged()
+    End Sub
+    Partial Private Sub OnGangreneLocationChanging(value As String)
+    End Sub
+    Partial Private Sub OnGangreneLocationChanged()
+    End Sub
+    Partial Private Sub OnAmputationChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnAmputationChanged()
+    End Sub
+    Partial Private Sub OnAmputationDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnAmputationDateOfChanged()
+    End Sub
+    Partial Private Sub OnAmputationLocationChanging(value As String)
+    End Sub
+    Partial Private Sub OnAmputationLocationChanged()
+    End Sub
+    Partial Private Sub OnDiseasesChanging(value As String)
+    End Sub
+    Partial Private Sub OnDiseasesChanged()
+    End Sub
+    Partial Private Sub OnAlcoholChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnAlcoholChanged()
+    End Sub
+    Partial Private Sub OnSigarretChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnSigarretChanged()
+    End Sub
+    Partial Private Sub OnInPatientChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnInPatientChanged()
+    End Sub
+    Partial Private Sub OnInPatientDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnInPatientDateOfChanged()
+    End Sub
+    Partial Private Sub OnInPatientReasonChanging(value As String)
+    End Sub
+    Partial Private Sub OnInPatientReasonChanged()
+    End Sub
+    Partial Private Sub OnRegisteryIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRegisteryIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblRegistery = CType(Nothing, EntityRef(Of tblRegistery))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DiabetTypeLU", DbType:="Int NOT NULL")>  _
+	Public Property DiabetTypeLU() As Integer
+		Get
+			Return Me._DiabetTypeLU
+		End Get
+		Set
+			If ((Me._DiabetTypeLU = value)  _
+						= false) Then
+				Me.OnDiabetTypeLUChanging(value)
+				Me.SendPropertyChanging
+				Me._DiabetTypeLU = value
+				Me.SendPropertyChanged("DiabetTypeLU")
+				Me.OnDiabetTypeLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_StartDateOf", DbType:="Date NOT NULL")>  _
+	Public Property StartDateOf() As Date
+		Get
+			Return Me._StartDateOf
+		End Get
+		Set
+			If ((Me._StartDateOf = value)  _
+						= false) Then
+				Me.OnStartDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._StartDateOf = value
+				Me.SendPropertyChanged("StartDateOf")
+				Me.OnStartDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Sore", DbType:="Bit NOT NULL")>  _
+	Public Property Sore() As Boolean
+		Get
+			Return Me._Sore
+		End Get
+		Set
+			If ((Me._Sore = value)  _
+						= false) Then
+				Me.OnSoreChanging(value)
+				Me.SendPropertyChanging
+				Me._Sore = value
+				Me.SendPropertyChanged("Sore")
+				Me.OnSoreChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreDateOf", DbType:="Date")>  _
+	Public Property SoreDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._SoreDateOf
+		End Get
+		Set
+			If (Me._SoreDateOf.Equals(value) = false) Then
+				Me.OnSoreDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreDateOf = value
+				Me.SendPropertyChanged("SoreDateOf")
+				Me.OnSoreDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreLocationLeft", DbType:="NVarChar(50)")>  _
+	Public Property SoreLocationLeft() As String
+		Get
+			Return Me._SoreLocationLeft
+		End Get
+		Set
+			If (String.Equals(Me._SoreLocationLeft, value) = false) Then
+				Me.OnSoreLocationLeftChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreLocationLeft = value
+				Me.SendPropertyChanged("SoreLocationLeft")
+				Me.OnSoreLocationLeftChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreLocationRight", DbType:="NVarChar(50)")>  _
+	Public Property SoreLocationRight() As String
+		Get
+			Return Me._SoreLocationRight
+		End Get
+		Set
+			If (String.Equals(Me._SoreLocationRight, value) = false) Then
+				Me.OnSoreLocationRightChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreLocationRight = value
+				Me.SendPropertyChanged("SoreLocationRight")
+				Me.OnSoreLocationRightChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Laser", DbType:="Bit NOT NULL")>  _
+	Public Property Laser() As Boolean
+		Get
+			Return Me._Laser
+		End Get
+		Set
+			If ((Me._Laser = value)  _
+						= false) Then
+				Me.OnLaserChanging(value)
+				Me.SendPropertyChanging
+				Me._Laser = value
+				Me.SendPropertyChanged("Laser")
+				Me.OnLaserChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LaserDateOf", DbType:="Date")>  _
+	Public Property LaserDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._LaserDateOf
+		End Get
+		Set
+			If (Me._LaserDateOf.Equals(value) = false) Then
+				Me.OnLaserDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._LaserDateOf = value
+				Me.SendPropertyChanged("LaserDateOf")
+				Me.OnLaserDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LaserLocation", DbType:="NVarChar(50)")>  _
+	Public Property LaserLocation() As String
+		Get
+			Return Me._LaserLocation
+		End Get
+		Set
+			If (String.Equals(Me._LaserLocation, value) = false) Then
+				Me.OnLaserLocationChanging(value)
+				Me.SendPropertyChanging
+				Me._LaserLocation = value
+				Me.SendPropertyChanged("LaserLocation")
+				Me.OnLaserLocationChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Debrid", DbType:="Bit NOT NULL")>  _
+	Public Property Debrid() As Boolean
+		Get
+			Return Me._Debrid
+		End Get
+		Set
+			If ((Me._Debrid = value)  _
+						= false) Then
+				Me.OnDebridChanging(value)
+				Me.SendPropertyChanging
+				Me._Debrid = value
+				Me.SendPropertyChanged("Debrid")
+				Me.OnDebridChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DebridDateOf", DbType:="Date")>  _
+	Public Property DebridDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._DebridDateOf
+		End Get
+		Set
+			If (Me._DebridDateOf.Equals(value) = false) Then
+				Me.OnDebridDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._DebridDateOf = value
+				Me.SendPropertyChanged("DebridDateOf")
+				Me.OnDebridDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DebridLocation", DbType:="NVarChar(50)")>  _
+	Public Property DebridLocation() As String
+		Get
+			Return Me._DebridLocation
+		End Get
+		Set
+			If (String.Equals(Me._DebridLocation, value) = false) Then
+				Me.OnDebridLocationChanging(value)
+				Me.SendPropertyChanging
+				Me._DebridLocation = value
+				Me.SendPropertyChanged("DebridLocation")
+				Me.OnDebridLocationChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Surgery", DbType:="Bit NOT NULL")>  _
+	Public Property Surgery() As Boolean
+		Get
+			Return Me._Surgery
+		End Get
+		Set
+			If ((Me._Surgery = value)  _
+						= false) Then
+				Me.OnSurgeryChanging(value)
+				Me.SendPropertyChanging
+				Me._Surgery = value
+				Me.SendPropertyChanged("Surgery")
+				Me.OnSurgeryChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SurgeryDateOf", DbType:="Date")>  _
+	Public Property SurgeryDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._SurgeryDateOf
+		End Get
+		Set
+			If (Me._SurgeryDateOf.Equals(value) = false) Then
+				Me.OnSurgeryDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._SurgeryDateOf = value
+				Me.SendPropertyChanged("SurgeryDateOf")
+				Me.OnSurgeryDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SurgeryLocationLeft", DbType:="NVarChar(50)")>  _
+	Public Property SurgeryLocationLeft() As String
+		Get
+			Return Me._SurgeryLocationLeft
+		End Get
+		Set
+			If (String.Equals(Me._SurgeryLocationLeft, value) = false) Then
+				Me.OnSurgeryLocationLeftChanging(value)
+				Me.SendPropertyChanging
+				Me._SurgeryLocationLeft = value
+				Me.SendPropertyChanged("SurgeryLocationLeft")
+				Me.OnSurgeryLocationLeftChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SurgeryLocationRight", DbType:="NVarChar(50)")>  _
+	Public Property SurgeryLocationRight() As String
+		Get
+			Return Me._SurgeryLocationRight
+		End Get
+		Set
+			If (String.Equals(Me._SurgeryLocationRight, value) = false) Then
+				Me.OnSurgeryLocationRightChanging(value)
+				Me.SendPropertyChanging
+				Me._SurgeryLocationRight = value
+				Me.SendPropertyChanged("SurgeryLocationRight")
+				Me.OnSurgeryLocationRightChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Gangrene", DbType:="Bit NOT NULL")>  _
+	Public Property Gangrene() As Boolean
+		Get
+			Return Me._Gangrene
+		End Get
+		Set
+			If ((Me._Gangrene = value)  _
+						= false) Then
+				Me.OnGangreneChanging(value)
+				Me.SendPropertyChanging
+				Me._Gangrene = value
+				Me.SendPropertyChanged("Gangrene")
+				Me.OnGangreneChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GangreneDateOf", DbType:="Date")>  _
+	Public Property GangreneDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._GangreneDateOf
+		End Get
+		Set
+			If (Me._GangreneDateOf.Equals(value) = false) Then
+				Me.OnGangreneDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._GangreneDateOf = value
+				Me.SendPropertyChanged("GangreneDateOf")
+				Me.OnGangreneDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GangreneLocation", DbType:="NVarChar(50)")>  _
+	Public Property GangreneLocation() As String
+		Get
+			Return Me._GangreneLocation
+		End Get
+		Set
+			If (String.Equals(Me._GangreneLocation, value) = false) Then
+				Me.OnGangreneLocationChanging(value)
+				Me.SendPropertyChanging
+				Me._GangreneLocation = value
+				Me.SendPropertyChanged("GangreneLocation")
+				Me.OnGangreneLocationChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Amputation", DbType:="Bit NOT NULL")>  _
+	Public Property Amputation() As Boolean
+		Get
+			Return Me._Amputation
+		End Get
+		Set
+			If ((Me._Amputation = value)  _
+						= false) Then
+				Me.OnAmputationChanging(value)
+				Me.SendPropertyChanging
+				Me._Amputation = value
+				Me.SendPropertyChanged("Amputation")
+				Me.OnAmputationChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AmputationDateOf", DbType:="Date")>  _
+	Public Property AmputationDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._AmputationDateOf
+		End Get
+		Set
+			If (Me._AmputationDateOf.Equals(value) = false) Then
+				Me.OnAmputationDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._AmputationDateOf = value
+				Me.SendPropertyChanged("AmputationDateOf")
+				Me.OnAmputationDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AmputationLocation", DbType:="NVarChar(50)")>  _
+	Public Property AmputationLocation() As String
+		Get
+			Return Me._AmputationLocation
+		End Get
+		Set
+			If (String.Equals(Me._AmputationLocation, value) = false) Then
+				Me.OnAmputationLocationChanging(value)
+				Me.SendPropertyChanging
+				Me._AmputationLocation = value
+				Me.SendPropertyChanged("AmputationLocation")
+				Me.OnAmputationLocationChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Diseases", DbType:="NVarChar(500)")>  _
+	Public Property Diseases() As String
+		Get
+			Return Me._Diseases
+		End Get
+		Set
+			If (String.Equals(Me._Diseases, value) = false) Then
+				Me.OnDiseasesChanging(value)
+				Me.SendPropertyChanging
+				Me._Diseases = value
+				Me.SendPropertyChanged("Diseases")
+				Me.OnDiseasesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Alcohol", DbType:="Bit NOT NULL")>  _
+	Public Property Alcohol() As Boolean
+		Get
+			Return Me._Alcohol
+		End Get
+		Set
+			If ((Me._Alcohol = value)  _
+						= false) Then
+				Me.OnAlcoholChanging(value)
+				Me.SendPropertyChanging
+				Me._Alcohol = value
+				Me.SendPropertyChanged("Alcohol")
+				Me.OnAlcoholChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Sigarret", DbType:="Bit NOT NULL")>  _
+	Public Property Sigarret() As Boolean
+		Get
+			Return Me._Sigarret
+		End Get
+		Set
+			If ((Me._Sigarret = value)  _
+						= false) Then
+				Me.OnSigarretChanging(value)
+				Me.SendPropertyChanging
+				Me._Sigarret = value
+				Me.SendPropertyChanged("Sigarret")
+				Me.OnSigarretChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InPatient", DbType:="Bit NOT NULL")>  _
+	Public Property InPatient() As Boolean
+		Get
+			Return Me._InPatient
+		End Get
+		Set
+			If ((Me._InPatient = value)  _
+						= false) Then
+				Me.OnInPatientChanging(value)
+				Me.SendPropertyChanging
+				Me._InPatient = value
+				Me.SendPropertyChanged("InPatient")
+				Me.OnInPatientChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InPatientDateOf", DbType:="Date")>  _
+	Public Property InPatientDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._InPatientDateOf
+		End Get
+		Set
+			If (Me._InPatientDateOf.Equals(value) = false) Then
+				Me.OnInPatientDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._InPatientDateOf = value
+				Me.SendPropertyChanged("InPatientDateOf")
+				Me.OnInPatientDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InPatientReason", DbType:="NVarChar(50)")>  _
+	Public Property InPatientReason() As String
+		Get
+			Return Me._InPatientReason
+		End Get
+		Set
+			If (String.Equals(Me._InPatientReason, value) = false) Then
+				Me.OnInPatientReasonChanging(value)
+				Me.SendPropertyChanging
+				Me._InPatientReason = value
+				Me.SendPropertyChanged("InPatientReason")
+				Me.OnInPatientReasonChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RegisteryID", DbType:="Int NOT NULL")>  _
+	Public Property RegisteryID() As Integer
+		Get
+			Return Me._RegisteryID
+		End Get
+		Set
+			If ((Me._RegisteryID = value)  _
+						= false) Then
+				If Me._tblRegistery.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnRegisteryIDChanging(value)
+				Me.SendPropertyChanging
+				Me._RegisteryID = value
+				Me.SendPropertyChanged("RegisteryID")
+				Me.OnRegisteryIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblHistory", Storage:="_tblRegistery", ThisKey:="RegisteryID", OtherKey:="ID", IsForeignKey:=true)>  _
+	Public Property tblRegistery() As tblRegistery
+		Get
+			Return Me._tblRegistery.Entity
+		End Get
+		Set
+			Dim previousValue As tblRegistery = Me._tblRegistery.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblRegistery.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblRegistery.Entity = Nothing
+					previousValue.tblHistories.Remove(Me)
+				End If
+				Me._tblRegistery.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblHistories.Add(Me)
+					Me._RegisteryID = value.ID
+				Else
+					Me._RegisteryID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("tblRegistery")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblLabResult")>  _
+Partial Public Class tblLabResult
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _FBS As System.Nullable(Of Integer)
+	
+	Private _A1C As System.Nullable(Of Integer)
+	
+	Private _LabDateOf As System.Nullable(Of Date)
+	
+	Private _Systol As System.Nullable(Of Integer)
+	
+	Private _Dyastol As System.Nullable(Of Integer)
+	
+	Private _O2 As System.Nullable(Of Integer)
+	
+	Private _HR As System.Nullable(Of Integer)
+	
+	Private _RR As System.Nullable(Of Integer)
+	
+	Private _VitalSignDateOf As System.Nullable(Of Date)
+	
+	Private _RegisteryID As Integer
+	
+	Private _tblRegistery As EntityRef(Of tblRegistery)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnFBSChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnFBSChanged()
+    End Sub
+    Partial Private Sub OnA1CChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnA1CChanged()
+    End Sub
+    Partial Private Sub OnLabDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnLabDateOfChanged()
+    End Sub
+    Partial Private Sub OnSystolChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSystolChanged()
+    End Sub
+    Partial Private Sub OnDyastolChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDyastolChanged()
+    End Sub
+    Partial Private Sub OnO2Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnO2Changed()
+    End Sub
+    Partial Private Sub OnHRChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnHRChanged()
+    End Sub
+    Partial Private Sub OnRRChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRRChanged()
+    End Sub
+    Partial Private Sub OnVitalSignDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnVitalSignDateOfChanged()
+    End Sub
+    Partial Private Sub OnRegisteryIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRegisteryIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblRegistery = CType(Nothing, EntityRef(Of tblRegistery))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FBS", DbType:="Int")>  _
+	Public Property FBS() As System.Nullable(Of Integer)
+		Get
+			Return Me._FBS
+		End Get
+		Set
+			If (Me._FBS.Equals(value) = false) Then
+				Me.OnFBSChanging(value)
+				Me.SendPropertyChanging
+				Me._FBS = value
+				Me.SendPropertyChanged("FBS")
+				Me.OnFBSChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_A1C", DbType:="Int")>  _
+	Public Property A1C() As System.Nullable(Of Integer)
+		Get
+			Return Me._A1C
+		End Get
+		Set
+			If (Me._A1C.Equals(value) = false) Then
+				Me.OnA1CChanging(value)
+				Me.SendPropertyChanging
+				Me._A1C = value
+				Me.SendPropertyChanged("A1C")
+				Me.OnA1CChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LabDateOf", DbType:="Date")>  _
+	Public Property LabDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._LabDateOf
+		End Get
+		Set
+			If (Me._LabDateOf.Equals(value) = false) Then
+				Me.OnLabDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._LabDateOf = value
+				Me.SendPropertyChanged("LabDateOf")
+				Me.OnLabDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Systol", DbType:="Int")>  _
+	Public Property Systol() As System.Nullable(Of Integer)
+		Get
+			Return Me._Systol
+		End Get
+		Set
+			If (Me._Systol.Equals(value) = false) Then
+				Me.OnSystolChanging(value)
+				Me.SendPropertyChanging
+				Me._Systol = value
+				Me.SendPropertyChanged("Systol")
+				Me.OnSystolChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Dyastol", DbType:="Int")>  _
+	Public Property Dyastol() As System.Nullable(Of Integer)
+		Get
+			Return Me._Dyastol
+		End Get
+		Set
+			If (Me._Dyastol.Equals(value) = false) Then
+				Me.OnDyastolChanging(value)
+				Me.SendPropertyChanging
+				Me._Dyastol = value
+				Me.SendPropertyChanged("Dyastol")
+				Me.OnDyastolChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_O2", DbType:="Int")>  _
+	Public Property O2() As System.Nullable(Of Integer)
+		Get
+			Return Me._O2
+		End Get
+		Set
+			If (Me._O2.Equals(value) = false) Then
+				Me.OnO2Changing(value)
+				Me.SendPropertyChanging
+				Me._O2 = value
+				Me.SendPropertyChanged("O2")
+				Me.OnO2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HR", DbType:="Int")>  _
+	Public Property HR() As System.Nullable(Of Integer)
+		Get
+			Return Me._HR
+		End Get
+		Set
+			If (Me._HR.Equals(value) = false) Then
+				Me.OnHRChanging(value)
+				Me.SendPropertyChanging
+				Me._HR = value
+				Me.SendPropertyChanged("HR")
+				Me.OnHRChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RR", DbType:="Int")>  _
+	Public Property RR() As System.Nullable(Of Integer)
+		Get
+			Return Me._RR
+		End Get
+		Set
+			If (Me._RR.Equals(value) = false) Then
+				Me.OnRRChanging(value)
+				Me.SendPropertyChanging
+				Me._RR = value
+				Me.SendPropertyChanged("RR")
+				Me.OnRRChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VitalSignDateOf", DbType:="Date")>  _
+	Public Property VitalSignDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._VitalSignDateOf
+		End Get
+		Set
+			If (Me._VitalSignDateOf.Equals(value) = false) Then
+				Me.OnVitalSignDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._VitalSignDateOf = value
+				Me.SendPropertyChanged("VitalSignDateOf")
+				Me.OnVitalSignDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RegisteryID", DbType:="Int NOT NULL")>  _
+	Public Property RegisteryID() As Integer
+		Get
+			Return Me._RegisteryID
+		End Get
+		Set
+			If ((Me._RegisteryID = value)  _
+						= false) Then
+				If Me._tblRegistery.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnRegisteryIDChanging(value)
+				Me.SendPropertyChanging
+				Me._RegisteryID = value
+				Me.SendPropertyChanged("RegisteryID")
+				Me.OnRegisteryIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblLabResult", Storage:="_tblRegistery", ThisKey:="RegisteryID", OtherKey:="ID", IsForeignKey:=true)>  _
+	Public Property tblRegistery() As tblRegistery
+		Get
+			Return Me._tblRegistery.Entity
+		End Get
+		Set
+			Dim previousValue As tblRegistery = Me._tblRegistery.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblRegistery.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblRegistery.Entity = Nothing
+					previousValue.tblLabResults.Remove(Me)
+				End If
+				Me._tblRegistery.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblLabResults.Add(Me)
+					Me._RegisteryID = value.ID
+				Else
+					Me._RegisteryID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("tblRegistery")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblPhysicalExam")>  _
+Partial Public Class tblPhysicalExam
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _CC As String
+	
+	Private _Sore As Boolean
+	
+	Private _SoreDateOf As System.Nullable(Of Date)
+	
+	Private _SoreCountLeft As System.Nullable(Of Integer)
+	
+	Private _SoreCountRight As System.Nullable(Of Integer)
+	
+	Private _LargestLength As System.Nullable(Of Integer)
+	
+	Private _SoreLocationLeft As String
+	
+	Private _SoreLocationRight As String
+	
+	Private _WorstLeftSoreLU As System.Nullable(Of Integer)
+	
+	Private _WorstRightSoreLU As System.Nullable(Of Integer)
+	
+	Private _Infection As Boolean
+	
+	Private _InfectionDateOf As System.Nullable(Of Date)
+	
+	Private _InfectionLocationLeft As String
+	
+	Private _InfectionLocationRight As String
+	
+	Private _Swell As Boolean
+	
+	Private _SwellDateOf As System.Nullable(Of Date)
+	
+	Private _SwellLocationLeft As String
+	
+	Private _SwellLocationRight As String
+	
+	Private _Neuropathy As String
+	
+	Private _DryLU As System.Nullable(Of Integer)
+	
+	Private _HeatLU As System.Nullable(Of Integer)
+	
+	Private _RegisteryID As Integer
+	
+	Private _tblRegistery As EntityRef(Of tblRegistery)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnCCChanging(value As String)
+    End Sub
+    Partial Private Sub OnCCChanged()
+    End Sub
+    Partial Private Sub OnSoreChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnSoreChanged()
+    End Sub
+    Partial Private Sub OnSoreDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnSoreDateOfChanged()
+    End Sub
+    Partial Private Sub OnSoreCountLeftChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSoreCountLeftChanged()
+    End Sub
+    Partial Private Sub OnSoreCountRightChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSoreCountRightChanged()
+    End Sub
+    Partial Private Sub OnLargestLengthChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnLargestLengthChanged()
+    End Sub
+    Partial Private Sub OnSoreLocationLeftChanging(value As String)
+    End Sub
+    Partial Private Sub OnSoreLocationLeftChanged()
+    End Sub
+    Partial Private Sub OnSoreLocationRightChanging(value As String)
+    End Sub
+    Partial Private Sub OnSoreLocationRightChanged()
+    End Sub
+    Partial Private Sub OnWorstLeftSoreLUChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnWorstLeftSoreLUChanged()
+    End Sub
+    Partial Private Sub OnWorstRightSoreLUChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnWorstRightSoreLUChanged()
+    End Sub
+    Partial Private Sub OnInfectionChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnInfectionChanged()
+    End Sub
+    Partial Private Sub OnInfectionDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnInfectionDateOfChanged()
+    End Sub
+    Partial Private Sub OnInfectionLocationLeftChanging(value As String)
+    End Sub
+    Partial Private Sub OnInfectionLocationLeftChanged()
+    End Sub
+    Partial Private Sub OnInfectionLocationRightChanging(value As String)
+    End Sub
+    Partial Private Sub OnInfectionLocationRightChanged()
+    End Sub
+    Partial Private Sub OnSwellChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnSwellChanged()
+    End Sub
+    Partial Private Sub OnSwellDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnSwellDateOfChanged()
+    End Sub
+    Partial Private Sub OnSwellLocationLeftChanging(value As String)
+    End Sub
+    Partial Private Sub OnSwellLocationLeftChanged()
+    End Sub
+    Partial Private Sub OnSwellLocationRightChanging(value As String)
+    End Sub
+    Partial Private Sub OnSwellLocationRightChanged()
+    End Sub
+    Partial Private Sub OnNeuropathyChanging(value As String)
+    End Sub
+    Partial Private Sub OnNeuropathyChanged()
+    End Sub
+    Partial Private Sub OnDryLUChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDryLUChanged()
+    End Sub
+    Partial Private Sub OnHeatLUChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnHeatLUChanged()
+    End Sub
+    Partial Private Sub OnRegisteryIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRegisteryIDChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblRegistery = CType(Nothing, EntityRef(Of tblRegistery))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CC", DbType:="NVarChar(500) NOT NULL", CanBeNull:=false)>  _
+	Public Property CC() As String
+		Get
+			Return Me._CC
+		End Get
+		Set
+			If (String.Equals(Me._CC, value) = false) Then
+				Me.OnCCChanging(value)
+				Me.SendPropertyChanging
+				Me._CC = value
+				Me.SendPropertyChanged("CC")
+				Me.OnCCChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Sore", DbType:="Bit NOT NULL")>  _
+	Public Property Sore() As Boolean
+		Get
+			Return Me._Sore
+		End Get
+		Set
+			If ((Me._Sore = value)  _
+						= false) Then
+				Me.OnSoreChanging(value)
+				Me.SendPropertyChanging
+				Me._Sore = value
+				Me.SendPropertyChanged("Sore")
+				Me.OnSoreChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreDateOf", DbType:="Date")>  _
+	Public Property SoreDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._SoreDateOf
+		End Get
+		Set
+			If (Me._SoreDateOf.Equals(value) = false) Then
+				Me.OnSoreDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreDateOf = value
+				Me.SendPropertyChanged("SoreDateOf")
+				Me.OnSoreDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreCountLeft", DbType:="Int")>  _
+	Public Property SoreCountLeft() As System.Nullable(Of Integer)
+		Get
+			Return Me._SoreCountLeft
+		End Get
+		Set
+			If (Me._SoreCountLeft.Equals(value) = false) Then
+				Me.OnSoreCountLeftChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreCountLeft = value
+				Me.SendPropertyChanged("SoreCountLeft")
+				Me.OnSoreCountLeftChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreCountRight", DbType:="Int")>  _
+	Public Property SoreCountRight() As System.Nullable(Of Integer)
+		Get
+			Return Me._SoreCountRight
+		End Get
+		Set
+			If (Me._SoreCountRight.Equals(value) = false) Then
+				Me.OnSoreCountRightChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreCountRight = value
+				Me.SendPropertyChanged("SoreCountRight")
+				Me.OnSoreCountRightChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LargestLength", DbType:="Int")>  _
+	Public Property LargestLength() As System.Nullable(Of Integer)
+		Get
+			Return Me._LargestLength
+		End Get
+		Set
+			If (Me._LargestLength.Equals(value) = false) Then
+				Me.OnLargestLengthChanging(value)
+				Me.SendPropertyChanging
+				Me._LargestLength = value
+				Me.SendPropertyChanged("LargestLength")
+				Me.OnLargestLengthChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreLocationLeft", DbType:="NVarChar(50)")>  _
+	Public Property SoreLocationLeft() As String
+		Get
+			Return Me._SoreLocationLeft
+		End Get
+		Set
+			If (String.Equals(Me._SoreLocationLeft, value) = false) Then
+				Me.OnSoreLocationLeftChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreLocationLeft = value
+				Me.SendPropertyChanged("SoreLocationLeft")
+				Me.OnSoreLocationLeftChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SoreLocationRight", DbType:="NVarChar(50)")>  _
+	Public Property SoreLocationRight() As String
+		Get
+			Return Me._SoreLocationRight
+		End Get
+		Set
+			If (String.Equals(Me._SoreLocationRight, value) = false) Then
+				Me.OnSoreLocationRightChanging(value)
+				Me.SendPropertyChanging
+				Me._SoreLocationRight = value
+				Me.SendPropertyChanged("SoreLocationRight")
+				Me.OnSoreLocationRightChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WorstLeftSoreLU", DbType:="Int")>  _
+	Public Property WorstLeftSoreLU() As System.Nullable(Of Integer)
+		Get
+			Return Me._WorstLeftSoreLU
+		End Get
+		Set
+			If (Me._WorstLeftSoreLU.Equals(value) = false) Then
+				Me.OnWorstLeftSoreLUChanging(value)
+				Me.SendPropertyChanging
+				Me._WorstLeftSoreLU = value
+				Me.SendPropertyChanged("WorstLeftSoreLU")
+				Me.OnWorstLeftSoreLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WorstRightSoreLU", DbType:="Int")>  _
+	Public Property WorstRightSoreLU() As System.Nullable(Of Integer)
+		Get
+			Return Me._WorstRightSoreLU
+		End Get
+		Set
+			If (Me._WorstRightSoreLU.Equals(value) = false) Then
+				Me.OnWorstRightSoreLUChanging(value)
+				Me.SendPropertyChanging
+				Me._WorstRightSoreLU = value
+				Me.SendPropertyChanged("WorstRightSoreLU")
+				Me.OnWorstRightSoreLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Infection", DbType:="Bit NOT NULL")>  _
+	Public Property Infection() As Boolean
+		Get
+			Return Me._Infection
+		End Get
+		Set
+			If ((Me._Infection = value)  _
+						= false) Then
+				Me.OnInfectionChanging(value)
+				Me.SendPropertyChanging
+				Me._Infection = value
+				Me.SendPropertyChanged("Infection")
+				Me.OnInfectionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InfectionDateOf", DbType:="Date")>  _
+	Public Property InfectionDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._InfectionDateOf
+		End Get
+		Set
+			If (Me._InfectionDateOf.Equals(value) = false) Then
+				Me.OnInfectionDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._InfectionDateOf = value
+				Me.SendPropertyChanged("InfectionDateOf")
+				Me.OnInfectionDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InfectionLocationLeft", DbType:="NVarChar(50)")>  _
+	Public Property InfectionLocationLeft() As String
+		Get
+			Return Me._InfectionLocationLeft
+		End Get
+		Set
+			If (String.Equals(Me._InfectionLocationLeft, value) = false) Then
+				Me.OnInfectionLocationLeftChanging(value)
+				Me.SendPropertyChanging
+				Me._InfectionLocationLeft = value
+				Me.SendPropertyChanged("InfectionLocationLeft")
+				Me.OnInfectionLocationLeftChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_InfectionLocationRight", DbType:="NVarChar(50)")>  _
+	Public Property InfectionLocationRight() As String
+		Get
+			Return Me._InfectionLocationRight
+		End Get
+		Set
+			If (String.Equals(Me._InfectionLocationRight, value) = false) Then
+				Me.OnInfectionLocationRightChanging(value)
+				Me.SendPropertyChanging
+				Me._InfectionLocationRight = value
+				Me.SendPropertyChanged("InfectionLocationRight")
+				Me.OnInfectionLocationRightChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Swell", DbType:="Bit NOT NULL")>  _
+	Public Property Swell() As Boolean
+		Get
+			Return Me._Swell
+		End Get
+		Set
+			If ((Me._Swell = value)  _
+						= false) Then
+				Me.OnSwellChanging(value)
+				Me.SendPropertyChanging
+				Me._Swell = value
+				Me.SendPropertyChanged("Swell")
+				Me.OnSwellChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SwellDateOf", DbType:="Date")>  _
+	Public Property SwellDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._SwellDateOf
+		End Get
+		Set
+			If (Me._SwellDateOf.Equals(value) = false) Then
+				Me.OnSwellDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._SwellDateOf = value
+				Me.SendPropertyChanged("SwellDateOf")
+				Me.OnSwellDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SwellLocationLeft", DbType:="NVarChar(50)")>  _
+	Public Property SwellLocationLeft() As String
+		Get
+			Return Me._SwellLocationLeft
+		End Get
+		Set
+			If (String.Equals(Me._SwellLocationLeft, value) = false) Then
+				Me.OnSwellLocationLeftChanging(value)
+				Me.SendPropertyChanging
+				Me._SwellLocationLeft = value
+				Me.SendPropertyChanged("SwellLocationLeft")
+				Me.OnSwellLocationLeftChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SwellLocationRight", DbType:="NVarChar(50)")>  _
+	Public Property SwellLocationRight() As String
+		Get
+			Return Me._SwellLocationRight
+		End Get
+		Set
+			If (String.Equals(Me._SwellLocationRight, value) = false) Then
+				Me.OnSwellLocationRightChanging(value)
+				Me.SendPropertyChanging
+				Me._SwellLocationRight = value
+				Me.SendPropertyChanged("SwellLocationRight")
+				Me.OnSwellLocationRightChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Neuropathy", DbType:="NVarChar(50)")>  _
+	Public Property Neuropathy() As String
+		Get
+			Return Me._Neuropathy
+		End Get
+		Set
+			If (String.Equals(Me._Neuropathy, value) = false) Then
+				Me.OnNeuropathyChanging(value)
+				Me.SendPropertyChanging
+				Me._Neuropathy = value
+				Me.SendPropertyChanged("Neuropathy")
+				Me.OnNeuropathyChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DryLU", DbType:="Int")>  _
+	Public Property DryLU() As System.Nullable(Of Integer)
+		Get
+			Return Me._DryLU
+		End Get
+		Set
+			If (Me._DryLU.Equals(value) = false) Then
+				Me.OnDryLUChanging(value)
+				Me.SendPropertyChanging
+				Me._DryLU = value
+				Me.SendPropertyChanged("DryLU")
+				Me.OnDryLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeatLU", DbType:="Int")>  _
+	Public Property HeatLU() As System.Nullable(Of Integer)
+		Get
+			Return Me._HeatLU
+		End Get
+		Set
+			If (Me._HeatLU.Equals(value) = false) Then
+				Me.OnHeatLUChanging(value)
+				Me.SendPropertyChanging
+				Me._HeatLU = value
+				Me.SendPropertyChanged("HeatLU")
+				Me.OnHeatLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RegisteryID", DbType:="Int NOT NULL")>  _
+	Public Property RegisteryID() As Integer
+		Get
+			Return Me._RegisteryID
+		End Get
+		Set
+			If ((Me._RegisteryID = value)  _
+						= false) Then
+				If Me._tblRegistery.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnRegisteryIDChanging(value)
+				Me.SendPropertyChanging
+				Me._RegisteryID = value
+				Me.SendPropertyChanged("RegisteryID")
+				Me.OnRegisteryIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblPhysicalExam", Storage:="_tblRegistery", ThisKey:="RegisteryID", OtherKey:="ID", IsForeignKey:=true)>  _
+	Public Property tblRegistery() As tblRegistery
+		Get
+			Return Me._tblRegistery.Entity
+		End Get
+		Set
+			Dim previousValue As tblRegistery = Me._tblRegistery.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblRegistery.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblRegistery.Entity = Nothing
+					previousValue.tblPhysicalExams.Remove(Me)
+				End If
+				Me._tblRegistery.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblPhysicalExams.Add(Me)
+					Me._RegisteryID = value.ID
+				Else
+					Me._RegisteryID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("tblRegistery")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblPrescription")>  _
+Partial Public Class tblPrescription
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _Amputation As Boolean
+	
+	Private _Surgery As Boolean
+	
+	Private _Debrid As Boolean
+	
+	Private _Shoe As Boolean
+	
+	Private _Visit As Boolean
+	
+	Private _Cover As Boolean
+	
+	Private _Consult As Boolean
+	
+	Private _Rehabilitation As Boolean
+	
+	Private _Drug As String
+	
+	Private _RegisteryID As Integer
+	
+	Private _FreeText As String
+	
+	Private _tblRegistery As EntityRef(Of tblRegistery)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnAmputationChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnAmputationChanged()
+    End Sub
+    Partial Private Sub OnSurgeryChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnSurgeryChanged()
+    End Sub
+    Partial Private Sub OnDebridChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnDebridChanged()
+    End Sub
+    Partial Private Sub OnShoeChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnShoeChanged()
+    End Sub
+    Partial Private Sub OnVisitChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnVisitChanged()
+    End Sub
+    Partial Private Sub OnCoverChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnCoverChanged()
+    End Sub
+    Partial Private Sub OnConsultChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnConsultChanged()
+    End Sub
+    Partial Private Sub OnRehabilitationChanging(value As Boolean)
+    End Sub
+    Partial Private Sub OnRehabilitationChanged()
+    End Sub
+    Partial Private Sub OnDrugChanging(value As String)
+    End Sub
+    Partial Private Sub OnDrugChanged()
+    End Sub
+    Partial Private Sub OnRegisteryIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRegisteryIDChanged()
+    End Sub
+    Partial Private Sub OnFreeTextChanging(value As String)
+    End Sub
+    Partial Private Sub OnFreeTextChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblRegistery = CType(Nothing, EntityRef(Of tblRegistery))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Amputation", DbType:="Bit NOT NULL")>  _
+	Public Property Amputation() As Boolean
+		Get
+			Return Me._Amputation
+		End Get
+		Set
+			If ((Me._Amputation = value)  _
+						= false) Then
+				Me.OnAmputationChanging(value)
+				Me.SendPropertyChanging
+				Me._Amputation = value
+				Me.SendPropertyChanged("Amputation")
+				Me.OnAmputationChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Surgery", DbType:="Bit NOT NULL")>  _
+	Public Property Surgery() As Boolean
+		Get
+			Return Me._Surgery
+		End Get
+		Set
+			If ((Me._Surgery = value)  _
+						= false) Then
+				Me.OnSurgeryChanging(value)
+				Me.SendPropertyChanging
+				Me._Surgery = value
+				Me.SendPropertyChanged("Surgery")
+				Me.OnSurgeryChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Debrid", DbType:="Bit NOT NULL")>  _
+	Public Property Debrid() As Boolean
+		Get
+			Return Me._Debrid
+		End Get
+		Set
+			If ((Me._Debrid = value)  _
+						= false) Then
+				Me.OnDebridChanging(value)
+				Me.SendPropertyChanging
+				Me._Debrid = value
+				Me.SendPropertyChanged("Debrid")
+				Me.OnDebridChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Shoe", DbType:="Bit NOT NULL")>  _
+	Public Property Shoe() As Boolean
+		Get
+			Return Me._Shoe
+		End Get
+		Set
+			If ((Me._Shoe = value)  _
+						= false) Then
+				Me.OnShoeChanging(value)
+				Me.SendPropertyChanging
+				Me._Shoe = value
+				Me.SendPropertyChanged("Shoe")
+				Me.OnShoeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Visit", DbType:="Bit NOT NULL")>  _
+	Public Property Visit() As Boolean
+		Get
+			Return Me._Visit
+		End Get
+		Set
+			If ((Me._Visit = value)  _
+						= false) Then
+				Me.OnVisitChanging(value)
+				Me.SendPropertyChanging
+				Me._Visit = value
+				Me.SendPropertyChanged("Visit")
+				Me.OnVisitChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Cover", DbType:="Bit NOT NULL")>  _
+	Public Property Cover() As Boolean
+		Get
+			Return Me._Cover
+		End Get
+		Set
+			If ((Me._Cover = value)  _
+						= false) Then
+				Me.OnCoverChanging(value)
+				Me.SendPropertyChanging
+				Me._Cover = value
+				Me.SendPropertyChanged("Cover")
+				Me.OnCoverChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Consult", DbType:="Bit NOT NULL")>  _
+	Public Property Consult() As Boolean
+		Get
+			Return Me._Consult
+		End Get
+		Set
+			If ((Me._Consult = value)  _
+						= false) Then
+				Me.OnConsultChanging(value)
+				Me.SendPropertyChanging
+				Me._Consult = value
+				Me.SendPropertyChanged("Consult")
+				Me.OnConsultChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Rehabilitation", DbType:="Bit NOT NULL")>  _
+	Public Property Rehabilitation() As Boolean
+		Get
+			Return Me._Rehabilitation
+		End Get
+		Set
+			If ((Me._Rehabilitation = value)  _
+						= false) Then
+				Me.OnRehabilitationChanging(value)
+				Me.SendPropertyChanging
+				Me._Rehabilitation = value
+				Me.SendPropertyChanged("Rehabilitation")
+				Me.OnRehabilitationChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Drug", DbType:="NVarChar(500)")>  _
+	Public Property Drug() As String
+		Get
+			Return Me._Drug
+		End Get
+		Set
+			If (String.Equals(Me._Drug, value) = false) Then
+				Me.OnDrugChanging(value)
+				Me.SendPropertyChanging
+				Me._Drug = value
+				Me.SendPropertyChanged("Drug")
+				Me.OnDrugChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RegisteryID", DbType:="Int NOT NULL")>  _
+	Public Property RegisteryID() As Integer
+		Get
+			Return Me._RegisteryID
+		End Get
+		Set
+			If ((Me._RegisteryID = value)  _
+						= false) Then
+				If Me._tblRegistery.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnRegisteryIDChanging(value)
+				Me.SendPropertyChanging
+				Me._RegisteryID = value
+				Me.SendPropertyChanged("RegisteryID")
+				Me.OnRegisteryIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[FreeText]", Storage:="_FreeText", DbType:="NVarChar(MAX)")>  _
+	Public Property FreeText() As String
+		Get
+			Return Me._FreeText
+		End Get
+		Set
+			If (String.Equals(Me._FreeText, value) = false) Then
+				Me.OnFreeTextChanging(value)
+				Me.SendPropertyChanging
+				Me._FreeText = value
+				Me.SendPropertyChanged("FreeText")
+				Me.OnFreeTextChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblPrescription", Storage:="_tblRegistery", ThisKey:="RegisteryID", OtherKey:="ID", IsForeignKey:=true)>  _
+	Public Property tblRegistery() As tblRegistery
+		Get
+			Return Me._tblRegistery.Entity
+		End Get
+		Set
+			Dim previousValue As tblRegistery = Me._tblRegistery.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._tblRegistery.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._tblRegistery.Entity = Nothing
+					previousValue.tblPrescriptions.Remove(Me)
+				End If
+				Me._tblRegistery.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.tblPrescriptions.Add(Me)
+					Me._RegisteryID = value.ID
+				Else
+					Me._RegisteryID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("tblRegistery")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblRegistery")>  _
+Partial Public Class tblRegistery
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _DemographicID As Integer
+	
+	Private _RegDateOf As Date
+	
+	Private _tblHistories As EntitySet(Of tblHistory)
+	
+	Private _tblLabResults As EntitySet(Of tblLabResult)
+	
+	Private _tblPhysicalExams As EntitySet(Of tblPhysicalExam)
+	
+	Private _tblPrescriptions As EntitySet(Of tblPrescription)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnDemographicIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnDemographicIDChanged()
+    End Sub
+    Partial Private Sub OnRegDateOfChanging(value As Date)
+    End Sub
+    Partial Private Sub OnRegDateOfChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._tblHistories = New EntitySet(Of tblHistory)(AddressOf Me.attach_tblHistories, AddressOf Me.detach_tblHistories)
+		Me._tblLabResults = New EntitySet(Of tblLabResult)(AddressOf Me.attach_tblLabResults, AddressOf Me.detach_tblLabResults)
+		Me._tblPhysicalExams = New EntitySet(Of tblPhysicalExam)(AddressOf Me.attach_tblPhysicalExams, AddressOf Me.detach_tblPhysicalExams)
+		Me._tblPrescriptions = New EntitySet(Of tblPrescription)(AddressOf Me.attach_tblPrescriptions, AddressOf Me.detach_tblPrescriptions)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DemographicID", DbType:="Int NOT NULL")>  _
+	Public Property DemographicID() As Integer
+		Get
+			Return Me._DemographicID
+		End Get
+		Set
+			If ((Me._DemographicID = value)  _
+						= false) Then
+				Me.OnDemographicIDChanging(value)
+				Me.SendPropertyChanging
+				Me._DemographicID = value
+				Me.SendPropertyChanged("DemographicID")
+				Me.OnDemographicIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RegDateOf", DbType:="DateTime NOT NULL")>  _
+	Public Property RegDateOf() As Date
+		Get
+			Return Me._RegDateOf
+		End Get
+		Set
+			If ((Me._RegDateOf = value)  _
+						= false) Then
+				Me.OnRegDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._RegDateOf = value
+				Me.SendPropertyChanged("RegDateOf")
+				Me.OnRegDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblHistory", Storage:="_tblHistories", ThisKey:="ID", OtherKey:="RegisteryID")>  _
+	Public Property tblHistories() As EntitySet(Of tblHistory)
+		Get
+			Return Me._tblHistories
+		End Get
+		Set
+			Me._tblHistories.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblLabResult", Storage:="_tblLabResults", ThisKey:="ID", OtherKey:="RegisteryID")>  _
+	Public Property tblLabResults() As EntitySet(Of tblLabResult)
+		Get
+			Return Me._tblLabResults
+		End Get
+		Set
+			Me._tblLabResults.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblPhysicalExam", Storage:="_tblPhysicalExams", ThisKey:="ID", OtherKey:="RegisteryID")>  _
+	Public Property tblPhysicalExams() As EntitySet(Of tblPhysicalExam)
+		Get
+			Return Me._tblPhysicalExams
+		End Get
+		Set
+			Me._tblPhysicalExams.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="tblRegistery_tblPrescription", Storage:="_tblPrescriptions", ThisKey:="ID", OtherKey:="RegisteryID")>  _
+	Public Property tblPrescriptions() As EntitySet(Of tblPrescription)
+		Get
+			Return Me._tblPrescriptions
+		End Get
+		Set
+			Me._tblPrescriptions.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_tblHistories(ByVal entity As tblHistory)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Me
+	End Sub
+	
+	Private Sub detach_tblHistories(ByVal entity As tblHistory)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Nothing
+	End Sub
+	
+	Private Sub attach_tblLabResults(ByVal entity As tblLabResult)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Me
+	End Sub
+	
+	Private Sub detach_tblLabResults(ByVal entity As tblLabResult)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Nothing
+	End Sub
+	
+	Private Sub attach_tblPhysicalExams(ByVal entity As tblPhysicalExam)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Me
+	End Sub
+	
+	Private Sub detach_tblPhysicalExams(ByVal entity As tblPhysicalExam)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Nothing
+	End Sub
+	
+	Private Sub attach_tblPrescriptions(ByVal entity As tblPrescription)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Me
+	End Sub
+	
+	Private Sub detach_tblPrescriptions(ByVal entity As tblPrescription)
+		Me.SendPropertyChanging
+		entity.tblRegistery = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblDemographic")>  _
+Partial Public Class tblDemographic
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _FileNo As String
+	
+	Private _NationalID As String
+	
+	Private _FirstNameOf As String
+	
+	Private _LastNameOf As String
+	
+	Private _GenderLU As System.Nullable(Of Integer)
+	
+	Private _BirthDateOf As System.Nullable(Of Date)
+	
+	Private _HeightOf As System.Nullable(Of Integer)
+	
+	Private _WeightOf As System.Nullable(Of Double)
+	
+	Private _MarriageLU As System.Nullable(Of Integer)
+	
+	Private _CellNo As String
+	
+	Private _PhoneNo As String
+	
+	Private _EducationLU As System.Nullable(Of Integer)
+	
+	Private _AddressOf As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnFileNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnFileNoChanged()
+    End Sub
+    Partial Private Sub OnNationalIDChanging(value As String)
+    End Sub
+    Partial Private Sub OnNationalIDChanged()
+    End Sub
+    Partial Private Sub OnFirstNameOfChanging(value As String)
+    End Sub
+    Partial Private Sub OnFirstNameOfChanged()
+    End Sub
+    Partial Private Sub OnLastNameOfChanging(value As String)
+    End Sub
+    Partial Private Sub OnLastNameOfChanged()
+    End Sub
+    Partial Private Sub OnGenderLUChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnGenderLUChanged()
+    End Sub
+    Partial Private Sub OnBirthDateOfChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnBirthDateOfChanged()
+    End Sub
+    Partial Private Sub OnHeightOfChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnHeightOfChanged()
+    End Sub
+    Partial Private Sub OnWeightOfChanging(value As System.Nullable(Of Double))
+    End Sub
+    Partial Private Sub OnWeightOfChanged()
+    End Sub
+    Partial Private Sub OnMarriageLUChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnMarriageLUChanged()
+    End Sub
+    Partial Private Sub OnCellNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnCellNoChanged()
+    End Sub
+    Partial Private Sub OnPhoneNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPhoneNoChanged()
+    End Sub
+    Partial Private Sub OnEducationLUChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnEducationLUChanged()
+    End Sub
+    Partial Private Sub OnAddressOfChanging(value As String)
+    End Sub
+    Partial Private Sub OnAddressOfChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FileNo", DbType:="NVarChar(8) NOT NULL", CanBeNull:=false)>  _
+	Public Property FileNo() As String
+		Get
+			Return Me._FileNo
+		End Get
+		Set
+			If (String.Equals(Me._FileNo, value) = false) Then
+				Me.OnFileNoChanging(value)
+				Me.SendPropertyChanging
+				Me._FileNo = value
+				Me.SendPropertyChanged("FileNo")
+				Me.OnFileNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_NationalID", DbType:="NVarChar(10)")>  _
+	Public Property NationalID() As String
+		Get
+			Return Me._NationalID
+		End Get
+		Set
+			If (String.Equals(Me._NationalID, value) = false) Then
+				Me.OnNationalIDChanging(value)
+				Me.SendPropertyChanging
+				Me._NationalID = value
+				Me.SendPropertyChanged("NationalID")
+				Me.OnNationalIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FirstNameOf", DbType:="NVarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property FirstNameOf() As String
+		Get
+			Return Me._FirstNameOf
+		End Get
+		Set
+			If (String.Equals(Me._FirstNameOf, value) = false) Then
+				Me.OnFirstNameOfChanging(value)
+				Me.SendPropertyChanging
+				Me._FirstNameOf = value
+				Me.SendPropertyChanged("FirstNameOf")
+				Me.OnFirstNameOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LastNameOf", DbType:="NVarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property LastNameOf() As String
+		Get
+			Return Me._LastNameOf
+		End Get
+		Set
+			If (String.Equals(Me._LastNameOf, value) = false) Then
+				Me.OnLastNameOfChanging(value)
+				Me.SendPropertyChanging
+				Me._LastNameOf = value
+				Me.SendPropertyChanged("LastNameOf")
+				Me.OnLastNameOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_GenderLU", DbType:="Int")>  _
+	Public Property GenderLU() As System.Nullable(Of Integer)
+		Get
+			Return Me._GenderLU
+		End Get
+		Set
+			If (Me._GenderLU.Equals(value) = false) Then
+				Me.OnGenderLUChanging(value)
+				Me.SendPropertyChanging
+				Me._GenderLU = value
+				Me.SendPropertyChanged("GenderLU")
+				Me.OnGenderLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BirthDateOf", DbType:="Date")>  _
+	Public Property BirthDateOf() As System.Nullable(Of Date)
+		Get
+			Return Me._BirthDateOf
+		End Get
+		Set
+			If (Me._BirthDateOf.Equals(value) = false) Then
+				Me.OnBirthDateOfChanging(value)
+				Me.SendPropertyChanging
+				Me._BirthDateOf = value
+				Me.SendPropertyChanged("BirthDateOf")
+				Me.OnBirthDateOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_HeightOf", DbType:="Int")>  _
+	Public Property HeightOf() As System.Nullable(Of Integer)
+		Get
+			Return Me._HeightOf
+		End Get
+		Set
+			If (Me._HeightOf.Equals(value) = false) Then
+				Me.OnHeightOfChanging(value)
+				Me.SendPropertyChanging
+				Me._HeightOf = value
+				Me.SendPropertyChanged("HeightOf")
+				Me.OnHeightOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_WeightOf", DbType:="Float")>  _
+	Public Property WeightOf() As System.Nullable(Of Double)
+		Get
+			Return Me._WeightOf
+		End Get
+		Set
+			If (Me._WeightOf.Equals(value) = false) Then
+				Me.OnWeightOfChanging(value)
+				Me.SendPropertyChanging
+				Me._WeightOf = value
+				Me.SendPropertyChanged("WeightOf")
+				Me.OnWeightOfChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MarriageLU", DbType:="Int")>  _
+	Public Property MarriageLU() As System.Nullable(Of Integer)
+		Get
+			Return Me._MarriageLU
+		End Get
+		Set
+			If (Me._MarriageLU.Equals(value) = false) Then
+				Me.OnMarriageLUChanging(value)
+				Me.SendPropertyChanging
+				Me._MarriageLU = value
+				Me.SendPropertyChanged("MarriageLU")
+				Me.OnMarriageLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CellNo", DbType:="NVarChar(20)")>  _
+	Public Property CellNo() As String
+		Get
+			Return Me._CellNo
+		End Get
+		Set
+			If (String.Equals(Me._CellNo, value) = false) Then
+				Me.OnCellNoChanging(value)
+				Me.SendPropertyChanging
+				Me._CellNo = value
+				Me.SendPropertyChanged("CellNo")
+				Me.OnCellNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PhoneNo", DbType:="NVarChar(20)")>  _
+	Public Property PhoneNo() As String
+		Get
+			Return Me._PhoneNo
+		End Get
+		Set
+			If (String.Equals(Me._PhoneNo, value) = false) Then
+				Me.OnPhoneNoChanging(value)
+				Me.SendPropertyChanging
+				Me._PhoneNo = value
+				Me.SendPropertyChanged("PhoneNo")
+				Me.OnPhoneNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EducationLU", DbType:="Int")>  _
+	Public Property EducationLU() As System.Nullable(Of Integer)
+		Get
+			Return Me._EducationLU
+		End Get
+		Set
+			If (Me._EducationLU.Equals(value) = false) Then
+				Me.OnEducationLUChanging(value)
+				Me.SendPropertyChanging
+				Me._EducationLU = value
+				Me.SendPropertyChanged("EducationLU")
+				Me.OnEducationLUChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="AddressOf", Storage:="_AddressOf", DbType:="NVarChar(500)")>  _
+	Public Property [AddressOf]() As String
+		Get
+			Return Me._AddressOf
+		End Get
+		Set
+			If (String.Equals(Me._AddressOf, value) = false) Then
+				Me.OnAddressOfChanging(value)
+				Me.SendPropertyChanging
+				Me._AddressOf = value
+				Me.SendPropertyChanged("[AddressOf]")
+				Me.OnAddressOfChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblShamsiMiladi")>  _
+Partial Public Class tblShamsiMiladi2
 	
 	Private _Miladi As Date
 	
