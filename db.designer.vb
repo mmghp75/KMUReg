@@ -73,6 +73,12 @@ Partial Public Class dbDataContext
     End Sub
   Partial Private Sub DeletetblDemographic(instance As tblDemographic)
     End Sub
+  Partial Private Sub InserttblLastFileNo(instance As tblLastFileNo)
+    End Sub
+  Partial Private Sub UpdatetblLastFileNo(instance As tblLastFileNo)
+    End Sub
+  Partial Private Sub DeletetblLastFileNo(instance As tblLastFileNo)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -157,6 +163,12 @@ Partial Public Class dbDataContext
 	Public ReadOnly Property tblShamsiMiladi2s() As System.Data.Linq.Table(Of tblShamsiMiladi2)
 		Get
 			Return Me.GetTable(Of tblShamsiMiladi2)
+		End Get
+	End Property
+	
+	Public ReadOnly Property tblLastFileNos() As System.Data.Linq.Table(Of tblLastFileNo)
+		Get
+			Return Me.GetTable(Of tblLastFileNo)
 		End Get
 	End Property
 End Class
@@ -3187,4 +3199,110 @@ Partial Public Class tblShamsiMiladi2
 			End If
 		End Set
 	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.tblLastFileNo")>  _
+Partial Public Class tblLastFileNo
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _LastFileNo As String
+	
+	Private _RegisteryNameOf As String
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDChanged()
+    End Sub
+    Partial Private Sub OnLastFileNoChanging(value As String)
+    End Sub
+    Partial Private Sub OnLastFileNoChanged()
+    End Sub
+    Partial Private Sub OnRegisteryNameOfChanging(value As String)
+    End Sub
+    Partial Private Sub OnRegisteryNameOfChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LastFileNo", DbType:="NVarChar(8) NOT NULL", CanBeNull:=false)>  _
+	Public Property LastFileNo() As String
+		Get
+			Return Me._LastFileNo
+		End Get
+		Set
+			If (String.Equals(Me._LastFileNo, value) = false) Then
+				Me.OnLastFileNoChanging(value)
+				Me.SendPropertyChanging
+				Me._LastFileNo = value
+				Me.SendPropertyChanged("LastFileNo")
+				Me.OnLastFileNoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RegisteryNameOf", DbType:="NVarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property RegisteryNameOf() As String
+		Get
+			Return Me._RegisteryNameOf
+		End Get
+		Set
+			If (String.Equals(Me._RegisteryNameOf, value) = false) Then
+				Me.OnRegisteryNameOfChanging(value)
+				Me.SendPropertyChanging
+				Me._RegisteryNameOf = value
+				Me.SendPropertyChanged("RegisteryNameOf")
+				Me.OnRegisteryNameOfChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
 End Class

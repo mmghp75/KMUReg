@@ -1,6 +1,8 @@
 ﻿Imports System.Runtime.CompilerServices
 Module PublicModule
-    Public ConnectionString As String = ConfigurationManager.ConnectionStrings("KMURegConnectionString").ConnectionString '"Data Source=.;Initial Catalog=KMUReg;Persist Security Info=True;User ID=sa;Password=Mmgh100122" '
+    Public ConnectionString As String = ConfigurationManager.ConnectionStrings("KMURegConnectionString").ConnectionString
+    Public ConnectionStringDemographic As String = ConfigurationManager.ConnectionStrings("KMUReg_DemographicConnectionString").ConnectionString
+    Public ConnectionStringDiabeticFoot As String = ConfigurationManager.ConnectionStrings("KMUReg_DiabeticFootConnectionString").ConnectionString
 
     <Extension()>
     Public Function AreEqualDays(ByVal oDate1 As DateTime,

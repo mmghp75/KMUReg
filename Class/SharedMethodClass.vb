@@ -299,6 +299,25 @@ var firstInput = $('#" & firstControlIdInPanel & "');
 
         Return oPC.GetYear(Miladi) & "/" & oPC.GetMonth(Miladi) & "/" & oPC.GetDayOfMonth(Miladi)
     End Function
+    Public Shared Function GetNextFileNo() As String
+        Dim odb As New dbDataContext(ConnectionStringDemographic)
+        Dim oLastFileNo = odb.tblLastFileNos.Where(Function(f) f.RegisteryNameOf.ToLower = "DiabeticFoot".ToLower).FirstOrDefault
+        If oLastFileNo Is Nothing Then
+            oLastFileNo = New tblLastFileNo With {.LastFileNo = "00-00-01", .RegisteryNameOf = "DiabeticFoot"}
+            odb.tblLastFileNos.InsertOnSubmit(oLastFileNo)
+        End If
+        While odb.tblDemographics.Where(Function(f) f.FileNo = oLastFileNo.LastFileNo).Count > 0
+            odb.SubmitChanges()
+            Dim oValue = Val(oLastFileNo.LastFileNo.Replace("-", "")) + 1
+            Dim oStr As String = oValue
+            While oStr.Length < 6
+                oStr = "0" + oStr
+            End While
+            oLastFileNo.LastFileNo = oStr(0) + oStr(1) + "-" + oStr(2) + oStr(3) + "-" + oStr(4) + oStr(5)
+        End While
+
+        Return oLastFileNo.LastFileNo
+    End Function
 
     Public Shared Sub ExpandPanel(sender As Object, groupedPanelList As CollapsePanelGroup(), expandingPanelIds As String())
         'باز نگه داشتن پنل های مورد نظر و بسته کردن باقی آن ها

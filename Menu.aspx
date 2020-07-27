@@ -116,7 +116,7 @@
     <div class='circle-container'>
         <img src='Images/Main_Hospital.png'>
         <a runat="server" id="lblAdmission" class='deg0 icon-lg' visible="False">
-            <img runat="server" id="btnAdmission" class="icon-lg" src='Images/Icons/r01.png' visible="False" /><center style="color: Red">ثبت بیمار جدید</center>
+            <img runat="server" id="btnAdmission" class="icon-lg" src='Images/Icons/r01.png' visible="False" /><center style="color: Red">ثبت داده‌ی جدید</center>
         </a><a runat="server" id="lblReports" class='deg135 icon-lg' visible="False">
             <img runat="server" id="btnReports" class="icon-lg" src='Images/Icons/17.png' visible="False"><center style="color: Red">گزارشات</center>
         </a><a runat="server" id="lblInsurance" class='deg180 icon-lg' visible="False">

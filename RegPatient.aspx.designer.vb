@@ -41,13 +41,13 @@ Partial Public Class RegPatient
     Protected WithEvents pnlDemographic As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''divDemographicMessage control.
+    '''pnlDemographicMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents divDemographicMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents pnlDemographicMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''lblDemographicMessage control.
@@ -158,13 +158,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''rbMarriage control.
+    '''rblMarriage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rbMarriage As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents rblMarriage As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
     '''txtCellNo control.
@@ -194,13 +194,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''rbEducation control.
+    '''rblEducation control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rbEducation As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents rblEducation As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
     '''txtAddress control.
@@ -254,7 +254,7 @@ Partial Public Class RegPatient
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents pnlHistory As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''lblHistoryTitle control.
@@ -266,13 +266,13 @@ Partial Public Class RegPatient
     Protected WithEvents lblHistoryTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''div1 control.
+    '''pnlHistoryMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents div1 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents pnlHistoryMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''lbllHistoryMessage control.
@@ -428,13 +428,13 @@ Partial Public Class RegPatient
     Protected WithEvents pnlHistoryFooter As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''btnCAncelHistory control.
+    '''btnCancelHistory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnCAncelHistory As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnCancelHistory As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''pnlPhysicalExam control.
@@ -455,22 +455,22 @@ Partial Public Class RegPatient
     Protected WithEvents lblPhysicalExamTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''div2 control.
+    '''pnlPhysicalExamMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents div2 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents pnlPhysicalExamMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Label6 control.
+    '''lblPhysicalExamMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblPhysicalExamMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''txtCC control.
@@ -599,22 +599,22 @@ Partial Public Class RegPatient
     Protected WithEvents lblLabResultsTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''div3 control.
+    '''pnlLabResultsMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents div3 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents pnlLabResultsMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''lblLabMessage control.
+    '''lblLabResultsMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblLabMessage As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblLabResultsMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''txtFBS control.
@@ -752,22 +752,22 @@ Partial Public Class RegPatient
     Protected WithEvents lblPrescriptionTitle As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''div4 control.
+    '''pnlPrescriptionMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents div4 As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    Protected WithEvents pnlPrescriptionMessage As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''Label14 control.
+    '''lblPrescriptionMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblPrescriptionMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''cbxNeedAmp control.
@@ -903,6 +903,15 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnOK As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnCancelReg control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelReg As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''pnlSore01 control.

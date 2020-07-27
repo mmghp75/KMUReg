@@ -14,14 +14,21 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Far_Mitra';
+    src: url('../Fonts/Far_Mitra.otf') format('opentype');
+    src: local('☺'), local('Far_Mitra'), url('../Fonts/Far_Mitra.woff') format('woff'), url('../Fonts/Far_Mitra.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {
-    font-family: 'Roya',tahoma,Arial,sans-serif;
-    font-size: 17px !important;
+    font-family: 'Far_Mitra','Roya',tahoma,Arial,sans-serif;
+    font-size: 20px !important;
 }
 
 .panel-heading, .panel-title {
-    font-family: 'Titr','Roya',tahoma,Arial,sans-serif;
+    font-family: 'Titr','Far_Mitra','Roya',tahoma,Arial,sans-serif;
 }
 
 @media screen and (max-width:460px) {
@@ -187,4 +194,10 @@ body {
 
 .my-inline-table {
     display: inline-table !important;
+}
+.panel-body, .panel {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }

@@ -50,28 +50,28 @@
         <elementListCompartment Id="6a2ae173-ad89-4529-b62a-fa193b48465e" absoluteBounds="3.765, 14.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.75 : 15.6362939453125); (4.75 : 21.6642163085938); (6.5 : 21.6642163085938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 15.6362939453125); (4.75 : 21.6642163085938); (6.5 : 21.6642163085938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbDataContext/tblRegistery/tblRegistery_tblHistory" />
       <nodes>
         <classShapeMoniker Id="24e8c9db-409f-472f-8488-5681b83ba26f" />
         <classShapeMoniker Id="9708cf3a-a95a-48d7-a9e0-85e409893c5e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.75 : 14.25); (4.75 : 6.33735270182292); (6.5 : 6.33735270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 14.25); (4.75 : 6.33735270182292); (6.5 : 6.33735270182292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbDataContext/tblRegistery/tblRegistery_tblLabResult" />
       <nodes>
         <classShapeMoniker Id="24e8c9db-409f-472f-8488-5681b83ba26f" />
         <classShapeMoniker Id="de375f86-4bef-48b7-860a-22bdd9263118" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 14.9431469726562); (6.5 : 14.9431469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 14.9431469726562); (6.5 : 14.9431469726562)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbDataContext/tblRegistery/tblRegistery_tblPhysicalExam" />
       <nodes>
         <classShapeMoniker Id="24e8c9db-409f-472f-8488-5681b83ba26f" />
         <classShapeMoniker Id="b5d1194c-ae4b-4c81-92eb-c37ddcd9eaed" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.2812525 : 14.25); (5.2812525 : 10.0585034179688); (6.5 : 10.0585034179688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.2812525 : 14.25); (5.2812525 : 10.0585034179688); (6.5 : 10.0585034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbDataContext/tblRegistery/tblRegistery_tblPrescription" />
       <nodes>
         <classShapeMoniker Id="24e8c9db-409f-472f-8488-5681b83ba26f" />
@@ -88,6 +88,12 @@
       <DataClassMoniker Name="/dbDataContext/tblShamsiMiladi2" />
       <nestedChildShapes>
         <elementListCompartment Id="85d7f685-ada9-4f11-92e3-474e43878871" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d622d6ee-4150-4762-802b-a3ae4d45e764" absoluteBounds="3.75, 3.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dbDataContext/tblLastFileNo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fdcdb873-86a0-490e-ad4c-ea9b1bf2e565" absoluteBounds="3.765, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

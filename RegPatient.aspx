@@ -46,25 +46,23 @@
                     </h4>
                 </div>
                 <div class="panel-body">
-                    <div runat="server" id="divDemographicMessage" class="alert alert-danger" role="alert" visible="False">
+                    <div runat="server" id="pnlDemographicMessage" class="alert alert-danger" role="alert" visible="False">
                         <asp:Label runat="server" ID="lblDemographicMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                     </div>
-                    <div class="panel col-xs-12">
-                        <div class="col-xs-3 text-right">
-                            <asp:TextBox ID="txtFileNo" runat="server" MaxLength="8" AutoPostBack="True" PlaceHolder="شماره پرونده" ToolTip="شماره پرونده" BackColor="LightGreen" CssClass="text-center form-control"></asp:TextBox>
+                    <div class="panel col-xs-12" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right">
+                            <asp:TextBox ID="txtFileNo" runat="server" MaxLength="8" AutoPostBack="True" PlaceHolder="شماره پرونده" ToolTip="شماره پرونده" BackColor="LightGreen" CssClass="text-center form-control" onFocus="this.select()"></asp:TextBox>
                         </div>
-                        <div class="col-xs-3 text-right">
-                            <asp:TextBox ID="txtNationalCode" runat="server" MaxLength="10" AutoPostBack="True" Placeholder="* کدملی" ToolTip="کدملی" CssClass="form-control"></asp:TextBox>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                            <asp:TextBox ID="txtNationalCode" runat="server" MaxLength="10" AutoPostBack="True" Placeholder="* کدملی" ToolTip="کدملی" CssClass="form-control" onFocus="this.select()"></asp:TextBox>
                         </div>
-                        <div class="col-xs-3 text-right">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
                             <asp:TextBox runat="server" ID="txtFirstName" PlaceHolder="* نام" ToolTip="نام" CssClass="form-control" Style="margin-bottom: 10px"></asp:TextBox>
                         </div>
-                        <div class="col-xs-3 text-right">
-                            <asp:TextBox runat="server" ID="txtLastName" PlaceHolder="* نام خانوادگی" ToolTip="نام خانوادگی" CssClass="form-control"></asp:TextBox>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                            <asp:TextBox runat="server" ID="txtLastName" PlaceHolder="* نام خانوادگی" ToolTip="نام خانوادگی" CssClass="form-control" Style="margin-bottom: 10px"></asp:TextBox>
                         </div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="col-xs-3 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
                             <div class="input-group">
                                 <asp:Label Text="* جنسیت:" Class="input-group-addon" runat="server" ID="Label4" Font-Bold="true" />
                                 <asp:RadioButtonList runat="server" Class="form-control my-inline-table" RepeatLayout="Flow" ID="rblGender" RepeatColumns="2">
@@ -73,44 +71,40 @@
                                 </asp:RadioButtonList>
                             </div>
                         </div>
-                        <div class="col-xs-3 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
                             <div class="input-group">
-                                <asp:TextBox class="form-control" runat="server" ID="txtAgeOf" PlaceHolder="سن(سال)" ToolTip="سن(سال)"></asp:TextBox>
+                                <asp:TextBox class="form-control" runat="server" ID="txtAgeOf" PlaceHolder="سن(سال)" ToolTip="سن(سال)" TextMode="Number"></asp:TextBox>
                                 <span class="input-group-addon">* یاتاریخ‌تولد</span>
                                 <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
-                                    <cc1:DateTimePicker ID="dpBirthDateOf" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ تولد" />
+                                    <cc1:DateTimePicker ID="dpBirthDateOf" runat="server" EnableTheming="true" CssClass="text-left" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ تولد" />
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-3 text-right" style="margin-bottom: 10px">
-                            <asp:TextBox runat="server" ID="txtHeight" PlaceHolder="قد(سانتیمتر)" ToolTip="قد(سانتیمتر)" CssClass="form-control"></asp:TextBox>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                            <asp:TextBox runat="server" ID="txtHeight" PlaceHolder="قد(سانتیمتر)" ToolTip="قد(سانتیمتر)" CssClass="form-control" TextMode="Number" Style="margin-bottom: 10px"></asp:TextBox>
                         </div>
-                        <div class="col-xs-3 text-right" style="margin-bottom: 10px">
-                            <asp:TextBox runat="server" ID="txtWeight" PlaceHolder="وزن(کیلوگرم)" ToolTip="وزن(کیلوگرم)" CssClass="form-control"></asp:TextBox>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                            <asp:TextBox runat="server" ID="txtWeight" PlaceHolder="وزن(کیلوگرم)" ToolTip="وزن(کیلوگرم)" CssClass="form-control" TextMode="Number" Style="margin-bottom: 10px"></asp:TextBox>
                         </div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="col-xs-3 text-right">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
                             <div class="input-group">
                                 <asp:Label Text="وضعیت‌تأهل:" CssClass="input-group-addon" runat="server" ID="Label7" Font-Bold="true" />
-                                <asp:RadioButtonList runat="server" ID="rbMarriage" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
+                                <asp:RadioButtonList runat="server" ID="rblMarriage" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
                                     <asp:ListItem Text="&nbsp;&nbsp;متأهل" Value="1" Style="margin-right: 10px;" />
                                     <asp:ListItem Text="&nbsp;&nbsp;مجرد" Value="2" Style="margin-right: 10px;" />
                                 </asp:RadioButtonList>
                             </div>
                         </div>
-                        <div class="col-xs-3 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
                             <asp:TextBox runat="server" ID="txtCellNo" PlaceHolder="* تلفن‌همراه" ToolTip="تلفن‌همراه" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="col-xs-3 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
                             <asp:TextBox runat="server" ID="txtPhoneNo" PlaceHolder="* تلفن‌ثابت" ToolTip="تلفن‌ثابت" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="clearfix">
-                        </div>
-                        <div class="col-xs-9 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                             <div class="input-group">
                                 <asp:Label Text="سطح‌تحصیلات:" CssClass="input-group-addon " runat="server" ID="Label8" Font-Bold="true" />
-                                <asp:RadioButtonList runat="server" ID="rbEducation" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="8">
+                                <asp:RadioButtonList runat="server" ID="rblEducation" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="8">
                                     <asp:ListItem Text="&nbsp;&nbsp;بی‌سواد" Value="1" />
                                     <asp:ListItem Text="&nbsp;&nbsp;ابتدایی" Value="2" Style="margin-right: 10px;" />
                                     <asp:ListItem Text="&nbsp;&nbsp;سیکل" Value="3" Style="margin-right: 10px;" />
@@ -122,8 +116,7 @@
                                 </asp:RadioButtonList>
                             </div>
                         </div>
-                        <div class="clearfix">
-                        </div>
+                        <div class="clearfix"></div>
                         <div class="col-xs-12 text-right" style="margin-bottom: 10px">
                             <asp:TextBox runat="server" ID="txtAddress" Height="50px" PlaceHolder="* آدرس‌منزل" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                         </div>
@@ -155,14 +148,14 @@
             </div>
             <div class="tab-content">
                 <div id="History" class="tab-pane fade in active">
-                    <div class="panel panel-primary" runat="server" id="pnlHistory" clientidmode="Static" visible="false">
+                    <asp:Panel class="panel panel-primary" runat="server" ID="pnlHistory" ClientIDMode="Static" Visible="false">
                         <div class="panel-heading">
                             <h4 id="lblHistoryTitle"
                                 runat="server"
                                 class="panel-title"></h4>
                         </div>
                         <div class="panel-body">
-                            <div runat="server" id="div1" class="alert alert-danger" role="alert" visible="False">
+                            <div runat="server" id="pnlHistoryMessage" class="alert alert-danger" role="alert" visible="False">
                                 <asp:Label runat="server" ID="lbllHistoryMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                             </div>
                             <div class="panel col-xs-12">
@@ -178,7 +171,7 @@
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
-                                        <asp:TextBox runat="server" ID="txtDateOf01" PlaceHolder="مدت ابتلا(سال)" ToolTip="مدت ابتلا(سال)" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="txtDateOf01" PlaceHolder="مدت ابتلا(سال)" ToolTip="مدت ابتلا(سال)" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                         <span class="input-group-addon">* یاتاریخ‌ابتلا</span>
                                         <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
                                             <cc1:DateTimePicker ID="dpDateOf01" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ حدودی ابتلا" />
@@ -240,14 +233,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </asp:Panel>
                     <div class="panel-footer text-left" runat="server" id="pnlHistoryFooter" visible="false">
                         <div class="input-group">
                             <div class="input-group-btn">
                                 <div class="col-xs-10">
                                 </div>
                                 <div class="col-xs-2">
-                                    <asp:Button runat="server" ID="btnCAncelHistory" Text="پاک کردن صفحه" CssClass="btn-danger" Width="100%" Font-Names="Titr" />
+                                    <asp:Button runat="server" ID="btnCancelHistory" Text="پاک کردن صفحه" CssClass="btn-danger" Width="100%" Font-Names="Titr" />
                                 </div>
                             </div>
                         </div>
@@ -261,8 +254,8 @@
                                 class="panel-title"></h4>
                         </div>
                         <div class="panel-body">
-                            <div runat="server" id="div2" class="alert alert-danger" role="alert" visible="False">
-                                <asp:Label runat="server" ID="Label6" Text="پیام مورد نظر در اینجا قرار میگیرد." />
+                            <div runat="server" id="pnlPhysicalExamMessage" class="alert alert-danger" role="alert" visible="False">
+                                <asp:Label runat="server" ID="lblPhysicalExamMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                             </div>
                             <div class="panel col-xs-12">
                                 <div class="col-xs-4 text-right">
@@ -334,15 +327,15 @@
                                 class="panel-title"></h4>
                         </div>
                         <div class="panel-body">
-                            <div runat="server" id="div3" class="alert alert-danger" role="alert" visible="False">
-                                <asp:Label runat="server" ID="lblLabMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
+                            <div runat="server" id="pnlLabResultsMessage" class="alert alert-danger" role="alert" visible="False">
+                                <asp:Label runat="server" ID="lblLabResultsMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                             </div>
                             <div class="panel col-xs-12">
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox ID="txtFBS" runat="server" MaxLength="10" Placeholder="* FBS" ToolTip="FBS" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtFBS" runat="server" MaxLength="10" Placeholder="* FBS" ToolTip="FBS" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox ID="txtA1C" runat="server" MaxLength="10" Placeholder="* Hb A1C" ToolTip="Hb A1C" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtA1C" runat="server" MaxLength="10" Placeholder="* Hb A1C" ToolTip="Hb A1C" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
@@ -355,21 +348,21 @@
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox runat="server" ID="txtSystol" PlaceHolder="فشارخون سیستولیک" ToolTip="فشارخون سیستولیک" CssClass="form-control" Style="margin-bottom: 10px"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtSystol" PlaceHolder="فشارخون سیستولیک" ToolTip="فشارخون سیستولیک" CssClass="form-control" Style="margin-bottom: 10px" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox runat="server" ID="txtDyastol" PlaceHolder="فشارخون دیاستولیک" ToolTip="فشارخون دیاستولیک" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtDyastol" PlaceHolder="فشارخون دیاستولیک" ToolTip="فشارخون دیاستولیک" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 10px">
-                                    <asp:TextBox runat="server" ID="txtO2" PlaceHolder="اشباع اکسیژن" ToolTip="اشباع اکسیژن" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtO2" PlaceHolder="اشباع اکسیژن" ToolTip="اشباع اکسیژن" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 10px">
-                                    <asp:TextBox runat="server" ID="txtHR" PlaceHolder="تعداد ضربان قلب در دقیقه" ToolTip="تعداد ضربان قلب در دقیقه" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtHR" PlaceHolder="تعداد ضربان قلب در دقیقه" ToolTip="تعداد ضربان قلب در دقیقه" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 10px">
-                                    <asp:TextBox runat="server" ID="txtRR" PlaceHolder="تعداد تنفس در دقیقه" ToolTip="تعداد تنفس در دقیقه" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtRR" PlaceHolder="تعداد تنفس در دقیقه" ToolTip="تعداد تنفس در دقیقه" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 10px">
                                     <div class="input-group">
@@ -402,8 +395,8 @@
                                 class="panel-title"></h4>
                         </div>
                         <div class="panel-body">
-                            <div runat="server" id="div4" class="alert alert-danger" role="alert" visible="False">
-                                <asp:Label runat="server" ID="Label14" Text="پیام مورد نظر در اینجا قرار میگیرد." />
+                            <div runat="server" id="pnlPrescriptionMessage" class="alert alert-danger" role="alert" visible="False">
+                                <asp:Label runat="server" ID="lblPrescriptionMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                             </div>
                             <div class="panel col-xs-12">
                                 <div class="col-xs-4 text-right">
@@ -463,7 +456,7 @@
                     <div class="panel-footer text-left" runat="server" id="pnlPrescriptionFooter">
                         <div class="input-group">
                             <div class="input-group-btn">
-                                <div class="col-xs-8">
+                                <div class="col-xs-6">
                                 </div>
                                 <div class="col-xs-2">
                                     <asp:Button runat="server" ID="btnCancelPrescription" Text="پاک کردن صفحه" CssClass="btn-danger" Width="100%" Font-Names="Titr" />
@@ -471,11 +464,13 @@
                                 <div class="col-xs-2">
                                     <asp:Button runat="server" ID="btnOK" Text="ثبت" CssClass="btn-success" Width="100%" Font-Names="Titr" />
                                 </div>
+                                <div class="col-xs-2">
+                                    <asp:Button runat="server" ID="btnCancelReg" Text="انصراف" CssClass="btn-danger" Width="100%" Font-Names="Titr" />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <asp:Panel runat="server" ClientIDMode="Static" ID="pnlSore01" class="modal fade" role="dialog">
