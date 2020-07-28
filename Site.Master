@@ -61,7 +61,9 @@
         <asp:ScriptManager runat="server" ID="scrMain"></asp:ScriptManager>
         <script type="text/javascript">
             function removeSpinner() {
-                $("button").removeClass("up-spinner-btn");
+                $(".up-spinner-btn").removeClass("up-spinner-btn");
+                $(".up-spinner-select").removeClass("up-spinner-select");
+                $(".up-spinner-text").removeClass("up-spinner-text");
                 $(".blockDiv").hide();
             }
             var postBackerId = "";
