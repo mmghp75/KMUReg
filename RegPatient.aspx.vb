@@ -12,6 +12,17 @@ Public Class RegPatient
             pnlPhysicalExamMessage.Visible = False
             pnlLabResultsMessage.Visible = False
             pnlPrescriptionMessage.Visible = False
+
+            pnlSore01MSG.Visible = False
+            pnlLaser01MSG.Visible = False
+            pnlDebrid01MSG.Visible = False
+            pnlSurg01MSG.Visible = False
+            pnlGang01MSG.Visible = False
+            pnlAmp01MSG.Visible = False
+            pnlInPatient01MSG.Visible = False
+            pnlSore02MSG.Visible = False
+            pnlInfect01MSG.Visible = False
+            pnlSwell01MSG.Visible = False
         Else
             txtNationalCode.Focus()
         End If
@@ -110,6 +121,7 @@ Public Class RegPatient
         End If
     End Sub
     Private Sub btnOKSore01_Click(sender As Object, e As EventArgs) Handles btnOKSore01.Click
+        If Not CheckpnlSore01() Then Exit Sub
         If lblSore01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlSore01.Style.Item("display") = "none"
@@ -139,6 +151,7 @@ Public Class RegPatient
     'End Sub
 
     Private Sub btnOKLaser01_Click(sender As Object, e As EventArgs) Handles btnOKLaser01.Click
+        If Not CheckpnlLaser() Then Exit Sub
         If lblLaser01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlLaser01.Style.Item("display") = "none"
@@ -155,6 +168,7 @@ Public Class RegPatient
         If sender IsNot Nothing Then cbxLaser01.Checked = False
     End Sub
     Private Sub btnOKDebrid01_Click(sender As Object, e As EventArgs) Handles btnOKDebrid01.Click
+        If Not CheckpnlDebrid() Then Exit Sub
         If lblDebrid01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlDebrid01.Style.Item("display") = "none"
@@ -171,6 +185,7 @@ Public Class RegPatient
         If sender IsNot Nothing Then cbxDebrid01.Checked = False
     End Sub
     Private Sub btnOKSurg01_Click(sender As Object, e As EventArgs) Handles btnOKSurg01.Click
+        If Not CheckpnlSurg() Then Exit Sub
         If lblSurg01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlSurg01.Style.Item("display") = "none"
@@ -187,6 +202,7 @@ Public Class RegPatient
         If sender IsNot Nothing Then cbxSurgery01.Checked = False
     End Sub
     Private Sub btnOKGang01_Click(sender As Object, e As EventArgs) Handles btnOKGang01.Click
+        If Not CheckpnlGang() Then Exit Sub
         If lblGang01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlGang01.Style.Item("display") = "none"
@@ -203,6 +219,7 @@ Public Class RegPatient
         If sender IsNot Nothing Then cbxGangrene01.Checked = False
     End Sub
     Private Sub btnOKAmp01_Click(sender As Object, e As EventArgs) Handles btnOKAmp01.Click
+        If Not CheckpnlAmp() Then Exit Sub
         If lblAmp01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlAmp01.Style.Item("display") = "none"
@@ -219,6 +236,7 @@ Public Class RegPatient
         If sender IsNot Nothing Then cbxAmp01.Checked = False
     End Sub
     Private Sub btnOKInPatient01_Click(sender As Object, e As EventArgs) Handles btnOKInPatient01.Click
+        If Not CheckpnlInPatient() Then Exit Sub
         If lblInPatient01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlInPatient01.Style.Item("display") = "none"
@@ -274,6 +292,7 @@ Public Class RegPatient
         End If
     End Sub
     Private Sub btnOKSore02_Click(sender As Object, e As EventArgs) Handles btnOKSore02.Click
+        If Not CheckpnlNewSore() Then Exit Sub
         If lblSore02MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlSore02.Style.Item("display") = "none"
@@ -290,6 +309,7 @@ Public Class RegPatient
         If sender IsNot Nothing Then cbxSore02.Checked = False
     End Sub
     Private Sub btnOKInfect01_Click(sender As Object, e As EventArgs) Handles btnOKInfect01.Click
+        If Not CheckpnlNewInfection() Then Exit Sub
         If lblInfect01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlInfect01.Style.Item("display") = "none"
@@ -306,6 +326,7 @@ Public Class RegPatient
         If sender IsNot Nothing Then cbxInfect01.Checked = False
     End Sub
     Private Sub btnOKSwell01_Click(sender As Object, e As EventArgs) Handles btnOKSwell01.Click
+        If Not CheckpnlNewSwell() Then Exit Sub
         If lblSwell01MSG.Text = "" Then
             hfNewPanelVisibility.Value = 0
             pnlSwell01.Style.Item("display") = "none"
@@ -339,7 +360,7 @@ Public Class RegPatient
         txtNationalCode.Focus()
     End Sub
     Private Sub btnContinueDemographic_Click(sender As Object, e As EventArgs) Handles btnContinueDemographic.Click
-        If CheckDemographicPanelDate() Then Exit Sub
+        If CheckDemographicPanelData() Then Exit Sub
 
         pnlDemographic.Visible = False
         pnlDemographicFooter.Visible = False
@@ -357,7 +378,7 @@ Public Class RegPatient
         hfActivePanelId.Value = "History"
         UpdateDemographicData()
     End Sub
-    Private Function CheckDemographicPanelDate() As Boolean
+    Private Function CheckDemographicPanelData() As Boolean
         If txtNationalCode.Text.Trim = "" Then
             pnlDemographicMessage.Visible = True
             lblDemographicMessage.Text = "کد ملی را وارد نکرده اید."
@@ -782,4 +803,278 @@ Public Class RegPatient
     Private Sub SavePrescription()
 
     End Sub
+    Private Function CheckboxListisChecked(cbl As CheckBoxList) As Boolean
+        For Each o As ListItem In cbl.Items
+            If o.Selected Then Return True
+        Next
+        Return False
+    End Function
+    Private Function CheckpnlSore01() As Boolean
+        If txtDuration01.Text = "" AndAlso Not dpLastSore01.GetMiladiValue.HasValue Then
+            pnlSore01MSG.Visible = True
+            lblSore01MSG.Text = "زمان ابتلا یا تاریخ آخرین زخم را تعیین نکرده اید."
+
+            txtDuration01.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration01.Text.Trim), 0, 2000, dpLastSore01.GetMiladiValue, "M") Then
+            pnlSore01MSG.Visible = True
+            lblSore01MSG.Text = "مقدار نامناسبی برای تاریخ آخرین زخم یا زمان ابتلا ثبت کرده اید."
+
+            txtDuration01.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblSoreLocationL01) AndAlso Not CheckboxListisChecked(cblSoreLocationR01) Then
+            pnlSore01MSG.Visible = True
+            lblSore01MSG.Text = "محل زخم‌های قبلی را تعیین نکرده اید."
+
+            cblSoreLocationL01.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlLaser() As Boolean
+        If txtDuration02.Text = "" AndAlso Not dpLastLaser01.GetMiladiValue.HasValue Then
+            pnlLaser01MSG.Visible = True
+            lblLaser01MSG.Text = "زمان درمان یا تاریخ درمان با لیزر را تعیین نکرده اید."
+
+            txtAgeOf.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration02.Text.Trim), 0, 2000, dpLastLaser01.GetMiladiValue, "M") Then
+            pnlLaser01MSG.Visible = True
+            lblLaser01MSG.Text = "مقدار نامناسبی برای زمان درمان یا تاریخ آخرین درمان با لیزر را ثبت کرده اید."
+
+            txtDuration02.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblLaser) Then
+            pnlLaser01MSG.Visible = True
+            lblLaser01MSG.Text = "محل لیزرتراپی‌های قبلی را تعیین نکرده اید."
+
+            cblLaser.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlDebrid() As Boolean
+        If txtDuration03.Text = "" AndAlso Not dpLastDebrid01.GetMiladiValue.HasValue Then
+            pnlDebrid01MSG.Visible = True
+            lblDebrid01MSG.Text = "زمان دبرید یا تاریخ آخرین دبریدمان را تعیین نکرده اید."
+
+            txtDuration03.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration03.Text.Trim), 0, 2000, dpLastDebrid01.GetMiladiValue, "M") Then
+            pnlDebrid01MSG.Visible = True
+            lblDebrid01MSG.Text = "مقدار نامناسبی برای زمان درمان یا تاریخ آخرین درمان با لیزر را ثبت کرده اید."
+
+            txtDuration03.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblDebrid) Then
+            pnlDebrid01MSG.Visible = True
+            lblDebrid01MSG.Text = "محل دبریدمان‌های قبلی را تعیین نکرده اید."
+
+            cblDebrid.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlSurg() As Boolean
+        If txtDuration04.Text = "" AndAlso Not dpLastSurg01.GetMiladiValue.HasValue Then
+            pnlSurg01MSG.Visible = True
+            lblSurg01MSG.Text = "زمان جراحی یا تاریخ آخرین جراحی را تعیین نکرده اید."
+
+            txtDuration04.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration04.Text.Trim), 0, 2000, dpLastSurg01.GetMiladiValue, "M") Then
+            pnlSurg01MSG.Visible = True
+            lblSurg01MSG.Text = "مقدار نامناسبی برای زمان [جراحی یا تاریخ آخرین جراحی را ثبت کرده اید."
+
+            txtDuration04.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblSurgL) AndAlso Not CheckboxListisChecked(cblSurgR) Then
+            pnlSurg01MSG.Visible = True
+            lblSurg01MSG.Text = "محل جراحی‌های قبلی را تعیین نکرده اید."
+
+            cblSurgL.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlGang() As Boolean
+        If txtDuration05.Text = "" AndAlso Not dpLastGang01.GetMiladiValue.HasValue Then
+            pnlGang01MSG.Visible = True
+            lblGang01MSG.Text = "زمان گانگرن یا تاریخ آخرین گانگرن را تعیین نکرده اید."
+
+            txtDuration05.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration05.Text.Trim), 0, 2000, dpLastGang01.GetMiladiValue, "M") Then
+            pnlGang01MSG.Visible = True
+            lblGang01MSG.Text = "مقدار نامناسبی برای زمان [جراحی یا تاریخ آخرین جراحی را ثبت کرده اید."
+
+            txtDuration05.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblGang) Then
+            pnlGang01MSG.Visible = True
+            lblGang01MSG.Text = "محل گانگرن‌های قبلی را تعیین نکرده اید."
+
+            cblGang.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlAmp() As Boolean
+        If txtDuration06.Text = "" AndAlso Not dpLastAmp01.GetMiladiValue.HasValue Then
+            pnlAmp01MSG.Visible = True
+            lblAmp01MSG.Text = "زمان آمپوتاسیون یا تاریخ آخرین آمپوتاسیون را تعیین نکرده اید."
+
+            txtDuration06.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration06.Text.Trim), 0, 2000, dpLastAmp01.GetMiladiValue, "M") Then
+            pnlAmp01MSG.Visible = True
+            lblAmp01MSG.Text = "مقدار نامناسبی برای زمان آمپوتاسیون یا تاریخ آخرین آمپوتاسیون را ثبت کرده اید."
+
+            txtDuration06.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblAmpL) AndAlso Not CheckboxListisChecked(cblAmpR) Then
+            pnlAmp01MSG.Visible = True
+            lblAmp01MSG.Text = "محل آمپوتاسیون‌های قبلی را تعیین نکرده اید."
+
+            cblAmpL.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlInPatient() As Boolean
+        If txtDuration07.Text = "" AndAlso Not dpLastInPatient01.GetMiladiValue.HasValue Then
+            pnlInPatient01MSG.Visible = True
+            lblInPatient01MSG.Text = "زمان بستری یا تاریخ آخرین بستری را تعیین نکرده اید."
+
+            txtDuration07.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration07.Text.Trim), 0, 2000, dpLastInPatient01.GetMiladiValue, "M") Then
+            pnlInPatient01MSG.Visible = True
+            lblInPatient01MSG.Text = "مقدار نامناسبی برای زمان بستری یا تاریخ آخرین بستری را ثبت کرده اید."
+
+            txtDuration07.Focus()
+            Return False
+        ElseIf txtSurg01Cause.Text.Trim = "" Then
+            pnlInPatient01MSG.Visible = True
+            lblInPatient01MSG.Text = "علت بستری را تعیین نکرده اید."
+
+            txtSurg01Cause.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlNewSore() As Boolean
+        If txtDuration08.Text = "" AndAlso Not dpNewSore.GetMiladiValue.HasValue Then
+            pnlSore02MSG.Visible = True
+            lblSore02MSG.Text = "زمان زخم یا تاریخ ایجاد زخم را تعیین نکرده اید."
+
+            txtDuration08.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration08.Text.Trim), 0, 2000, dpNewSore.GetMiladiValue, "M") Then
+            pnlSore02MSG.Visible = True
+            lblSore02MSG.Text = "مقدار نامناسبی برای زمان زخم یا تاریخ ایجاد زخم را ثبت کرده اید."
+
+            txtDuration08.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblNewSoreL) AndAlso Not CheckboxListisChecked(cblNewSoreR) Then
+            pnlSore02MSG.Visible = True
+            lblSore02MSG.Text = "محل زخم‌های جدید را تعیین نکرده اید."
+
+            cblNewSoreL.Focus()
+
+            Return False
+        ElseIf txtNewSoreCountOfL.Text.Trim = "" Then
+            pnlSore02MSG.Visible = True
+            lblSore02MSG.Text = "تعداد زخم‌های پای چپ را تعیین نکرده اید."
+
+            txtNewSoreCountOfL.Focus()
+
+            Return False
+        ElseIf txtNewSoreCountOfR.Text.Trim = "" Then
+            pnlSore02MSG.Visible = True
+            lblSore02MSG.Text = "تعداد زخم‌های پای راست را تعیین نکرده اید."
+
+            txtNewSoreCountOfR.Focus()
+
+            Return False
+        ElseIf txtNewMaxLength.Text.Trim = "" Then
+            pnlSore02MSG.Visible = True
+            lblSore02MSG.Text = "طول بزرگترین زخم را تعیین نکرده اید."
+
+            txtNewMaxLength.Focus()
+
+            Return False
+        ElseIf rblNewWorstSoreL.SelectedIndex = -1 AndAlso rblNewWorstSoreR.SelectedIndex = -1 Then
+            pnlSore02MSG.Visible = True
+            lblSore02MSG.Text = "شدت زخم‌های جدید را تعیین نکرده اید."
+
+            rblNewWorstSoreL.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlNewInfection() As Boolean
+        If txtDuration09.Text = "" AndAlso Not dpNewInfect.GetMiladiValue.HasValue Then
+            pnlInfect01MSG.Visible = True
+            lblInfect01MSG.Text = "زمان عفونت یا تاریخ ایجاد عفونت را تعیین نکرده اید."
+
+            txtDuration09.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration09.Text.Trim), 0, 2000, dpNewInfect.GetMiladiValue, "M") Then
+            pnlInfect01MSG.Visible = True
+            lblInfect01MSG.Text = "مقدار نامناسبی برای زمان عفونت یا تاریخ ایجاد عفونت را ثبت کرده اید."
+
+            txtDuration09.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblNewInfectL) AndAlso Not CheckboxListisChecked(cblNewInfectR) Then
+            pnlInfect01MSG.Visible = True
+            lblInfect01MSG.Text = "محل عفونت جدید را تعیین نکرده اید."
+
+            cblNewInfectL.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlNewSwell() As Boolean
+        If txtDuration10.Text = "" AndAlso Not dpNewSwell.GetMiladiValue.HasValue Then
+            pnlSwell01MSG.Visible = True
+            lblSwell01MSG.Text = "زمان تورم، تاول و قرمزی یا تاریخ آن‌ها را تعیین نکرده اید."
+
+            txtDuration10.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration10.Text.Trim), 0, 2000, dpNewSwell.GetMiladiValue, "M") Then
+            pnlSwell01MSG.Visible = True
+            lblSwell01MSG.Text = "مقدار نامناسبی برای زمان تورم، تاول و قرمزی یا تاریخ ایجاد آن‌ها را ثبت کرده اید."
+
+            txtDuration10.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblNewSwellL) AndAlso Not CheckboxListisChecked(cblNewSwellR) Then
+            pnlSwell01MSG.Visible = True
+            lblSwell01MSG.Text = "محل تورم، تاول و قرمزی‌های جدید را تعیین نکرده اید."
+
+            cblNewSwellL.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
 End Class

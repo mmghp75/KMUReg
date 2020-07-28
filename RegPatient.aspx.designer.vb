@@ -653,6 +653,15 @@ Partial Public Class RegPatient
     Protected WithEvents dpDateOf02 As Global.Rayavaran.RWControls.DateTimePicker
 
     '''<summary>
+    '''P03 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents P03 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''txtSystol control.
     '''</summary>
     '''<remarks>
