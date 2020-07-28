@@ -56,7 +56,7 @@
 
 </head>
 <body>
-    <div id="blockDiv" style="display: none"></div>
+    <div class="blockDiv" style="display: none"></div>
     <form id="form1" runat="server">
         <asp:ScriptManager runat="server" ID="scrMain"></asp:ScriptManager>
         <script type="text/javascript">
@@ -115,7 +115,7 @@
                 //$(disableControls).attr("disabled",null);
             }
             Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InitControls);
-            var disableControls ;
+            var disableControls;
             Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
             function BeginRequestHandler(sender, args) {
                 //disableControls = $("input:enabled");
