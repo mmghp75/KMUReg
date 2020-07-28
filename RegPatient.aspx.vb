@@ -679,10 +679,10 @@ Public Class RegPatient
             dpDateOf03.Focus()
             Exit Sub
         End If
-        SaveHistory
-        SavePhysicalExam
-        SaveLabResults
-        SavePrescription
+        SaveHistory()
+        SavePhysicalExam()
+        SaveLabResults()
+        SavePrescription()
 
         btnCancelReg_Click(Nothing, Nothing)
     End Sub

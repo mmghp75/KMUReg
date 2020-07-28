@@ -137,13 +137,12 @@
                     </div>
                 </div>
             </div>
-
             <div runat="server" id="pnlPages" visible="false">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="active"><a data-toggle="tab" href="#History" style="font-family: 'B Titr'">تاریخچه بالینی</a></li>
-                    <li><a data-toggle="tab" href="#PhysicalExam" style="font-family: 'B Titr'">معاینه فیزیکی</a></li>
-                    <li><a data-toggle="tab" href="#LabResults" style="font-family: 'B Titr'">جواب آزمایشات</a></li>
-                    <li><a data-toggle="tab" href="#Prescription" style="font-family: 'B Titr'">تجویز پزشک</a></li>
+                    <li class="active"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#History" style="font-family: 'B Titr'">تاریخچه بالینی</a></li>
+                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#PhysicalExam" style="font-family: 'B Titr'">معاینه فیزیکی</a></li>
+                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#LabResults" style="font-family: 'B Titr'">جواب آزمایشات</a></li>
+                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#Prescription" style="font-family: 'B Titr'">تجویز پزشک</a></li>
                 </ul>
             </div>
             <div class="tab-content">
@@ -1043,48 +1042,26 @@
                 </div>
             </asp:Panel>
 
-            <%--            <script>
-                var hfExpanedPanelIds = $("#hfExpanedPanelIds");
-
-                function setExpandedPanels(sender) {
-
-                    var currentPanelId = $(sender).parent().parent().attr("id");
-
-                    var expandedList = $("[aria-expanded=true]");
-
-                    hfExpanedPanelIds.val("");
-                    for (var i = 0; i < expandedList.length; i++) {
-                        hfExpanedPanelIds.val(hfExpanedPanelIds.value + $(expandedList[i]).parent().parent().attr("id") + " ");
-                    }
-
-                    if ($(sender).attr("aria-expanded") == "true") {
-                        //remove from expand list
-                        if (hfExpanedPanelIds.value != undefined) {
-                            hfExpanedPanelIds.val(hfExpanedPanelIds.value.replace(currentPanelId + " ", ""));
-                        }
-                    }
-                    else {
-                        //add to expand list
-                        if (hfExpanedPanelIds.value == undefined) {
-                            hfExpanedPanelIds.val(currentPanelId + " ");
-                        }
-                        else {
-                            hfExpanedPanelIds.val(hfExpanedPanelIds.value + currentPanelId + " ");
-                        }
-                    }
-                }
-            </script>--%>
-
             <script type="text/javascript">
-                $(document).ready(function () {
+    
+                SetTabIndex = function (sender, hfId) {
+                    $("#" + hfId.id).val($(sender).attr("href").replace("#",""));
+                }
+
+                InitTabPage = function(isPostBack){
                     var selectedTab = $("#<%=hfActivePanelId.ClientID%>");
                     //alert(selectedTab.val());
                     var tabId = selectedTab.val() != "" ? selectedTab.val() : "PhysicalExam";
-                    $('#dvTab a[href="#' + tabId + '"]').tab('show');
-                    $("#dvTab a").click(function () {
-                        selectedTab.val($(this).attr("href").substring(1));
-                    });
+                    var tabCtrl = $('a[href="#PhysicalExam"]');
+                    if(!isPostBack)                    
+                        $('a[href="#' + tabId + '"]').tab('show');
+                }
+
+                $(document).ready(function () {
+                    InitTabPage(false);
                 });
+                
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InitTabPage(true));                
             </script>
         </ContentTemplate>
     </asp:UpdatePanel>
