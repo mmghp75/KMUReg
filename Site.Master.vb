@@ -15,7 +15,49 @@ Partial Class Site
             lblUser.Text = "کاربر : " & Session("User").FirstNameOf & " " & Session("User").LastNameOf
         End If
         If Me.Parent.Page.AppRelativeVirtualPath.ToLower.Contains("Menu.aspx".ToLower) Then btnMainmenu.Visible = False
+
+        FocusOnNextControl(Me.Page)
+
     End Sub
+
+    ''' <summary>
+    ''' در صورتی که برای کنترل ها TabIndex تنظیم شده باشد به کنترل بعدی رفته و در غیر اینصورت در بازگشت کنترل جاری را مجدد فوکوس میکند
+    ''' </summary>
+    ''' <param name="sender"></param>
+    Private Sub FocusOnNextControl(sender As Page)
+        If Page.IsPostBack Then
+            Dim senderControl As Control = GetControlThatCausedPostBack(sender)
+            If TypeOf senderControl Is WebControl Then
+                Dim index As Integer = CType(senderControl, WebControl).TabIndex
+                Dim ctrl =
+                     From control In senderControl.Parent.Controls.OfType(Of WebControl)()
+                     Where control.TabIndex > index
+                     Select control
+                ctrl.DefaultIfEmpty(senderControl).First().Focus()
+            End If
+
+        End If
+    End Sub
+
+    Private Function GetControlThatCausedPostBack(ByVal page As Page) As Control
+        Dim control As Control = Nothing
+
+        Dim ctrlname As String = page.Request.Params.Get("__EVENTTARGET")
+        If ctrlname IsNot Nothing AndAlso ctrlname <> String.Empty Then
+            control = page.FindControl(ctrlname)
+        Else
+            For Each ctl As String In page.Request.Form
+                Dim c As Control = page.FindControl(ctl)
+                If TypeOf c Is System.Web.UI.WebControls.Button OrElse TypeOf c Is System.Web.UI.WebControls.ImageButton Then
+                    control = c
+                    Exit For
+                End If
+            Next ctl
+        End If
+        Return control
+
+    End Function
+
 
     Private Sub btnCancelChangeUserPass_Click(sender As Object, e As EventArgs) Handles btnCancelChangeUserPass.Click
         'hfNewPanelVisibility.Value = 0
@@ -25,7 +67,7 @@ Partial Class Site
     End Sub
 
     Private Sub btnChangeUserPass_Click(sender As Object, e As EventArgs) Handles btnChangeUserPass.Click
-        ShowModalPopup(Me, "pnlChangeUserPass", eFocusType.click, ControlIdForFocus:=txtUserName.ClientID)
+        ShowModalPopup(Me, "pnlChangeUserPass", eFocusType.click, controlIdForFocus:=txtUserName.ClientID)
         'hfNewPanelVisibility.Value = 1
 
         pnlChangeUserPass.Style.Item("display") = "block"
