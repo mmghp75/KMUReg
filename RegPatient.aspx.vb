@@ -25,6 +25,7 @@ Public Class RegPatient
             pnlSwell01MSG.Visible = False
         Else
             txtNationalCode.Focus()
+            Session("Demographic") = Nothing
         End If
     End Sub
     Private Sub cbxSore01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore01.CheckedChanged
@@ -515,7 +516,7 @@ Public Class RegPatient
         cbxSurgery01.Checked = False
         cbxGangrene01.Checked = False
         cbxAmp01.Checked = False
-        rblDesease.SelectedIndex = -1
+        cblDisease.SelectedIndex = -1
         cbxAlcohol.Checked = False
         cbxSigarret.Checked = False
         cbxInPatient.Checked = False
@@ -753,7 +754,7 @@ Public Class RegPatient
         ElseIf oFieldName.ToLower = "NationalID".ToLower Then
             oDemographic = odb.tblDemographics.Where(Function(f) f.NationalID = txtNationalCode.Text.Trim).FirstOrDefault
         End If
-
+        Session("Demographic") = oDemographic
         If oDemographic IsNot Nothing Then
             With oDemographic
                 txtFileNo.Text = .FileNo
@@ -787,12 +788,262 @@ Public Class RegPatient
         btnCancelHistory_Click(Nothing, Nothing)
         btnCancelPhysicalExam_Click(Nothing, Nothing)
         btnCacelLabResults_Click(Nothing, Nothing)
+
+        Session("Demographic") = Nothing
     End Sub
     Private Sub FillHistory()
+        Dim _DemographicID As Integer = Session("Demographic").ID
+        Dim odb As New dbDataContext(ConnectionStringDiabeticFoot)
+        Dim oRegistery = odb.tblRegisteries.Where(Function(f) f.DemographicID = _DemographicID).FirstOrDefault
+        If oRegistery IsNot Nothing AndAlso oRegistery.tblHistories.Count = 1 Then
+            With oRegistery.tblHistories(0)
+                Session("History") = oRegistery.tblHistories(0)
+                rblDiabetTypeOf.SelectedIndex = .DiabetTypeLU - 1
+                Dim oNow = Getdate()
+                txtDateOf01.Text = DateDiff(DateInterval.Year, .StartDateOf, oNow)
+                dpDateOf01.SetFromMiladiValue(.StartDateOf)
+                cbxSore01.Checked = .Sore
+                If cbxSore01.Checked Then
+                    txtDuration01.Text = DateDiff(DateInterval.Month, .SoreDateOf.Value, oNow)
+                    dpLastSore01.SetFromMiladiValue(.SoreDateOf)
+                    Dim _SoreLocationSLeft = .SoreLocationLeft.Split(",")
+                    For Each oitem As ListItem In cblSoreLocationL01.Items
+                        oitem.Selected = _SoreLocationSLeft.Contains(oitem.Value)
+                    Next
+                    Dim _SoreLocationSRight = .SoreLocationRight.Split(",")
+                    For Each oitem As ListItem In cblSoreLocationR01.Items
+                        oitem.Selected = _SoreLocationSRight.Contains(oitem.Value)
+                    Next
+                End If
+
+                cbxLaser01.Checked = .Laser
+                If cbxLaser01.Checked Then
+                    txtDuration02.Text = DateDiff(DateInterval.Month, .LaserDateOf.Value, oNow)
+                    dpLastLaser01.SetFromMiladiValue(.LaserDateOf)
+                    Dim _Location = .LaserLocation.Split(",")
+                    For Each oitem As ListItem In cblLaser.Items
+                        oitem.Selected = _Location.Contains(oitem.Value)
+                    Next
+                End If
+
+                cbxDebrid01.Checked = .Debrid
+                If cbxDebrid01.Checked Then
+                    txtDuration03.Text = DateDiff(DateInterval.Month, .DebridDateOf.Value, oNow)
+                    dpLastDebrid01.SetFromMiladiValue(.DebridDateOf)
+                    Dim _Location = .DebridLocation.Split(",")
+                    For Each oitem As ListItem In cblDebrid.Items
+                        oitem.Selected = _Location.Contains(oitem.Value)
+                    Next
+                End If
+                cbxSurgery01.Checked = .Surgery
+                If cbxSurgery01.Checked Then
+                    txtDuration04.Text = DateDiff(DateInterval.Month, .SurgeryDateOf.Value, oNow)
+                    dpLastSurg01.SetFromMiladiValue(.SurgeryDateOf)
+                    Dim _LocationLeft = .SurgeryLocationLeft.Split(",")
+                    For Each oitem As ListItem In cblSurgL.Items
+                        oitem.Selected = _LocationLeft.Contains(oitem.Value)
+                    Next
+                    Dim _LocationRight = .SurgeryLocationRight.Split(",")
+                    For Each oitem As ListItem In cblSurgR.Items
+                        oitem.Selected = _LocationRight.Contains(oitem.Value)
+                    Next
+                End If
+                cbxGangrene01.Checked = .Gangrene
+                If cbxGangrene01.Checked Then
+                    txtDuration05.Text = DateDiff(DateInterval.Month, .GangreneDateOf.Value, oNow)
+                    dpLastGang01.SetFromMiladiValue(.GangreneDateOf)
+                    Dim _Location = .GangreneLocation.Split(",")
+                    For Each oitem As ListItem In cblGang.Items
+                        oitem.Selected = _Location.Contains(oitem.Value)
+                    Next
+                End If
+                cbxAmp01.Checked = .Amputation
+                If cbxAmp01.Checked Then
+                    txtDuration06.Text = DateDiff(DateInterval.Month, .AmputationDateOf.Value, oNow)
+                    dpLastAmp01.SetFromMiladiValue(.AmputationDateOf)
+                    Dim _LocationL = .AmputationLocationLeft.Split(",")
+                    For Each oitem As ListItem In cblAmpL.Items
+                        oitem.Selected = _LocationL.Contains(oitem.Value)
+                    Next
+                    Dim _Locationr = .AmputationLocationRight.Split(",")
+                    For Each oitem As ListItem In cblAmpR.Items
+                        oitem.Selected = _LocationL.Contains(oitem.Value)
+                    Next
+                End If
+                If cbxInPatient.Checked Then
+                    txtDuration07.Text = DateDiff(DateInterval.Month, .InPatientDateOf.Value, oNow)
+                    dpLastInPatient01.SetFromMiladiValue(.InPatientDateOf)
+                    txtSurg01Cause.Text = .InPatientReason
+                End If
+            End With
+        End If
 
     End Sub
     Private Sub SaveHistory()
+        If Session("History") IsNot Nothing Then Exit Sub
+        Dim odb As New dbDataContext(ConnectionStringDiabeticFoot)
+        Dim _DemographicID As Integer = Session("Demographic").ID
 
+        Dim oRegistery = odb.tblRegisteries.Where(Function(f) f.DemographicID = _DemographicID).FirstOrDefault
+        If oRegistery Is Nothing Then
+            oRegistery = New tblRegistery With {.RegDateOf = Getdate(), .DemographicID = _DemographicID}
+            odb.tblRegisteries.InsertOnSubmit(oRegistery)
+            odb.SubmitChanges()
+        End If
+
+        Dim oHistory As New tblHistory
+        odb.tblHistories.InsertOnSubmit(oHistory)
+        With oHistory
+            .Alcohol = cbxAlcohol.Checked
+            .Amputation = cbxAmp01.Checked
+            If CType(dpLastAmp01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .AmputationDateOf = dpLastAmp01.GetMiladiValue
+            Else
+                .AmputationDateOf = Getdate().AddMonths(-Val(txtDuration06.Text.Trim))
+            End If
+            Dim _str = ""
+            For Each oitem As ListItem In cblAmpL.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .AmputationLocationLeft = _str
+            _str = ""
+            For Each oitem As ListItem In cblAmpR.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .AmputationLocationRight = _str
+            .Debrid = cbxDebrid01.Checked
+            If CType(dpLastDebrid01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .DebridDateOf = dpLastDebrid01.GetMiladiValue
+            Else
+                .DebridDateOf = Getdate().AddMonths(-Val(txtDuration03.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblDebrid.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .DebridLocation = _str
+            .DiabetTypeLU = rblDiabetTypeOf.SelectedValue
+            _str = ""
+            For Each oitem As ListItem In cblDisease.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .Diseases = _str
+            .Gangrene = cbxGangrene01.Checked
+            If CType(dpLastGang01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .GangreneDateOf = dpLastGang01.GetMiladiValue
+            Else
+                .GangreneDateOf = Getdate().AddMonths(-Val(txtDuration05.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblGang.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .GangreneLocation = _str
+            .InPatient = cbxInPatient.Checked
+            If CType(dpLastInPatient01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .InPatientDateOf = dpLastInPatient01.GetMiladiValue
+            Else
+                .InPatientDateOf = Getdate().AddMonths(-Val(txtDuration07.Text.Trim))
+            End If
+            .InPatientReason = txtSurg01Cause.Text
+            .Laser = cbxLaser01.Checked
+
+            .RegisteryID = oRegistery.id
+            .Sigarret = cbxSigarret.Checked
+            .Sore = cbxSore01.Checked
+            If CType(dpLastSore01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .SoreDateOf = dpLastSore01.GetMiladiValue
+            Else
+                .SoreDateOf = Getdate().AddMonths(-Val(txtDuration01.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblSoreLocationL01.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .SoreLocationLeft = _str
+            _str = ""
+            For Each oitem As ListItem In cblSoreLocationR01.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .SoreLocationRight = _str
+            If CType(dpDateOf01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .StartDateOf = dpDateOf01.GetMiladiValue
+            Else
+                .StartDateOf = Getdate().AddMonths(-Val(txtDateOf01.Text.Trim))
+            End If
+            .Surgery = cbxSurgery01.Checked
+            If CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .SurgeryDateOf = dpLastSurg01.GetMiladiValue
+            Else
+                .SurgeryDateOf = Getdate().AddMonths(-Val(txtDuration04.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblSurgL.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .SurgeryLocationLeft = _str
+            For Each oitem As ListItem In cblSurgR.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .SurgeryLocationRight = _str
+
+        End With
+
+        odb.SubmitChanges()
     End Sub
     Private Sub SavePhysicalExam()
 

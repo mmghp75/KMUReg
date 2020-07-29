@@ -49,20 +49,24 @@
                     <div runat="server" id="pnlDemographicMessage" class="alert alert-danger" role="alert" visible="False">
                         <asp:Label runat="server" ID="lblDemographicMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                     </div>
-                    <div class="panel col-xs-12" style="margin-bottom: 10px">
+                    <div class="panel col-xs-12" style="margin-bottom: 15px">
                         <div class="col-xs-6 text-right">
                             <asp:TextBox ID="txtFileNo" runat="server" MaxLength="8" AutoPostBack="True" PlaceHolder="شماره پرونده" ToolTip="شماره پرونده" BackColor="LightGreen" CssClass="text-center form-control" onFocus="this.select()"></asp:TextBox>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                             <asp:TextBox ID="txtNationalCode" runat="server" MaxLength="10" AutoPostBack="True" Placeholder="* کدملی" ToolTip="کدملی" CssClass="form-control" onFocus="this.select()"></asp:TextBox>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
-                            <asp:TextBox runat="server" ID="txtFirstName" PlaceHolder="* نام" ToolTip="نام" CssClass="form-control" Style="margin-bottom: 10px"></asp:TextBox>
+                        <div class="clearfix">
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
-                            <asp:TextBox runat="server" ID="txtLastName" PlaceHolder="* نام خانوادگی" ToolTip="نام خانوادگی" CssClass="form-control" Style="margin-bottom: 10px"></asp:TextBox>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
+                            <asp:TextBox runat="server" ID="txtFirstName" PlaceHolder="* نام" ToolTip="نام" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
+                            <asp:TextBox runat="server" ID="txtLastName" PlaceHolder="* نام خانوادگی" ToolTip="نام خانوادگی" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                             <div class="input-group">
                                 <asp:Label Text="* جنسیت:" Class="input-group-addon" runat="server" ID="Label4" Font-Bold="true" />
                                 <asp:RadioButtonList runat="server" Class="form-control my-inline-table" RepeatLayout="Flow" ID="rblGender" RepeatColumns="2">
@@ -71,7 +75,7 @@
                                 </asp:RadioButtonList>
                             </div>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                             <div class="input-group">
                                 <asp:TextBox class="form-control" runat="server" ID="txtAgeOf" PlaceHolder="سن(سال)" ToolTip="سن(سال)" TextMode="Number"></asp:TextBox>
                                 <span class="input-group-addon">* یاتاریخ‌تولد</span>
@@ -80,13 +84,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
-                            <asp:TextBox runat="server" ID="txtHeight" PlaceHolder="قد(سانتیمتر)" ToolTip="قد(سانتیمتر)" CssClass="form-control" TextMode="Number" Style="margin-bottom: 10px"></asp:TextBox>
+                        <div class="clearfix">
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
-                            <asp:TextBox runat="server" ID="txtWeight" PlaceHolder="وزن(کیلوگرم)" ToolTip="وزن(کیلوگرم)" CssClass="form-control" TextMode="Number" Style="margin-bottom: 10px"></asp:TextBox>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
+                            <asp:TextBox runat="server" ID="txtHeight" PlaceHolder="قد(سانتیمتر)" ToolTip="قد(سانتیمتر)" CssClass="form-control" TextMode="Number"></asp:TextBox>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
+                            <asp:TextBox runat="server" ID="txtWeight" PlaceHolder="وزن(کیلوگرم)" ToolTip="وزن(کیلوگرم)" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                        </div>
+                        <div class="clearfix">
+                        </div>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                             <div class="input-group">
                                 <asp:Label Text="وضعیت‌تأهل:" CssClass="input-group-addon" runat="server" ID="Label7" Font-Bold="true" />
                                 <asp:RadioButtonList runat="server" ID="rblMarriage" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
@@ -95,13 +103,15 @@
                                 </asp:RadioButtonList>
                             </div>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                        <div class="clearfix">
+                        </div>
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                             <asp:TextBox runat="server" ID="txtCellNo" PlaceHolder="* تلفن‌همراه" ToolTip="تلفن‌همراه" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="col-xs-6 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                             <asp:TextBox runat="server" ID="txtPhoneNo" PlaceHolder="* تلفن‌ثابت" ToolTip="تلفن‌ثابت" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                             <div class="input-group">
                                 <asp:Label Text="سطح‌تحصیلات:" CssClass="input-group-addon " runat="server" ID="Label8" Font-Bold="true" />
                                 <asp:RadioButtonList runat="server" ID="rblEducation" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="8">
@@ -117,7 +127,7 @@
                             </div>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                        <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                             <asp:TextBox runat="server" ID="txtAddress" Height="50px" PlaceHolder="* آدرس‌منزل" TextMode="MultiLine" CssClass="form-control"></asp:TextBox>
                         </div>
                     </div>
@@ -168,7 +178,7 @@
                                         </asp:RadioButtonList>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 text-right"  style="margin-bottom:10px;">
+                                <div class="col-xs-6 text-right" style="margin-bottom: 15px;">
                                     <div class="input-group" style="margin: 0; padding: 0;">
                                         <asp:TextBox runat="server" ID="txtDateOf01" PlaceHolder="مدت ابتلا(سال)" ToolTip="مدت ابتلا(سال)" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                         <span class="input-group-addon">* یاتاریخ‌ابتلا</span>
@@ -179,30 +189,30 @@
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxSore01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxLaser01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;لیزر زخم" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxDebrid01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;دبریدمان" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxSurgery01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;جراحی" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxGangrene01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxAmp01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="بیماری‌زمینه‌ای:" CssClass="input-group-addon" runat="server" ID="Label3" Font-Bold="true" />
-                                        <asp:CheckBoxList runat="server" ID="rblDesease" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="7" Style="height: auto">
+                                        <asp:CheckBoxList runat="server" ID="cblDisease" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="7" Style="height: auto">
                                             <asp:ListItem Text="&nbsp;&nbsp;قلبی‌عروقی" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;رتینوپاتی(بیماری‌های‌چشمی)" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;مزمن‌کلیوی" Value="3" Style="margin-right: 30px;" />
@@ -221,13 +231,13 @@
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxAlcohol" runat="server" MaxLength="10" Text="&nbsp;&nbsp;مصرف مشروبات الکلی" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxSigarret" runat="server" MaxLength="10" Text="&nbsp;&nbsp;سیگار و قلیان" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxInPatient" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;سابقه بستری" CssClass="form-control"></asp:CheckBox>
                                 </div>
                             </div>
@@ -260,7 +270,7 @@
                                 <div class="col-xs-12 text-right">
                                     <asp:TextBox ID="txtCC" runat="server" MaxLength="10" Placeholder="* علت مراجعه" ToolTip="علت مراجعه" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="clearfix" style="margin-bottom: 10px">
+                                <div class="clearfix" style="margin-bottom: 15px">
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <asp:CheckBox ID="cbxSore02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control"></asp:CheckBox>
@@ -271,8 +281,8 @@
                                 <div class="col-xs-4 text-right">
                                     <asp:CheckBox ID="cbxSwell01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;تورم، تاول و قرمزی" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="clearfix" style="margin-bottom: 10px"></div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="clearfix" style="margin-bottom: 15px"></div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="نوروپاتی:" CssClass="input-group-addon" runat="server" ID="Label9" Font-Bold="true" />
                                         <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="cblNeuropathy" RepeatColumns="2">
@@ -281,7 +291,7 @@
                                         </asp:CheckBoxList>
                                     </div>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="خشکی‌پا:" runat="server" CssClass="input-group-addon" ID="Label11" Font-Bold="true" />
                                         <asp:RadioButtonList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="rblDry" RepeatColumns="3">
@@ -301,7 +311,7 @@
                                         </asp:RadioButtonList>
                                     </div>
                                 </div>
-                                <div class="clearfix" style="margin-bottom: 10px">
+                                <div class="clearfix" style="margin-bottom: 15px">
                                 </div>
                             </div>
                         </div>
@@ -336,7 +346,7 @@
                                 <div class="col-xs-4 text-right">
                                     <asp:TextBox ID="txtA1C" runat="server" MaxLength="10" Placeholder="* Hb A1C" ToolTip="Hb A1C" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* تاریخ آزمایش:" CssClass="input-group-addon" runat="server" ID="Label1" Font-Bold="true" />
                                         <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
@@ -346,25 +356,25 @@
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <asp:Panel runat="server" ID="P03" Style="border-top-style: solid; border-top-color: brown; height: 1px; margin-bottom: 10px" CssClass="col-xs-12" />
+                                <asp:Panel runat="server" ID="P03" Style="border-top-style: solid; border-top-color: brown; height: 1px; margin-bottom: 15px" CssClass="col-xs-12" />
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox runat="server" ID="txtSystol" PlaceHolder="فشارخون سیستولیک" ToolTip="فشارخون سیستولیک" CssClass="form-control" Style="margin-bottom: 10px" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtSystol" PlaceHolder="فشارخون سیستولیک" ToolTip="فشارخون سیستولیک" CssClass="form-control" Style="margin-bottom: 15px" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <asp:TextBox runat="server" ID="txtDyastol" PlaceHolder="فشارخون دیاستولیک" ToolTip="فشارخون دیاستولیک" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtO2" PlaceHolder="اشباع اکسیژن" ToolTip="اشباع اکسیژن" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtHR" PlaceHolder="تعداد ضربان قلب در دقیقه" ToolTip="تعداد ضربان قلب در دقیقه" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtRR" PlaceHolder="تعداد تنفس در دقیقه" ToolTip="تعداد تنفس در دقیقه" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="تاریخ ثبت علایم‌حیاتی:" CssClass="input-group-addon" runat="server" ID="Label44" Font-Bold="true" />
                                         <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
@@ -405,12 +415,12 @@
                                 <div class="col-xs-4 text-right">
                                     <asp:CheckBox ID="cbxNeedSurg" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به جراحی دارد" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxNeedDebrid" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به دبریدمان دارد" CssClass="form-control"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxNeedShoe" runat="server" MaxLength="10" Text="&nbsp;&nbsp;تجویز کفش طبی دارد" CssClass="form-control"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
@@ -421,16 +431,16 @@
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxNeedEducation" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به مشاوره‌ی‌درمانی و آموزش خودمراقبتی دارد" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxNeedRehab" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به فرایندهای توان‌بخشی دارد" CssClass="form-control"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-12 text-right">
-                                    <div class="col-xs-12 text-right form-control" style="margin-bottom: 10px">
+                                    <div class="col-xs-12 text-right form-control" style="margin-bottom: 15px">
                                         <div class="col-xs-1 text-left">
                                             <asp:Label Text=" داروهای‌تجویزی:" runat="server" ID="Label21" Font-Bold="true" />
                                         </div>
@@ -443,7 +453,7 @@
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="توضیحات" CssClass="input-group-addon" runat="server" ID="Label5" Font-Bold="true" />
                                         <asp:TextBox ID="txtFreeText" runat="server" CssClass="form-control" TextMode="MultiLine" Height="100px"></asp:TextBox>
@@ -485,7 +495,7 @@
                                 <div runat="server" id="pnlSore01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSore01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration01" class="form-control" PlaceHolder="زمان ابتلا(چندماه‌پیش؟)" ToolTip="زمان ابتلا(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ آخرین زخم:" CssClass="input-group-addon" runat="server" ID="Label15" />
@@ -495,7 +505,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های قبلی در پای چپ:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label16" />
                                         <asp:CheckBoxList runat="server" ID="cblSoreLocationL01" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="4">
@@ -507,7 +517,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های قبلی در پای راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label17" />
                                         <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="cblSoreLocationR01" RepeatColumns="4">
@@ -542,7 +552,7 @@
                                 <div runat="server" id="pnlLaser01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblLaser01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration02" PlaceHolder="زمان درمان(چندماه‌پیش؟)" ToolTip="زمان درمان(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ آخرین درمان با لیزر:" CssClass="input-group-addon" runat="server" ID="Label19" />
@@ -586,7 +596,7 @@
                                 <div runat="server" id="pnlDebrid01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblDebrid01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration03" PlaceHolder="زمان دبرید(چندماه‌پیش؟)" ToolTip="زمان دبرید(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ آخرین دبریدمان:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label23" />
@@ -634,7 +644,7 @@
                                 <div runat="server" id="pnlSurg01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSurg01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration04" PlaceHolder="زمان جراحی(چندماه‌پیش؟)" ToolTip="زمان جراحی(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ آخرین جراحی:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label27" />
@@ -644,7 +654,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی‌های قبلی پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label28" />
                                         <asp:CheckBoxList runat="server" ID="cblSurgL" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="5">
@@ -657,7 +667,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی‌های قبلی پای‌راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label29" />
                                         <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="cblSurgR" RepeatColumns="5">
@@ -694,7 +704,7 @@
                                 <div runat="server" id="pnlGang01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblGang01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration05" PlaceHolder="زمان گانگرن(چندماه‌پیش؟)" ToolTip="زمان گانگرن(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ آخرین گانگرن:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label31" />
@@ -704,7 +714,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text=" محل گانگرن‌های قبلی:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label32" />
                                         <asp:CheckBoxList runat="server" ID="cblGang" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
@@ -738,7 +748,7 @@
                                 <div runat="server" id="pnlAmp01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblAmp01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration06" PlaceHolder="زمان آمپوتاسیون(چندماه‌پیش؟)" ToolTip="زمان آمپوتاسیون(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="*یا تاریخ آخرین آمپوتاسیون:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label35" />
@@ -748,7 +758,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px;">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px;">
                                     <div class="input-group">
                                         <asp:Label Text="* محل آمپوتاسیون‌های قبلی پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label36" />
                                         <asp:CheckBoxList runat="server" ID="cblAmpL" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
@@ -762,7 +772,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل آمپوتاسیون‌های قبلی پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label37" />
                                         <asp:CheckBoxList runat="server" ID="cblAmpR" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
@@ -799,7 +809,7 @@
                                 <div runat="server" id="pnlInPatient01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblInPatient01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration07" PlaceHolder="زمان بستری(چندماه‌پیش؟)" ToolTip="زمان بستری(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ آخرین بستری:" CssClass="input-group-addon" runat="server" ID="Label22" />
@@ -839,7 +849,7 @@
                                 <div runat="server" id="pnlSore02MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSore02MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration08" PlaceHolder="زمان زخم(چندماه‌پیش؟)" ToolTip="زمان زخم(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ ایجاد زخم:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label25" />
@@ -849,17 +859,17 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtNewSoreCountOfL" PlaceHolder="* تعداد زخم‌های پای چپ" ToolTip="تعداد زخم‌های پای چپ" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtNewSoreCountOfR" PlaceHolder="* تعداد زخم‌های پای راست" ToolTip="تعداد زخم‌های پای راست" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtNewMaxLength" PlaceHolder="* طول بزرگترین زخم(میلیمتر)" ToolTip="طول بزرگترین زخم(میلیمتر)" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label26" />
                                         <asp:CheckBoxList runat="server" ID="cblNewSoreL" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow">
@@ -872,7 +882,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل زخم‌های پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label30" />
                                         <asp:CheckBoxList runat="server" ID="cblNewSoreR" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow">
@@ -885,7 +895,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* شدیدترین‌زخم‌پای‌چپ:" runat="server" Font-Bold="true" CssClass="input-group-addon" ID="Label33" />
                                         <asp:RadioButtonList runat="server" ID="rblNewWorstSoreL" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="1" Style="height: auto;">
@@ -936,7 +946,7 @@
                                 <div runat="server" id="pnlInfect01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblInfect01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration09" PlaceHolder="زمان عفونت(چندروز‌پیش؟)" ToolTip="زمان عفونت(چندروز‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ ایجاد عفونت:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label34" />
@@ -946,7 +956,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل‌عفونت‌پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label38" />
                                         <asp:CheckBoxList runat="server" ID="cblNewInfectL" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow">
@@ -959,7 +969,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل‌عفونت‌پای‌راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label39" />
                                         <asp:CheckBoxList runat="server" ID="cblNewInfectR" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow">
@@ -996,7 +1006,7 @@
                                 <div runat="server" id="pnlSwell01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSwell01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:TextBox runat="server" ID="txtDuration10" PlaceHolder="زمان ایجاد(چندروز‌پیش؟)" ToolTip="زمانایجاد تورم،تاول و قرمزی(چندروز‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ ایجاد تورم،تاول و قرمزی:" runat="server" Font-Bold="true" CssClass="input-group-addon" ID="Label41" />
@@ -1006,7 +1016,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل تورم،تاول و قرمزی‌های پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label42" />
                                         <asp:CheckBoxList runat="server" ID="cblNewSwellL" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow">
@@ -1019,7 +1029,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                                <div class="col-xs-12 text-right" style="margin-bottom: 10px">
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل تورم،تاول و قرمزی‌های پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label43" />
                                         <asp:CheckBoxList runat="server" ID="cblNewSwellR" RepeatColumns="5" CssClass="form-control my-inline-table" RepeatLayout="Flow">
@@ -1044,25 +1054,25 @@
             </asp:Panel>
 
             <script type="text/javascript">
-    
+
                 SetTabIndex = function (sender, hfId) {
-                    $("#" + hfId.id).val($(sender).attr("href").replace("#",""));
+                    $("#" + hfId.id).val($(sender).attr("href").replace("#", ""));
                 }
 
-                InitTabPage = function(isPostBack){
+                InitTabPage = function (isPostBack) {
                     var selectedTab = $("#<%=hfActivePanelId.ClientID%>");
                     //alert(selectedTab.val());
                     var tabId = selectedTab.val() != "" ? selectedTab.val() : "PhysicalExam";
                     var tabCtrl = $('a[href="#PhysicalExam"]');
-                    if(!isPostBack)                    
+                    if (!isPostBack)
                         $('a[href="#' + tabId + '"]').tab('show');
                 }
 
                 $(document).ready(function () {
                     InitTabPage(false);
                 });
-                
-                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InitTabPage(true));                
+
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InitTabPage(true));
             </script>
         </ContentTemplate>
     </asp:UpdatePanel>

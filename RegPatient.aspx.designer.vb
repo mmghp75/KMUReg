@@ -383,13 +383,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''rblDesease control.
+    '''cblDisease control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rblDesease As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents cblDisease As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''cbxAlcohol control.
