@@ -32,4 +32,9 @@ function InitControls() {
             $(this).remove();
         }
     });
+
+    //نمایش بهتر تول لیپ ها
+    $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'click'
+    }).addClass("my-Pointer");
 }
