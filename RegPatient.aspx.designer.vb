@@ -482,6 +482,15 @@ Partial Public Class RegPatient
     Protected WithEvents txtCC As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''dpContract control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dpContract As Global.Rayavaran.RWControls.DateTimePicker
+
+    '''<summary>
     '''cbxSore02 control.
     '''</summary>
     '''<remarks>
@@ -941,6 +950,15 @@ Partial Public Class RegPatient
     Protected WithEvents pnlSore01Back As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''pnlSore01Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlSore01Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''pnlSore01MSG control.
     '''</summary>
     '''<remarks>
@@ -1058,6 +1076,15 @@ Partial Public Class RegPatient
     Protected WithEvents pnlLaser01Back As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''pnlLaser01Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlLaser01Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''pnlLaser01MSG control.
     '''</summary>
     '''<remarks>
@@ -1157,6 +1184,15 @@ Partial Public Class RegPatient
     Protected WithEvents pnlDebrid01Back As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''pnlDebrid01Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlDebrid01Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''pnlDebrid01MSG control.
     '''</summary>
     '''<remarks>
@@ -1254,6 +1290,15 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlSurg01Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlSurg01Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlSurg01Body As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''pnlSurg01MSG control.
@@ -1373,6 +1418,15 @@ Partial Public Class RegPatient
     Protected WithEvents pnlGang01Back As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''pnlGang01Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlGang01Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''pnlGang01MSG control.
     '''</summary>
     '''<remarks>
@@ -1470,6 +1524,15 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlAmp01Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlAmp01Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlAmp01Body As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''pnlAmp01MSG control.

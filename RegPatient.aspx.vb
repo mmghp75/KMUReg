@@ -4,7 +4,7 @@ Public Class RegPatient
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Me.IsPostBack Then
-            hfActivePanelId.Value = Request.Form(hfActivePanelId.UniqueID)
+            'hfActivePanelId.Value = Request.Form(hfActivePanelId.UniqueID)
             'MsgBox(hfActivePanelId.Value)
 
             pnlDemographicMessage.Visible = False
@@ -24,11 +24,14 @@ Public Class RegPatient
             pnlInfect01MSG.Visible = False
             pnlSwell01MSG.Visible = False
         Else
+            btnCancelReg.Width = btnCancelPrescription.Width
+            btnOK.Width = btnCancelPrescription.Width
             txtNationalCode.Focus()
             Session("Demographic") = Nothing
         End If
     End Sub
     Private Sub cbxSore01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxSore01.Checked = Not cbxSore01.Checked
         If cbxSore01.Checked Then
             ShowModalPopup(Me, "pnlSore01")
             hfNewPanelVisibility.Value = 1
@@ -44,6 +47,7 @@ Public Class RegPatient
         'GetStep2Panels()
     End Sub
     Private Sub cbxLaser01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxLaser01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxLaser01.Checked = Not cbxLaser01.Checked
         If cbxLaser01.Checked Then
             ShowModalPopup(Me, "pnlLaser01")
             hfNewPanelVisibility.Value = 1
@@ -57,6 +61,7 @@ Public Class RegPatient
         End If
     End Sub
     Private Sub cbxDebrid01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxDebrid01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxDebrid01.Checked = Not cbxDebrid01.Checked
         If cbxDebrid01.Checked Then
             ShowModalPopup(Me, "pnlDebrid01")
             hfNewPanelVisibility.Value = 1
@@ -70,6 +75,7 @@ Public Class RegPatient
         End If
     End Sub
     Private Sub cbxGangrene01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGangrene01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxGangrene01.Checked = Not cbxGangrene01.Checked
         If cbxGangrene01.Checked Then
             ShowModalPopup(Me, "pnlGang01")
             hfNewPanelVisibility.Value = 1
@@ -83,6 +89,7 @@ Public Class RegPatient
         End If
     End Sub
     Private Sub cbxSurgery01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurgery01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxSurgery01.Checked = Not cbxSurgery01.Checked
         If cbxSurgery01.Checked Then
             ShowModalPopup(Me, "pnlSurg01")
             hfNewPanelVisibility.Value = 1
@@ -96,6 +103,7 @@ Public Class RegPatient
         End If
     End Sub
     Private Sub cbxAmp01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxAmp01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxAmp01.Checked = Not cbxAmp01.Checked
         If cbxAmp01.Checked Then
             ShowModalPopup(Me, "pnlAmp01")
             hfNewPanelVisibility.Value = 1
@@ -109,6 +117,7 @@ Public Class RegPatient
         End If
     End Sub
     Private Sub cbxInPatient01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxInPatient.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxInPatient.Checked = Not cbxInPatient.Checked
         If cbxInPatient.Checked Then
             ShowModalPopup(Me, "pnlInPatient01")
             hfNewPanelVisibility.Value = 1
@@ -136,11 +145,10 @@ Public Class RegPatient
         pnlSore01.Style.Item("display") = "none"
         pnlSore01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing Then cbxSore01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxSore01.Checked = False
 
         'GetStep2Panels()
     End Sub
-
     'Private Sub GetStep2Panels()
     '    Dim panels = {
     '        New CollapsePanelGroup(pnlHistory, lblHistoryTitle, collapseHistoryMessage),
@@ -150,7 +158,6 @@ Public Class RegPatient
     '    }
     '    ExpandPanel(Me, panels, hfExpanedPanelIds.Value.Split(" "))
     'End Sub
-
     Private Sub btnOKLaser01_Click(sender As Object, e As EventArgs) Handles btnOKLaser01.Click
         If Not CheckpnlLaser() Then Exit Sub
         If lblLaser01MSG.Text = "" Then
@@ -166,7 +173,7 @@ Public Class RegPatient
         pnlLaser01.Style.Item("display") = "none"
         pnlLaser01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing Then cbxLaser01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxLaser01.Checked = False
     End Sub
     Private Sub btnOKDebrid01_Click(sender As Object, e As EventArgs) Handles btnOKDebrid01.Click
         If Not CheckpnlDebrid() Then Exit Sub
@@ -183,7 +190,7 @@ Public Class RegPatient
         pnlDebrid01.Style.Item("display") = "none"
         pnlDebrid01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing Then cbxDebrid01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxDebrid01.Checked = False
     End Sub
     Private Sub btnOKSurg01_Click(sender As Object, e As EventArgs) Handles btnOKSurg01.Click
         If Not CheckpnlSurg() Then Exit Sub
@@ -200,7 +207,7 @@ Public Class RegPatient
         pnlSurg01.Style.Item("display") = "none"
         pnlSurg01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing Then cbxSurgery01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxSurgery01.Checked = False
     End Sub
     Private Sub btnOKGang01_Click(sender As Object, e As EventArgs) Handles btnOKGang01.Click
         If Not CheckpnlGang() Then Exit Sub
@@ -217,7 +224,7 @@ Public Class RegPatient
         pnlGang01.Style.Item("display") = "none"
         pnlGang01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing Then cbxGangrene01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxGangrene01.Checked = False
     End Sub
     Private Sub btnOKAmp01_Click(sender As Object, e As EventArgs) Handles btnOKAmp01.Click
         If Not CheckpnlAmp() Then Exit Sub
@@ -234,7 +241,7 @@ Public Class RegPatient
         pnlAmp01.Style.Item("display") = "none"
         pnlAmp01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing Then cbxAmp01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxAmp01.Checked = False
     End Sub
     Private Sub btnOKInPatient01_Click(sender As Object, e As EventArgs) Handles btnOKInPatient01.Click
         If Not CheckpnlInPatient() Then Exit Sub
@@ -251,7 +258,7 @@ Public Class RegPatient
         pnlInPatient01.Style.Item("display") = "none"
         pnlInPatient01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing Then cbxInPatient.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxInPatient.Checked = False
     End Sub
     Private Sub cbxSore02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore02.CheckedChanged
         If cbxSore02.Checked Then
@@ -359,6 +366,7 @@ Public Class RegPatient
         rblEducation.SelectedIndex = -1
         txtAddress.Text = ""
         txtNationalCode.Focus()
+        Session("History") = Nothing
     End Sub
     Private Sub btnContinueDemographic_Click(sender As Object, e As EventArgs) Handles btnContinueDemographic.Click
         If CheckDemographicPanelData() Then Exit Sub
@@ -375,7 +383,6 @@ Public Class RegPatient
         btnCacelLabResults_Click(Nothing, Nothing)
         btnCancelPrescription_Click(Nothing, Nothing)
 
-        'hfExpanedPanelIds.Value = "pnlHistory"
         hfActivePanelId.Value = "History"
         UpdateDemographicData()
     End Sub
@@ -506,6 +513,7 @@ Public Class RegPatient
         odb.SubmitChanges()
     End Sub
     Private Sub btnCancelHistory_Click(sender As Object, e As EventArgs) Handles btnCancelHistory.Click
+        If Session("History") IsNot Nothing Then Exit Sub
         'History
         rblDiabetTypeOf.SelectedIndex = -1
         txtDateOf01.Text = ""
@@ -652,29 +660,40 @@ Public Class RegPatient
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "ActiveLastTab", oScript, True)
     End Sub
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        If rblDiabetTypeOf.SelectedIndex = -1 Then
-            pnlHistoryMessage.Visible = True
-            lbllHistoryMessage.Text = "نوع دیابت را تعیین نکرده اید."
 
-            rblDiabetTypeOf.Focus()
-            Exit Sub
-        ElseIf txtDateOf01.Text = "" AndAlso Not dpDateOf01.GetMiladiValue.HasValue Then
-            pnlHistoryMessage.Visible = True
-            lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت را تعیین نکرده اید."
+        If Session("History") Is Nothing Then
+            If rblDiabetTypeOf.SelectedIndex = -1 Then
+                pnlHistoryMessage.Visible = True
+                lbllHistoryMessage.Text = "نوع دیابت را تعیین نکرده اید."
 
-            txtDateOf01.Focus()
-            Exit Sub
-        ElseIf isNotValidDateOf(Val(txtDateOf01.Text.Trim), 0, 1000, dpDateOf01.GetMiladiValue, "Y") Then
-            pnlHistoryMessage.Visible = True
-            lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت در محدوده‌ی قابل قبول نمی‌باشد."
+                rblDiabetTypeOf.Focus()
+                Exit Sub
+            ElseIf txtDateOf01.Text = "" AndAlso Not dpDateOf01.GetMiladiValue.HasValue Then
+                pnlHistoryMessage.Visible = True
+                lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت را تعیین نکرده اید."
 
-            txtDateOf01.Focus()
-            Exit Sub
-        ElseIf txtCC.Text.Trim = "" Then
+                txtDateOf01.Focus()
+                Exit Sub
+            ElseIf isNotValidDateOf(Val(txtDateOf01.Text.Trim), 0, 1000, dpDateOf01.GetMiladiValue, "Y") Then
+                pnlHistoryMessage.Visible = True
+                lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت در محدوده‌ی قابل قبول نمی‌باشد."
+
+                txtDateOf01.Focus()
+                Exit Sub
+            End If
+        End If
+
+        If txtCC.Text.Trim = "" Then
             pnlPhysicalExamMessage.Visible = True
             lblPhysicalExamMessage.Text = "علت مراجعه را ثبت نکرده اید."
 
             txtCC.Focus()
+            Exit Sub
+        ElseIf Not dpContract.GetMiladiValue.HasValue Then
+            pnlPhysicalExamMessage.Visible = True
+            lblPhysicalExamMessage.Text = "تاریخ مراجعه را تعیین نکرده اید."
+
+            dpContract.Focus()
             Exit Sub
         ElseIf txtFBS.Text = "" Then
             pnlLabResultsMessage.Visible = True
@@ -701,10 +720,11 @@ Public Class RegPatient
             dpDateOf03.Focus()
             Exit Sub
         End If
-        SaveHistory()
-        SavePhysicalExam()
-        SaveLabResults()
-        SavePrescription()
+        If Session("History") Is Nothing Then
+            SaveHistory()
+        End If
+
+        SaveContract()
 
         btnCancelReg_Click(Nothing, Nothing)
     End Sub
@@ -790,6 +810,13 @@ Public Class RegPatient
         btnCacelLabResults_Click(Nothing, Nothing)
 
         Session("Demographic") = Nothing
+        pnlSore01Body.Enabled = True
+        pnlLaser01Body.Enabled = True
+        pnlDebrid01Body.Enabled = True
+        pnlGang01Body.Enabled = True
+        pnlAmp01Body.Enabled = True
+        pnlSurg01Body.Enabled = True
+
     End Sub
     Private Sub FillHistory()
         Dim _DemographicID As Integer = Session("Demographic").ID
@@ -876,6 +903,12 @@ Public Class RegPatient
                     txtSurg01Cause.Text = .InPatientReason
                 End If
             End With
+            pnlSore01Body.Enabled = False
+            pnlLaser01Body.Enabled = False
+            pnlDebrid01Body.Enabled = False
+            pnlGang01Body.Enabled = False
+            pnlAmp01Body.Enabled = False
+            pnlSurg01Body.Enabled = False
         End If
 
     End Sub
@@ -977,8 +1010,23 @@ Public Class RegPatient
             End If
             .InPatientReason = txtSurg01Cause.Text
             .Laser = cbxLaser01.Checked
-
-            .RegisteryID = oRegistery.id
+            If CType(dpLastLaser01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .LaserDateOf = dpLastLaser01.GetMiladiValue
+            Else
+                .LaserDateOf = Getdate().AddMonths(-Val(txtDuration02.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblLaser.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .LaserLocation = _str
+            .RegisteryID = oRegistery.ID
             .Sigarret = cbxSigarret.Checked
             .Sore = cbxSore01.Checked
             If CType(dpLastSore01.Controls(3).Controls(0), TextBox).Text <> "" Then
@@ -1040,19 +1088,116 @@ Public Class RegPatient
                 End If
             Next
             .SurgeryLocationRight = _str
-
         End With
 
         odb.SubmitChanges()
+        Session("History") = oHistory
     End Sub
-    Private Sub SavePhysicalExam()
+    Private Sub SaveContract()
+        Dim odb As New dbDataContext(ConnectionStringDiabeticFoot)
+        Dim oContract As tblContract = New tblContract
+        If Session("Contract") Is Nothing Then
+            oContract.HistoryID = Session("Contract").ID
+            odb.tblContracts.InsertOnSubmit(oContract)
+        End If
+        Dim _str = ""
+        With oContract
+            'Physical Exam
+            .CC = txtCC.Text.Trim
+            .DryLU = rblDry.SelectedValue
+            .HeatLU = rblTemp.SelectedValue
+            .Infection = cbxInfect01.Checked
+            If cbxInfect01.Checked Then
+                If CType(dpNewInfect.Controls(3).Controls(0), TextBox).Text <> "" Then
+                    .InfectionDateOf = dpNewInfect.GetMiladiValue
+                Else
+                    .InfectionDateOf = Getdate().AddMonths(-Val(txtDuration10.Text.Trim))
+                End If
+                _str = ""
+                For Each oitem As ListItem In cblNewInfectL.Items
+                    If oitem.Selected Then
+                        If _str = "" Then
+                            _str &= oitem.Value
+                        Else
+                            _str &= "," & oitem.Value
+                        End If
+                    End If
+                Next
+                .InfectionLocationLeft = _str
+                _str = ""
+                For Each oitem As ListItem In cblNewInfectR.Items
+                    If oitem.Selected Then
+                        If _str = "" Then
+                            _str &= oitem.Value
+                        Else
+                            _str &= "," & oitem.Value
+                        End If
+                    End If
+                Next
+                .InfectionLocationRight = _str
+            End If
+            .LargestLength = Val(txtNewMaxLength.Text)
+            _str = ""
+            For Each oitem As ListItem In cblNeuropathy.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .Neuropathy = _str
+            .Sore = cbxSore02.Checked
+            If cbxSore02.Checked Then
+                .SoreCountLeft = Val(txtNewSoreCountOfL.Text)
+                .SoreCountRight = Val(txtNewSoreCountOfR.Text)
+                If CType(dpNewSore.Controls(3).Controls(0), TextBox).Text <> "" Then
+                    .SoreDateOf = dpNewSore.GetMiladiValue
+                Else
+                    .SoreDateOf = Getdate().AddMonths(-Val(txtDuration08.Text.Trim))
+                End If
+                If rblNewWorstSoreL.SelectedIndex > -1 Then .WorstLeftSoreLU = rblNewWorstSoreL.SelectedValue
+                If rblNewWorstSoreR.SelectedIndex > -1 Then .WorstRightSoreLU = rblNewWorstSoreR.SelectedValue
+            End If
+            .Swell = cbxSwell01.Checked
+            If cbxSwell01.Checked Then
+                If CType(dpNewSwell.Controls(3).Controls(0), TextBox).Text <> "" Then
+                    .SwellDateOf = dpNewSore.GetMiladiValue
+                Else
+                    .SwellDateOf = Getdate().AddMonths(-Val(txtDuration09.Text.Trim))
+                End If
+                _str = ""
+                For Each oitem As ListItem In cblNewSwellL.Items
+                    If oitem.Selected Then
+                        If _str = "" Then
+                            _str &= oitem.Value
+                        Else
+                            _str &= "," & oitem.Value
+                        End If
+                    End If
+                Next
+                .SwellLocationLeft = _str
+                _str = ""
+                For Each oitem As ListItem In cblNewSwellR.Items
+                    If oitem.Selected Then
+                        If _str = "" Then
+                            _str &= oitem.Value
+                        Else
+                            _str &= "," & oitem.Value
+                        End If
+                    End If
+                Next
+                .SwellLocationRight = _str
+            End If
+            'Lab Results
 
-    End Sub
-    Private Sub SaveLabResults()
+            'Prescription
 
-    End Sub
-    Private Sub SavePrescription()
 
+
+        End With
+        odb.SubmitChanges()
     End Sub
     Private Function CheckboxListisChecked(cbl As CheckBoxList) As Boolean
         For Each o As ListItem In cbl.Items

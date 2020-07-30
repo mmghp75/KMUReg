@@ -31,75 +31,11 @@
       <Column Name="Shamsi_DayOf" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.tblLabResult" Member="tblLabResults">
-    <Type Name="tblLabResult">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FBS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="A1C" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LabDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Systol" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Dyastol" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="O2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RR" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VitalSignDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="RegisteryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblRegistery_tblLabResult" Member="tblRegistery" ThisKey="RegisteryID" OtherKey="ID" Type="tblRegistery" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblPhysicalExam" Member="tblPhysicalExams">
-    <Type Name="tblPhysicalExam">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CC" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="Sore" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="SoreDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="SoreCountLeft" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoreCountRight" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LargestLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SoreLocationLeft" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SoreLocationRight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="WorstLeftSoreLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="WorstRightSoreLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Infection" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="InfectionDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="InfectionLocationLeft" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="InfectionLocationRight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Swell" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="SwellDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="SwellLocationLeft" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SwellLocationRight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Neuropathy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DryLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HeatLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RegisteryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="tblRegistery_tblPhysicalExam" Member="tblRegistery" ThisKey="RegisteryID" OtherKey="ID" Type="tblRegistery" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblPrescription" Member="tblPrescriptions">
-    <Type Name="tblPrescription">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Amputation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Surgery" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Debrid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Shoe" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Visit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Cover" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Consult" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Rehabilitation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Drug" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="RegisteryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="[FreeText]" Member="FreeText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="tblRegistery_tblPrescription" Member="tblRegistery" ThisKey="RegisteryID" OtherKey="ID" Type="tblRegistery" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblRegistery" Member="tblRegisteries">
     <Type Name="tblRegistery">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="DemographicID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="RegDateOf" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="tblRegistery_tblLabResult" Member="tblLabResults" ThisKey="ID" OtherKey="RegisteryID" Type="tblLabResult" />
-      <Association Name="tblRegistery_tblPhysicalExam" Member="tblPhysicalExams" ThisKey="ID" OtherKey="RegisteryID" Type="tblPhysicalExam" />
-      <Association Name="tblRegistery_tblPrescription" Member="tblPrescriptions" ThisKey="ID" OtherKey="RegisteryID" Type="tblPrescription" />
       <Association Name="tblRegistery_tblHistory" Member="tblHistories" ThisKey="ID" OtherKey="RegisteryID" Type="tblHistory" />
     </Type>
   </Table>
@@ -170,7 +106,56 @@
       <Column Name="InPatientDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="InPatientReason" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="RegisteryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblHistory_tblContract" Member="tblContracts" ThisKey="ID" OtherKey="HistoryID" Type="tblContract" />
       <Association Name="tblRegistery_tblHistory" Member="tblRegistery" ThisKey="RegisteryID" OtherKey="ID" Type="tblRegistery" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblContract" Member="tblContracts">
+    <Type Name="tblContract">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HistoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CC" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Sore" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SoreDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SoreCountLeft" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoreCountRight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LargestLength" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoreLocationLeft" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoreLocationRight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WorstLeftSoreLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WorstRightSoreLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Infection" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InfectionDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InfectionLocationLeft" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InfectionLocationRight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Swell" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SwellDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SwellLocationLeft" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SwellLocationRight" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Neuropathy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DryLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HeatLU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FBS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="A1C" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LabDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Systol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dyastol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="O2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VitalSignDateOf" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Amputation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Surgery" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Debrid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Shoe" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Visit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Cover" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Consult" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Rehabilitation" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Drug" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="[FreeText]" Member="FreeText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContractDateOf" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="tblHistory_tblContract" Member="tblHistory" ThisKey="HistoryID" OtherKey="ID" Type="tblHistory" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

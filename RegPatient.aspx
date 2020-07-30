@@ -266,11 +266,19 @@
                             <div runat="server" id="pnlPhysicalExamMessage" class="alert alert-danger" role="alert" visible="False">
                                 <asp:Label runat="server" ID="lblPhysicalExamMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                             </div>
-                            <div class="panel col-xs-12">
-                                <div class="col-xs-12 text-right">
+                            <div class="panel col-xs-12" style="margin-bottom: 15px">
+                                <div class="col-xs-9 text-right">
                                     <asp:TextBox ID="txtCC" runat="server" MaxLength="10" Placeholder="* علت مراجعه" ToolTip="علت مراجعه" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="clearfix" style="margin-bottom: 15px">
+                                <div class="col-xs-3 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">* تاریخ‌مراجعه</span>
+                                        <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                            <cc1:DateTimePicker ID="dpContract" runat="server" EnableTheming="true" CssClass="text-left" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ مراجعه" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right">
                                     <asp:CheckBox ID="cbxSore02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control"></asp:CheckBox>
@@ -491,7 +499,7 @@
                             <div class="panel-heading">
                                 <div class="panel-title">مشخصات زخم</div>
                             </div>
-                            <div class="panel-body">
+                            <asp:Panel runat="server" ID="pnlSore01Body" class="panel-body">
                                 <div runat="server" id="pnlSore01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSore01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -529,7 +537,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                            </div>
+                            </asp:Panel>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelSore01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKSore01" Text="ثبت" CssClass="btn-success" />
@@ -548,7 +556,7 @@
                                     مشخصات لیزرتراپی انجام شده
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <asp:Panel runat="server" ID="pnlLaser01Body" class="panel-body">
                                 <div runat="server" id="pnlLaser01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblLaser01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -573,7 +581,7 @@
                                 </div>
 
                                 <div class="clearfix"></div>
-                            </div>
+                            </asp:Panel>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelLaser01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKLaser01" Text="ثبت" CssClass="btn-success" />
@@ -592,7 +600,7 @@
                                     مشخصات دبریدمان انجام شده
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <asp:Panel runat="server" ID="pnlDebrid01Body" class="panel-body">
                                 <div runat="server" id="pnlDebrid01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblDebrid01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -620,7 +628,7 @@
                                 </div>
 
                                 <div class="clearfix"></div>
-                            </div>
+                            </asp:Panel>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelDebrid01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKDebrid01" Text="ثبت" CssClass="btn-success" />
@@ -640,7 +648,7 @@
                                     مشخصات جراحی‌ها
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <asp:Panel runat="server" ID="pnlSurg01Body" class="panel-body">
                                 <div runat="server" id="pnlSurg01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSurg01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -681,7 +689,7 @@
                                 </div>
 
                                 <div class="clearfix"></div>
-                            </div>
+                            </asp:Panel>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelSurg01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKSurg01" Text="ثبت" CssClass="btn-success" />
@@ -700,7 +708,7 @@
                                     مشخصات گانگرن
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <asp:Panel runat="server" ID="pnlGang01Body" class="panel-body">
                                 <div runat="server" id="pnlGang01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblGang01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -725,7 +733,7 @@
                                 </div>
 
                                 <div class="clearfix"></div>
-                            </div>
+                            </asp:Panel>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelGang01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKGang01" Text="ثبت" CssClass="btn-success" />
@@ -744,7 +752,7 @@
                                     مشخصات آمپوتاسیون
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <asp:Panel runat="server" ID="pnlAmp01Body" class="panel-body">
                                 <div runat="server" id="pnlAmp01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblAmp01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -786,7 +794,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                            </div>
+                            </asp:Panel>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelAmp01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKAmp01" Text="ثبت" CssClass="btn-success" />
@@ -835,6 +843,7 @@
                     </div>
                 </div>
             </asp:Panel>
+
             <asp:Panel runat="server" ClientIDMode="Static" ID="pnlSore02" class="modal fade" role="dialog">
                 <asp:Panel runat="server" ID="pnlSore02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
                 <div class="modal-lg modal-dialog media-middle">
