@@ -4,8 +4,9 @@ Public Class RegPatient
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Me.IsPostBack Then
-            hfActivePanelId.Value = Request.Form(hfActivePanelId.UniqueID)
             'MsgBox(hfActivePanelId.Value)
+
+            SetActiveTab(hfActivePanelId.Value)
 
             pnlDemographicMessage.Visible = False
             pnlHistoryMessage.Visible = False
@@ -361,6 +362,7 @@ Public Class RegPatient
         txtNationalCode.Focus()
     End Sub
     Private Sub btnContinueDemographic_Click(sender As Object, e As EventArgs) Handles btnContinueDemographic.Click
+
         If CheckDemographicPanelData() Then Exit Sub
 
         pnlDemographic.Visible = False
@@ -379,6 +381,13 @@ Public Class RegPatient
         hfActivePanelId.Value = "History"
         UpdateDemographicData()
     End Sub
+
+    Private Sub SetActiveTab(tabId As String)
+        If Not String.IsNullOrEmpty(tabId) Then
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "SecActiveTabServerSide", "$('#" & tabId & " > a[data-toggle=tab]').click();", True)
+        End If
+    End Sub
+
     Private Function CheckDemographicPanelData() As Boolean
         If txtNationalCode.Text.Trim = "" Then
             pnlDemographicMessage.Visible = True

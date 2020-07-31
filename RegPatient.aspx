@@ -33,11 +33,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cpNavBar" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cpMain" runat="server">
-
+    <asp:HiddenField runat="server" ID="hfNewPanelVisibility" Value="0" />
+    <asp:HiddenField runat="server" ID="hfActivePanelId" ClientIDMode="Static" />
+            
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            <asp:HiddenField runat="server" ID="hfNewPanelVisibility" Value="0" />
-            <asp:HiddenField runat="server" ID="hfActivePanelId" ClientIDMode="Static" />
             <%--            <asp:HiddenField runat="server" ID="hfExpanedPanelIds" ClientIDMode="Static" />--%>
 
             <div class="panel panel-primary" runat="server" id="pnlDemographic" visible="true">
@@ -149,10 +149,10 @@
             </div>
             <div runat="server" id="pnlPages" visible="false">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="active"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#History" style="font-family: 'B Titr'">تاریخچه بالینی</a></li>
-                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#PhysicalExam" style="font-family: 'B Titr'">معاینه فیزیکی</a></li>
-                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#LabResults" style="font-family: 'B Titr'">جواب آزمایشات</a></li>
-                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#Prescription" style="font-family: 'B Titr'">تجویز پزشک</a></li>
+                    <li runat="server" clientidmode="Static" id="tabHistory" class="active"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#History" style="font-family: 'B Titr'">تاریخچه بالینی</a></li>
+                    <li runat="server" clientidmode="Static" id="tabPhysicalExam"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#PhysicalExam" style="font-family: 'B Titr'">معاینه فیزیکی</a></li>
+                    <li runat="server" clientidmode="Static" id="tabLabResults"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#LabResults" style="font-family: 'B Titr'">جواب آزمایشات</a></li>
+                    <li runat="server" clientidmode="Static" id="tabPrescription"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#Prescription" style="font-family: 'B Titr'">تجویز پزشک</a></li>
                 </ul>
             </div>
             <div class="tab-content">
@@ -1054,25 +1054,9 @@
             </asp:Panel>
 
             <script type="text/javascript">
-
                 SetTabIndex = function (sender, hfId) {
-                    $("#" + hfId.id).val($(sender).attr("href").replace("#", ""));
+                    $("#" + hfId.id).val($(sender).parent().attr("id"));
                 }
-
-                InitTabPage = function (isPostBack) {
-                    var selectedTab = $("#<%=hfActivePanelId.ClientID%>");
-                    //alert(selectedTab.val());
-                    var tabId = selectedTab.val() != "" ? selectedTab.val() : "PhysicalExam";
-                    var tabCtrl = $('a[href="#PhysicalExam"]');
-                    if (!isPostBack)
-                        $('a[href="#' + tabId + '"]').tab('show');
-                }
-
-                $(document).ready(function () {
-                    InitTabPage(false);
-                });
-
-                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InitTabPage(true));
             </script>
         </ContentTemplate>
     </asp:UpdatePanel>
