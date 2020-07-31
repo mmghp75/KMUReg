@@ -511,6 +511,7 @@ Public Class RegPatient
             End If
         End With
         odb.SubmitChanges()
+        Session("Demographic") = oDemographic
     End Sub
     Private Sub btnCancelHistory_Click(sender As Object, e As EventArgs) Handles btnCancelHistory.Click
         If Session("History") IsNot Nothing Then Exit Sub
@@ -1097,7 +1098,7 @@ Public Class RegPatient
         Dim odb As New dbDataContext(ConnectionStringDiabeticFoot)
         Dim oContract As tblContract = New tblContract
         If Session("Contract") Is Nothing Then
-            oContract.HistoryID = Session("Contract").ID
+            oContract.HistoryID = Session("History").ID
             odb.tblContracts.InsertOnSubmit(oContract)
         End If
         Dim _str = ""
@@ -1159,6 +1160,28 @@ Public Class RegPatient
                 End If
                 If rblNewWorstSoreL.SelectedIndex > -1 Then .WorstLeftSoreLU = rblNewWorstSoreL.SelectedValue
                 If rblNewWorstSoreR.SelectedIndex > -1 Then .WorstRightSoreLU = rblNewWorstSoreR.SelectedValue
+                _str = ""
+                For Each oitem As ListItem In cblNewSoreL.Items
+                    If oitem.Selected Then
+                        If _str = "" Then
+                            _str &= oitem.Value
+                        Else
+                            _str &= "," & oitem.Value
+                        End If
+                    End If
+                Next
+                .SoreLocationLeft = _str
+                _str = ""
+                For Each oitem As ListItem In cblNewSoreR.Items
+                    If oitem.Selected Then
+                        If _str = "" Then
+                            _str &= oitem.Value
+                        Else
+                            _str &= "," & oitem.Value
+                        End If
+                    End If
+                Next
+                .SoreLocationRight = _str
             End If
             .Swell = cbxSwell01.Checked
             If cbxSwell01.Checked Then
@@ -1190,13 +1213,41 @@ Public Class RegPatient
                 Next
                 .SwellLocationRight = _str
             End If
+
             'Lab Results
+            .FBS = Val(txtFBS.Text)
+            .A1C = Val(txtA1C.Text)
+            .LabDateOf = dpDateOf02.GetMiladiValue
+            If txtSystol.Text <> "" Then .Systol = Val(txtSystol.Text)
+            If txtDyastol.Text <> "" Then .Dyastol = Val(txtDyastol.Text)
+            If txtO2.Text <> "" Then .O2 = Val(txtO2.Text)
+            If txtHR.Text <> "" Then .HR = Val(txtHR.Text)
+            If txtRR.Text <> "" Then .RR = Val(txtRR.Text)
+            If CType(dpDateOf03.Controls(3).Controls(0), TextBox).Text <> "" Then .VitalSignDateOf = dpDateOf03.GetMiladiValue
 
             'Prescription
-
-
-
+            .Amputation = cbxNeedAmp.Checked
+            .Surgery = cbxNeedSurg.Checked
+            .Debrid = cbxDebrid01.Checked
+            .Shoe = cbxNeedShoe.Checked
+            .Visit = cbxNeedVisit.Checked
+            .Cover = cbxNeedCover.Checked
+            .Consult = cbxNeedEducation.Checked
+            .Rehabilitation = cbxNeedRehab.Checked
+            _str = ""
+            For Each oitem As ListItem In cblDrugs.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .Drug = _str
+            .FreeText = txtFreeText.Text.Trim
         End With
+
         odb.SubmitChanges()
     End Sub
     Private Function CheckboxListisChecked(cbl As CheckBoxList) As Boolean
