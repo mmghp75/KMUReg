@@ -159,6 +159,7 @@
     <Content Include="Content\Spinner\spin.svg" />
     <Content Include="Content\Spinner\spiner.svg" />
     <Content Include="Content\Spinner\Spinner.css" />
+    <Content Include="EditData.aspx" />
     <Content Include="Fonts\Far_Mitra.svg" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Fonts\Roya.svg" />
@@ -188,6 +189,7 @@
     <Content Include="Images\Icons\7.png" />
     <Content Include="Images\Icons\8.png" />
     <Content Include="Images\Icons\9.png" />
+    <Content Include="Images\Icons\edit01.png" />
     <Content Include="Images\Icons\Medical_and_healthcare_flat_icons_set.png" />
     <Content Include="Images\Icons\r01.png" />
     <Content Include="Images\Icons\r02.png" />
@@ -214,6 +216,7 @@
       <LastGenOutput>db.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include=".editorconfig" />
     <None Include="db.dbml.layout">
       <DependentUpon>db.dbml</DependentUpon>
     </None>
@@ -267,6 +270,7 @@
     <Content Include="Styles\fileinput.min.css" />
     <Content Include="Styles\normalize.min.css" />
     <Content Include="Styles\viewer.css" />
+    <Content Include="test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +284,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="EditData.aspx.designer.vb">
+      <DependentUpon>EditData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditData.aspx.vb">
+      <DependentUpon>EditData.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.vb">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -327,6 +338,13 @@
     <Compile Include="Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.vb">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.vb">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

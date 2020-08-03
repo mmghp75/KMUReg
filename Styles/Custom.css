@@ -14,6 +14,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'Far_Mitra';
     src: url('../Fonts/Far_Mitra.otf') format('opentype');
@@ -169,13 +170,14 @@ ul.viewer-toolbar > li, .viewer-toolbar > ul > li, .viewer-toolbar > ul > li + l
 }
 
 .viewer-toolbar > .viewer-play:before {
-    margin: 2px 4px 5px 5px  !important;
+    margin: 2px 4px 5px 5px !important;
 }
 
 /*Start DateTimePicker*/
 .datepicker-plot-area .datepicker-header .btn-prev {
     direction: ltr;
 }
+
 .datepicker-plot-area .datepicker-header .btn-next {
     direction: ltr;
 }
@@ -188,6 +190,7 @@ body {
 .my-MouseCursorDefault {
     cursor: default;
 }
+
 .my-Titr {
     font-family: B Titr;
 }
@@ -195,9 +198,14 @@ body {
 .my-inline-table {
     display: inline-table !important;
 }
+
 .panel-body, .panel {
     margin-left: 0px !important;
     margin-right: 0px !important;
     padding-left: 0px !important;
     padding-right: 0px !important;
+}
+
+.my-Pointer {
+    cursor: pointer;
 }

@@ -21,22 +21,33 @@
                 <div class="clearfix">
                 </div>
                 <div runat="server" id="divMessage" class="alert alert-danger" role="alert" visible="False">
-                    
-                        
-                    <asp:Label runat="server" ID="lblMessage" Text="نام کاربری یا کلمه عبور صحیح نیست." Visible="True"></asp:Label>
+                    <asp:Label runat="server" ID="lblMessage" Text="نام کاربری یا کلمه عبور صحیح نیست." Visible="True"></asp:Label>                    
                 </div>
                 <div class="clearfix">
                 </div>
-                <div style="margin-bottom: 15px" class="input-group  col-xs-12 col-sm-10 text-left ">
+                <div style="margin-bottom: 15px" class="input-group col-xs-12 col-sm-10 text-left ">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <asp:TextBox runat="server" ID="txtUserName" CssClass="form-control" placeholder="نام کاربری" />
+                    <asp:TextBox runat="server" ID="txtUserName" CssClass="form-control" placeholder="نام کاربری" />                    
+                    <span 
+                        class="input-group-addon" 
+                        data-toggle="tooltip" 
+                        data-html="true"
+                        title="<table style='font:calibri; color: yellow;'><tr><td>به حروف کوچک و بزرگ حساس نیست</td></tr></table>">
+                        <i class="glyphicon glyphicon-question-sign"></i>
+                    </span>
                 </div>
                 <div class="clearfix">
                 </div>
                 <div class="input-group col-xs-12 col-sm-10 text-right pull-right" style="margin-bottom: 15px">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control" TextMode="Password"
-                        placeholder="رمز عبور" />
+                    <asp:TextBox runat="server" ID="txtPassword" CssClass="form-control" TextMode="Password" placeholder="رمز عبور" />
+                    <span 
+                        class="input-group-addon" 
+                        data-toggle="tooltip" 
+                        data-html="true"
+                        title="<table style='font:calibri; color: red;'><tr><td>به حروف کوچک و بزرگ حساس است</td></tr></table>">
+                        <i class="glyphicon glyphicon-question-sign"></i>
+                    </span>
                 </div>
                 <div class="clearfix visible-xs">
                 </div>
@@ -45,7 +56,7 @@
                 </div>
                 <div class="clearfix">
                 </div>
-<%--                <div class="col-xs-12">
+                <%--                <div class="col-xs-12">
                     <asp:CheckBox runat="server" ID="cbxRememberMe" Text="مرا به خاطر بسپار" />
                     <br />
                     <asp:LinkButton runat="server" ID="lbtnForgotPassword" Text="رمز عبور خود را فراموش کرده اید؟" />

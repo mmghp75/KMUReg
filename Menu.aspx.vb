@@ -23,15 +23,15 @@ Public Class Menu
 
                 Dim visibleControlList As New List(Of HtmlAnchor)
 
-                visibleControlList.Add(lblAdmission)
-                btnAdmission.Visible = True
-                lblAdmission.Visible = True
+                visibleControlList.Add(lblNew)
+                btnNew.Visible = True
+                lblNew.Visible = True
                 visibleControlList.Add(lblReports)
                 btnReports.Visible = True
                 lblReports.Visible = True
-                visibleControlList.Add(lblSetting)
-                btnSetting.Visible = True
-                lblSetting.Visible = True
+                visibleControlList.Add(lblEdit)
+                btnEdit.Visible = True
+                lblEdit.Visible = True
 
                 rotateControls(visibleControlList)
 
@@ -50,7 +50,7 @@ Public Class Menu
             i += 1
         Next
     End Sub
-    Private Sub lblAdmission_ServerClick(sender As Object, e As EventArgs) Handles lblAdmission.ServerClick
+    Private Sub lblAdmission_ServerClick(sender As Object, e As EventArgs) Handles lblNew.ServerClick
         Dim oID As Integer = Session("User").ID
         oUser = (From o In odb.tblUsers Where o.ID = oID).FirstOrDefault
 
@@ -61,9 +61,14 @@ Public Class Menu
         Dim oID As Integer = Session("User").ID
         oUser = (From o In odb.tblUsers Where o.ID = oID).FirstOrDefault
 
-        Dim _str = "AdmitOutPatient_Physio.aspx"
+        Dim _str = "Reports.aspx"
         Response.Redirect(_str)
     End Sub
-    Private Sub lblSetting_ServerClick(sender As Object, e As EventArgs) Handles lblSetting.ServerClick
+    Private Sub lblEdit_ServerClick(sender As Object, e As EventArgs) Handles lblEdit.ServerClick
+        Dim oID As Integer = Session("User").ID
+        oUser = (From o In odb.tblUsers Where o.ID = oID).FirstOrDefault
+
+        Dim _str = "EditData.aspx"
+        Response.Redirect(_str)
     End Sub
 End Class

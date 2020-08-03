@@ -6,6 +6,7 @@ Public Class RegPatient
         If Me.IsPostBack Then
             'hfActivePanelId.Value = Request.Form(hfActivePanelId.UniqueID)
             'MsgBox(hfActivePanelId.Value)
+            SetActiveTab(hfActivePanelId.Value)
 
             pnlDemographicMessage.Visible = False
             pnlHistoryMessage.Visible = False
@@ -30,6 +31,11 @@ Public Class RegPatient
             Session("Demographic") = Nothing
         End If
     End Sub
+    Private Sub SetActiveTab(tabId As String)
+        If Not String.IsNullOrEmpty(tabId) Then
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "SecActiveTabServerSide", "$('#" & tabId & " > a[data-toggle=tab]').click();", True)
+        End If
+    End Sub
     Private Sub cbxSore01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore01.CheckedChanged
         If Session("History") IsNot Nothing Then cbxSore01.Checked = Not cbxSore01.Checked
         If cbxSore01.Checked Then
@@ -41,6 +47,7 @@ Public Class RegPatient
             pnlSore01.CssClass = "modal fade in"
             pnlSore01Back.Visible = True
 
+            txtDuration01.Focus()
             hfActivePanelId.Value = "History"
         End If
 
@@ -57,6 +64,7 @@ Public Class RegPatient
             pnlLaser01.CssClass = "modal fade in"
             pnlLaser01Back.Visible = True
 
+            txtDuration02.Focus()
             hfActivePanelId.Value = "History"
         End If
     End Sub
@@ -71,6 +79,7 @@ Public Class RegPatient
             pnlDebrid01.CssClass = "modal fade in"
             pnlDebrid01Back.Visible = True
 
+            txtDuration03.Focus()
             hfActivePanelId.Value = "History"
         End If
     End Sub
@@ -85,6 +94,7 @@ Public Class RegPatient
             pnlGang01.CssClass = "modal fade in"
             pnlGang01Back.Visible = True
 
+            txtDuration04.Focus()
             hfActivePanelId.Value = "History"
         End If
     End Sub
@@ -99,6 +109,7 @@ Public Class RegPatient
             pnlSurg01.CssClass = "modal fade in"
             pnlSurg01Back.Visible = True
 
+            txtDuration05.Focus()
             hfActivePanelId.Value = "History"
         End If
     End Sub
@@ -113,6 +124,7 @@ Public Class RegPatient
             pnlAmp01.CssClass = "modal fade in"
             pnlAmp01Back.Visible = True
 
+            txtDuration06.Focus()
             hfActivePanelId.Value = "History"
         End If
     End Sub
@@ -126,7 +138,7 @@ Public Class RegPatient
             pnlInPatient01.Attributes("aria-hidden") = "false"
             pnlInPatient01.CssClass = "modal fade in"
             pnlInPatient01Back.Visible = True
-
+            txtSurg01Cause.Focus()
             hfActivePanelId.Value = "History"
         End If
     End Sub
@@ -242,16 +254,6 @@ Public Class RegPatient
         pnlAmp01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxAmp01.Checked = False
-    End Sub
-    Private Sub btnOKInPatient01_Click(sender As Object, e As EventArgs) Handles btnOKInPatient01.Click
-        If Not CheckpnlInPatient() Then Exit Sub
-        If lblInPatient01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlInPatient01.Style.Item("display") = "none"
-            pnlInPatient01Back.Visible = False
-        End If
-
-        btnCancelInPatient01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelInPatient01_Click(sender As Object, e As EventArgs) Handles btnCancelInPatient01.Click
         hfNewPanelVisibility.Value = 0
@@ -652,13 +654,13 @@ Public Class RegPatient
         txtFreeText.Text = ""
 
         hfActivePanelId.Value = "Prescription"
-        Dim oScript As String = "var selectedTab = $(""#<%=hfActivePanelId.ClientID%>"");" & vbCrLf &
-                                "var tabId = selectedTab.val() != """" ? selectedTab.val() : ""PhysicalExam"";" & vbCrLf &
-                                "$('#dvTab a[href=""#' + tabId + '""]').tab('show');" & vbCrLf &
-                                "$(""#dvTab a"").click(function () {" & vbCrLf &
-                                "    selectedTab.val($(this).attr(""href"").substring(1));" & vbCrLf &
-                                "});"
-        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "ActiveLastTab", oScript, True)
+        'Dim oScript As String = "var selectedTab = $(""#<%=hfActivePanelId.ClientID%>"");" & vbCrLf &
+        '                        "var tabId = selectedTab.val() != """" ? selectedTab.val() : ""PhysicalExam"";" & vbCrLf &
+        '                        "$('#dvTab a[href=""#' + tabId + '""]').tab('show');" & vbCrLf &
+        '                        "$(""#dvTab a"").click(function () {" & vbCrLf &
+        '                        "    selectedTab.val($(this).attr(""href"").substring(1));" & vbCrLf &
+        '                        "});"
+        'ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "ActiveLastTab", oScript, True)
     End Sub
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
 
@@ -667,18 +669,24 @@ Public Class RegPatient
                 pnlHistoryMessage.Visible = True
                 lbllHistoryMessage.Text = "نوع دیابت را تعیین نکرده اید."
 
+                hfActivePanelId.Value = "History"
+                SetActiveTab(hfActivePanelId.Value)
                 rblDiabetTypeOf.Focus()
                 Exit Sub
             ElseIf txtDateOf01.Text = "" AndAlso Not dpDateOf01.GetMiladiValue.HasValue Then
                 pnlHistoryMessage.Visible = True
                 lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت را تعیین نکرده اید."
 
+                hfActivePanelId.Value = "History"
+                SetActiveTab(hfActivePanelId.Value)
                 txtDateOf01.Focus()
                 Exit Sub
             ElseIf isNotValidDateOf(Val(txtDateOf01.Text.Trim), 0, 1000, dpDateOf01.GetMiladiValue, "Y") Then
                 pnlHistoryMessage.Visible = True
                 lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت در محدوده‌ی قابل قبول نمی‌باشد."
 
+                hfActivePanelId.Value = "History"
+                SetActiveTab(hfActivePanelId.Value)
                 txtDateOf01.Focus()
                 Exit Sub
             End If
@@ -688,36 +696,48 @@ Public Class RegPatient
             pnlPhysicalExamMessage.Visible = True
             lblPhysicalExamMessage.Text = "علت مراجعه را ثبت نکرده اید."
 
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
             txtCC.Focus()
             Exit Sub
         ElseIf Not dpContract.GetMiladiValue.HasValue Then
             pnlPhysicalExamMessage.Visible = True
             lblPhysicalExamMessage.Text = "تاریخ مراجعه را تعیین نکرده اید."
 
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
             dpContract.Focus()
             Exit Sub
         ElseIf txtFBS.Text = "" Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار FBS را ثبت نکرده اید."
 
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
             txtFBS.Focus()
             Exit Sub
         ElseIf txtA1C.Text = "" Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار A1C را ثبت نکرده اید."
 
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
             txtA1C.Focus()
             Exit Sub
         ElseIf Not dpDateOf02.GetMiladiValue.HasValue Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "تاریخ انجام آزمایشات را ثبت نکرده اید."
 
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
             dpDateOf02.Focus()
             Exit Sub
         ElseIf (txtSystol.Text <> "" OrElse txtDyastol.Text <> "" OrElse txtHR.Text <> "" OrElse txtRR.Text <> "" OrElse txtO2.Text <> "") AndAlso Not dpDateOf03.GetMiladiValue.HasValue Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار تاریخ ثبت علائم حیاتی را وارد نکرده اید."
 
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
         End If
@@ -756,8 +776,7 @@ Public Class RegPatient
             btnCancelDemographic_Click(Nothing, Nothing)
             Exit Sub
         End If
-
-        FillDemographic("FileNo")
+        SetDemoGraphicReadonly(FillDemographic("FileNo"))
     End Sub
     Private Sub txtNationalCode_TextChanged(sender As Object, e As EventArgs) Handles txtNationalCode.TextChanged
         If txtNationalCode.Text.Trim = "" Then
@@ -765,9 +784,22 @@ Public Class RegPatient
             Exit Sub
         End If
 
-        FillDemographic("NationalID")
+        SetDemoGraphicReadonly(FillDemographic("NationalID"))
     End Sub
-    Private Sub FillDemographic(oFieldName As String)
+    Private Sub SetDemoGraphicReadonly(Optional _readonly As Boolean = True)
+        txtFirstName.Enabled = _readonly
+        txtLastName.Enabled = _readonly
+        rblGender.Enabled = _readonly
+        pnlBirthDateOf.Enabled = _readonly
+        txtHeight.Enabled = _readonly
+        txtWeight.Enabled = _readonly
+        rblMarriage.Enabled = _readonly
+        txtCellNo.Enabled = _readonly
+        txtPhoneNo.Enabled = _readonly
+        rblEducation.Enabled = _readonly
+        txtAddress.Enabled = _readonly
+    End Sub
+    Private Function FillDemographic(oFieldName As String) As Boolean
         Dim odb As New dbDataContext(ConnectionStringDemographic)
         Dim oDemographic As tblDemographic = Nothing
         If oFieldName.ToLower = "FileNo".ToLower Then
@@ -792,10 +824,36 @@ Public Class RegPatient
                 txtPhoneNo.Text = .PhoneNo
                 txtAddress.Text = .AddressOf
             End With
+            Return (oDemographic Is Nothing)
         ElseIf oFieldName.ToLower = "FileNo".ToLower Then
             pnlDemographicMessage.Visible = True
             lblDemographicMessage.Text = "پرونده‌ای با شماره " & txtFileNo.Text.Trim & " یافت نشد."
         End If
+
+        If oFieldName.ToLower = "FileNo".ToLower Then
+            ClearDemographicButTop()
+            txtNationalCode.Text = ""
+        ElseIf oFieldName.ToLower = "NationalID".ToLower Then
+            ClearDemographicButTop()
+            txtFileNo.Text = ""
+        End If
+
+        Return (oDemographic Is Nothing)
+    End Function
+    Private Sub ClearDemographicButTop()
+        txtFirstName.Text = ""
+        txtLastName.Text = ""
+        rblGender.SelectedIndex = -1
+        txtAgeOf.Text = ""
+        dpBirthDateOf.Clear()
+        txtHeight.Text = ""
+        txtWeight.Text = ""
+        rblMarriage.SelectedIndex = -1
+        txtCellNo.Text = ""
+        txtPhoneNo.Text = ""
+        rblEducation.SelectedIndex = -1
+        txtAddress.Text = ""
+
     End Sub
     Private Sub btnCancelReg_Click(sender As Object, e As EventArgs) Handles btnCancelReg.Click
         pnlHistory.Visible = False
@@ -817,6 +875,7 @@ Public Class RegPatient
         pnlGang01Body.Enabled = True
         pnlAmp01Body.Enabled = True
         pnlSurg01Body.Enabled = True
+        pnlInPatient01Body.Enabled = True
 
     End Sub
     Private Sub FillHistory()
@@ -910,6 +969,7 @@ Public Class RegPatient
             pnlGang01Body.Enabled = False
             pnlAmp01Body.Enabled = False
             pnlSurg01Body.Enabled = False
+            pnlInPatient01Body.Enabled = False
         End If
 
     End Sub
@@ -1105,9 +1165,9 @@ Public Class RegPatient
         With oContract
             'Physical Exam
             .CC = txtCC.Text.Trim
-            .DryLU = rblDry.SelectedValue
-            .HeatLU = rblTemp.SelectedValue
-            .Infection = cbxInfect01.Checked
+            .ContractDateOf = dpContract.GetMiladiValue
+            If rblDry.SelectedIndex > -1 Then .DryLU = rblDry.SelectedValue
+            If rblTemp.SelectedIndex > -1 Then .HeatLU = rblTemp.SelectedValue
             If cbxInfect01.Checked Then
                 If CType(dpNewInfect.Controls(3).Controls(0), TextBox).Text <> "" Then
                     .InfectionDateOf = dpNewInfect.GetMiladiValue

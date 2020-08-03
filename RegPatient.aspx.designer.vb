@@ -113,6 +113,15 @@ Partial Public Class RegPatient
     Protected WithEvents rblGender As Global.System.Web.UI.WebControls.RadioButtonList
 
     '''<summary>
+    '''pnlBirthDateOf control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlBirthDateOf As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''txtAgeOf control.
     '''</summary>
     '''<remarks>
@@ -246,6 +255,42 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlPages As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''tabHistory control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tabHistory As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''tabPhysicalExam control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tabPhysicalExam As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''tabLabResults control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tabLabResults As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''tabPrescription control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tabPrescription As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''pnlHistory control.
@@ -914,15 +959,6 @@ Partial Public Class RegPatient
     Protected WithEvents btnCancelPrescription As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''btnOK control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnOK As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''btnCancelReg control.
     '''</summary>
     '''<remarks>
@@ -930,6 +966,15 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnCancelReg As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnOK control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnOK As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''pnlSore01 control.
@@ -1650,6 +1695,15 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents pnlInPatient01Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlInPatient01Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlInPatient01Body As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''pnlInPatient01MSG control.

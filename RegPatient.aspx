@@ -30,14 +30,12 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cpNavBar" runat="server">
-</asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cpMain" runat="server">
+    <asp:HiddenField runat="server" ID="hfNewPanelVisibility" Value="0" />
+    <asp:HiddenField runat="server" ID="hfActivePanelId" ClientIDMode="Static" />
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
-            <asp:HiddenField runat="server" ID="hfNewPanelVisibility" Value="0" />
-            <asp:HiddenField runat="server" ID="hfActivePanelId" ClientIDMode="Static" />
             <%--            <asp:HiddenField runat="server" ID="hfExpanedPanelIds" ClientIDMode="Static" />--%>
 
             <div class="panel panel-primary" runat="server" id="pnlDemographic" visible="true">
@@ -69,20 +67,22 @@
                         <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                             <div class="input-group">
                                 <asp:Label Text="* جنسیت:" Class="input-group-addon" runat="server" ID="Label4" Font-Bold="true" />
-                                <asp:RadioButtonList runat="server" Class="form-control my-inline-table" RepeatLayout="Flow" ID="rblGender" RepeatColumns="2">
-                                    <asp:ListItem Text="&nbsp;&nbsp;مذکر" Value="1" />
+                                <asp:RadioButtonList runat="server" ID="rblGender" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
+                                    <asp:ListItem Text="&nbsp;&nbsp;مذکر" Value="1" Style="margin-right: 5px;" />
                                     <asp:ListItem Text="&nbsp;&nbsp;مؤنث" Value="2" Style="margin-right: 5px;" />
                                 </asp:RadioButtonList>
                             </div>
                         </div>
                         <div class="col-xs-6 text-right" style="margin-bottom: 15px">
-                            <div class="input-group">
-                                <asp:TextBox class="form-control" runat="server" ID="txtAgeOf" PlaceHolder="سن(سال)" ToolTip="سن(سال)" TextMode="Number"></asp:TextBox>
-                                <span class="input-group-addon">* یاتاریخ‌تولد</span>
-                                <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
-                                    <cc1:DateTimePicker ID="dpBirthDateOf" runat="server" EnableTheming="true" CssClass="text-left" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ تولد" />
+                            <asp:Panel runat="server" ID="pnlBirthDateOf">
+                                <div class="input-group">
+                                    <asp:TextBox class="form-control" runat="server" ID="txtAgeOf" PlaceHolder="سن(سال)" ToolTip="سن(سال)" TextMode="Number"></asp:TextBox>
+                                    <span class="input-group-addon">* یاتاریخ‌تولد</span>
+                                    <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                        <cc1:DateTimePicker ID="dpBirthDateOf" runat="server" EnableTheming="true" CssClass="text-left" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ تولد" />
+                                    </div>
                                 </div>
-                            </div>
+                            </asp:Panel>
                         </div>
                         <div class="clearfix">
                         </div>
@@ -149,10 +149,10 @@
             </div>
             <div runat="server" id="pnlPages" visible="false">
                 <ul class="nav nav-tabs" role="tablist">
-                    <li class="active"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#History" style="font-family: 'B Titr'">تاریخچه بالینی</a></li>
-                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#PhysicalExam" style="font-family: 'B Titr'">معاینه فیزیکی</a></li>
-                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#LabResults" style="font-family: 'B Titr'">جواب آزمایشات</a></li>
-                    <li><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#Prescription" style="font-family: 'B Titr'">تجویز پزشک</a></li>
+                    <li runat="server" clientidmode="Static" id="tabHistory" class="active"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#History" style="font-family: 'B Titr'">تاریخچه بالینی</a></li>
+                    <li runat="server" clientidmode="Static" id="tabPhysicalExam"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#PhysicalExam" style="font-family: 'B Titr'">معاینه فیزیکی</a></li>
+                    <li runat="server" clientidmode="Static" id="tabLabResults"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#LabResults" style="font-family: 'B Titr'">جواب آزمایشات</a></li>
+                    <li runat="server" clientidmode="Static" id="tabPrescription"><a data-toggle="tab" onclick="SetTabIndex(this, hfActivePanelId);" href="#Prescription" style="font-family: 'B Titr'">تجویز پزشک</a></li>
                 </ul>
             </div>
             <div class="tab-content">
@@ -266,13 +266,13 @@
                             <div runat="server" id="pnlPhysicalExamMessage" class="alert alert-danger" role="alert" visible="False">
                                 <asp:Label runat="server" ID="lblPhysicalExamMessage" Text="پیام مورد نظر در اینجا قرار میگیرد." />
                             </div>
-                            <div class="panel col-xs-12" style="margin-bottom: 15px">
-                                <div class="col-xs-9 text-right">
+                            <div class="panel col-xs-12">
+                                <div class="col-xs-6 text-right">
                                     <asp:TextBox ID="txtCC" runat="server" MaxLength="10" Placeholder="* علت مراجعه" ToolTip="علت مراجعه" CssClass="form-control"></asp:TextBox>
                                 </div>
-                                <div class="col-xs-3 text-right" style="margin-bottom: 15px">
+                                <div class="col-xs-6 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
-                                        <span class="input-group-addon">* تاریخ‌مراجعه</span>
+                                        <span class="input-group-addon">* تاریخ مراجعه</span>
                                         <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
                                             <cc1:DateTimePicker ID="dpContract" runat="server" EnableTheming="true" CssClass="text-left" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ مراجعه" />
                                         </div>
@@ -280,16 +280,16 @@
                                 </div>
                                 <div class="clearfix">
                                 </div>
-                                <div class="col-xs-4 text-right">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxSore02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxInfect01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;عفونت" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="col-xs-4 text-right">
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxSwell01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;تورم، تاول و قرمزی" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="clearfix" style="margin-bottom: 15px"></div>
+                                <div class="clearfix"></div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="نوروپاتی:" CssClass="input-group-addon" runat="server" ID="Label9" Font-Bold="true" />
@@ -319,7 +319,7 @@
                                         </asp:RadioButtonList>
                                     </div>
                                 </div>
-                                <div class="clearfix" style="margin-bottom: 15px">
+                                <div class="clearfix">
                                 </div>
                             </div>
                         </div>
@@ -480,10 +480,10 @@
                                     <asp:Button runat="server" ID="btnCancelPrescription" Text="پاک کردن صفحه" CssClass="btn-danger" Width="100%" Font-Names="Titr" />
                                 </div>
                                 <div class="col-xs-2">
-                                    <asp:Button runat="server" ID="btnOK" Text="ثبت" CssClass="btn-success" Width="100%" Font-Names="Titr" />
+                                    <asp:Button runat="server" ID="btnCancelReg" Text="انصراف" CssClass="btn-danger" Width="100%" Font-Names="Titr" />
                                 </div>
                                 <div class="col-xs-2">
-                                    <asp:Button runat="server" ID="btnCancelReg" Text="انصراف" CssClass="btn-danger" Width="100%" Font-Names="Titr" />
+                                    <asp:Button runat="server" ID="btnOK" Text="ثبت" CssClass="btn-success" Width="100%" Font-Names="Titr" />
                                 </div>
                             </div>
                         </div>
@@ -499,7 +499,7 @@
                             <div class="panel-heading">
                                 <div class="panel-title">مشخصات زخم</div>
                             </div>
-                            <asp:Panel runat="server" ID="pnlSore01Body" class="panel-body">
+                            <asp:Panel runat="server" class="panel-body" ID="pnlSore01Body">
                                 <div runat="server" id="pnlSore01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSore01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -556,7 +556,7 @@
                                     مشخصات لیزرتراپی انجام شده
                                 </div>
                             </div>
-                            <asp:Panel runat="server" ID="pnlLaser01Body" class="panel-body">
+                            <asp:Panel runat="server" class="panel-body" ID="pnlLaser01Body">
                                 <div runat="server" id="pnlLaser01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblLaser01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -600,7 +600,7 @@
                                     مشخصات دبریدمان انجام شده
                                 </div>
                             </div>
-                            <asp:Panel runat="server" ID="pnlDebrid01Body" class="panel-body">
+                            <asp:Panel runat="server" class="panel-body" ID="pnlDebrid01Body">
                                 <div runat="server" id="pnlDebrid01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblDebrid01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -648,7 +648,7 @@
                                     مشخصات جراحی‌ها
                                 </div>
                             </div>
-                            <asp:Panel runat="server" ID="pnlSurg01Body" class="panel-body">
+                            <asp:Panel runat="server" class="panel-body" ID="pnlSurg01Body">
                                 <div runat="server" id="pnlSurg01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblSurg01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -708,7 +708,7 @@
                                     مشخصات گانگرن
                                 </div>
                             </div>
-                            <asp:Panel runat="server" ID="pnlGang01Body" class="panel-body">
+                            <asp:Panel runat="server" class="panel-body" ID="pnlGang01Body">
                                 <div runat="server" id="pnlGang01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblGang01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -752,7 +752,7 @@
                                     مشخصات آمپوتاسیون
                                 </div>
                             </div>
-                            <asp:Panel runat="server" ID="pnlAmp01Body" class="panel-body">
+                            <asp:Panel runat="server" class="panel-body" ID="pnlAmp01Body">
                                 <div runat="server" id="pnlAmp01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblAmp01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -813,7 +813,7 @@
                                     مشخصات سابقه بستری
                                 </div>
                             </div>
-                            <div class="panel-body">
+                            <asp:Panel runat="server" class="panel-body" ID="pnlInPatient01Body">
                                 <div runat="server" id="pnlInPatient01MSG" class="alert alert-danger" role="alert" visible="False">
                                     <asp:Label runat="server" ID="lblInPatient01MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
                                 </div>
@@ -834,7 +834,7 @@
                                     </div>
                                 </div>
                                 <div class="clearfix"></div>
-                            </div>
+                            </asp:Panel>
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelInPatient01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKInPatient01" Text="ثبت" CssClass="btn-success" />
@@ -843,7 +843,6 @@
                     </div>
                 </div>
             </asp:Panel>
-
             <asp:Panel runat="server" ClientIDMode="Static" ID="pnlSore02" class="modal fade" role="dialog">
                 <asp:Panel runat="server" ID="pnlSore02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
                 <div class="modal-lg modal-dialog media-middle">
@@ -1063,25 +1062,9 @@
             </asp:Panel>
 
             <script type="text/javascript">
-
                 SetTabIndex = function (sender, hfId) {
-                    $("#" + hfId.id).val($(sender).attr("href").replace("#", ""));
+                    $("#" + hfId.id).val($(sender).parent().attr("id"));
                 }
-
-                InitTabPage = function (isPostBack) {
-                    var selectedTab = $("#<%=hfActivePanelId.ClientID%>");
-                    //alert(selectedTab.val());
-                    var tabId = selectedTab.val() != "" ? selectedTab.val() : "PhysicalExam";
-                    var tabCtrl = $('a[href="#PhysicalExam"]');
-                    if (!isPostBack)
-                        $('a[href="#' + tabId + '"]').tab('show');
-                }
-
-                $(document).ready(function () {
-                    InitTabPage(false);
-                });
-
-                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(InitTabPage(true));
             </script>
         </ContentTemplate>
     </asp:UpdatePanel>

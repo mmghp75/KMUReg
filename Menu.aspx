@@ -115,13 +115,13 @@
     </div>
     <div class='circle-container'>
         <img src='Images/Main_Hospital.png'>
-        <a runat="server" id="lblAdmission" class='deg0 icon-lg' visible="False">
-            <img runat="server" id="btnAdmission" class="icon-lg" src='Images/Icons/r01.png' visible="False" /><center style="color: Red">ثبت داده‌ی جدید</center>
+        <a runat="server" id="lblNew" class='deg0 icon-lg' visible="False">
+            <img runat="server" id="btnNew" class="icon-lg" src='Images/Icons/r01.png' visible="False" /><center style="color: Red">ثبت داده‌ی جدید</center>
         </a><a runat="server" id="lblReports" class='deg135 icon-lg' visible="False">
             <img runat="server" id="btnReports" class="icon-lg" src='Images/Icons/17.png' visible="False"><center style="color: Red">گزارشات</center>
         </a><a runat="server" id="lblInsurance" class='deg180 icon-lg' visible="False">
-        </a><a runat="server" id="lblSetting" class='deg315 icon-lg' visible="False">
-            <img runat="server" id="btnSetting" class="icon-lg" src='Images/Icons/12.png' visible="False"><center style="color: Red">تنظیمات</center>
+        </a><a runat="server" id="lblEdit" class='deg315 icon-lg' visible="False">
+            <img runat="server" id="btnEdit" class="icon-lg" src='Images/Icons/edit01.png' visible="False"><center style="color: Red">ویرایش داده‌ها</center>
         </a>
     </div>
 </asp:Content>

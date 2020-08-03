@@ -59,22 +59,22 @@ Partial Public Class Menu
     Protected WithEvents ddlUser As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''lblAdmission control.
+    '''lblNew control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblAdmission As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents lblNew As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
-    '''btnAdmission control.
+    '''btnNew control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnAdmission As Global.System.Web.UI.HtmlControls.HtmlImage
+    Protected WithEvents btnNew As Global.System.Web.UI.HtmlControls.HtmlImage
 
     '''<summary>
     '''lblReports control.
@@ -104,20 +104,20 @@ Partial Public Class Menu
     Protected WithEvents lblInsurance As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
-    '''lblSetting control.
+    '''lblEdit control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblSetting As Global.System.Web.UI.HtmlControls.HtmlAnchor
+    Protected WithEvents lblEdit As Global.System.Web.UI.HtmlControls.HtmlAnchor
 
     '''<summary>
-    '''btnSetting control.
+    '''btnEdit control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnSetting As Global.System.Web.UI.HtmlControls.HtmlImage
+    Protected WithEvents btnEdit As Global.System.Web.UI.HtmlControls.HtmlImage
 End Class
