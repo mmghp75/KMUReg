@@ -291,6 +291,26 @@
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxLaser02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;لیزر" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxDebrid02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;دبریدمان" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxGang02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxAmp02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxSurg02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;جراحی" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxInPatient02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;بستری" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="نوروپاتی:" CssClass="input-group-addon" runat="server" ID="Label9" Font-Bold="true" />
                                         <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="cblNeuropathy" RepeatColumns="2">
@@ -377,7 +397,7 @@
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:TextBox runat="server" ID="txtHR" PlaceHolder="تعداد ضربان قلب در دقیقه" ToolTip="تعداد ضربان قلب در دقیقه" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtHR" PlaceHolder="تعداد ضربان قلب در دقیقه" ToolTip="تعداد ضربان قلب در دقیقه" CssClass="form-control" TextMode="Number" MaxLength="4" ValidateRequestMode="Inherit"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtRR" PlaceHolder="تعداد تنفس در دقیقه" ToolTip="تعداد تنفس در دقیقه" CssClass="form-control" TextMode="Number"></asp:TextBox>
@@ -565,7 +585,7 @@
                                         <asp:TextBox runat="server" ID="txtDuration02" PlaceHolder="زمان درمان(چندماه‌پیش؟)" ToolTip="زمان درمان(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
                                         <asp:Label Text="* یا تاریخ آخرین درمان با لیزر:" CssClass="input-group-addon" runat="server" ID="Label19" />
                                         <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
-                                            <cc1:DateTimePicker ID="dpLastLaser01" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ آخرین زخم" />
+                                            <cc1:DateTimePicker ID="dpLastLaser01" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ لیزر زخم" />
                                         </div>
                                     </div>
                                 </div>
@@ -1055,6 +1075,303 @@
                             <div class="panel-footer text-left">
                                 <asp:Button runat="server" ID="btnCancelSwell01" Text="انصراف" CssClass="btn-danger" />
                                 <asp:Button runat="server" ID="btnOKSwell01" Text="ثبت" CssClass="btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+            <asp:Panel runat="server" ClientIDMode="Static" ID="pnlLaser02" class="modal fade" role="dialog">
+                <asp:Panel runat="server" ID="pnlLaser02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
+                <div class="modal-dialog media-middle">
+                    <div class="modal-content">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    مشخصات لیزرتراپی
+                                </div>
+                            </div>
+                            <asp:Panel runat="server" class="panel-body" ID="pnlLaser02Body">
+                                <div runat="server" id="pnlLaser02MSG" class="alert alert-danger" role="alert" visible="False">
+                                    <asp:Label runat="server" ID="lblLaser02MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
+                                </div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:TextBox runat="server" ID="txtDuration11" PlaceHolder="زمان درمان(چندماه‌پیش؟)" ToolTip="زمان درمان(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label Text="* یا تاریخ درمان با لیزر:" CssClass="input-group-addon" runat="server" ID="Label6" />
+                                        <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                            <cc1:DateTimePicker ID="dpLastLaser02" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ لیزرزخم" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-right">
+                                    <div class="input-group">
+                                        <asp:Label Text="* محل لیزرتراپی‌های جدید:" CssClass="input-group-addon" runat="server" ID="Label12" />
+                                        <asp:CheckBoxList runat="server" ID="cblLaser02" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
+                                            <asp:ListItem Text="&nbsp;&nbsp;پای چپ" Value="1" Style="margin-right: 50px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;پای راست" Value="2" Style="margin-right: 50px;" />
+                                        </asp:CheckBoxList>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </asp:Panel>
+                            <div class="panel-footer text-left">
+                                <asp:Button runat="server" ID="btnCancelLaser02" Text="انصراف" CssClass="btn-danger" />
+                                <asp:Button runat="server" ID="btnOKLaser02" Text="ثبت" CssClass="btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+            <asp:Panel runat="server" ClientIDMode="Static" ID="pnlDebrid02" class="modal fade" role="dialog">
+                <asp:Panel runat="server" ID="pnlDebrid02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
+                <div class="modal-dialog media-middle">
+                    <div class="modal-content">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    مشخصات دبریدمان
+                                </div>
+                            </div>
+                            <asp:Panel runat="server" class="panel-body" ID="pnlDebrid02Body">
+                                <div runat="server" id="pnlDebrid02MSG" class="alert alert-danger" role="alert" visible="False">
+                                    <asp:Label runat="server" ID="lblDebrid02MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
+                                </div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:TextBox runat="server" ID="txtDuration12" PlaceHolder="زمان دبرید(چندماه‌پیش؟)" ToolTip="زمان دبرید(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label Text="* یا تاریخ دبریدمان:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label13" />
+                                        <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                            <cc1:DateTimePicker ID="dpLastDebrid02" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ دبریدمان" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-right">
+                                    <div class="input-group">
+                                        <asp:Label Text="* محل دبریدمان:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label14" />
+                                        <asp:CheckBoxList runat="server" ID="cblDebrid02" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="5">
+                                            <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 10px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 10px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;پاشنه" Value="4" Style="margin-right: 10px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;بالاترازمچ" Value="5" Style="margin-right: 10px;" />
+                                        </asp:CheckBoxList>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </asp:Panel>
+                            <div class="panel-footer text-left">
+                                <asp:Button runat="server" ID="btnCancelDebrid02" Text="انصراف" CssClass="btn-danger" />
+                                <asp:Button runat="server" ID="btnOKDebrid02" Text="ثبت" CssClass="btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+            <asp:Panel runat="server" ClientIDMode="Static" ID="pnlSurg02" class="modal fade" role="dialog">
+                <asp:Panel runat="server" ID="pnlSurg02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
+                <div class="col-xs-3"></div>
+                <div class="modal-dialog media-middle col-xs-7">
+                    <div class="modal-content">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    مشخصات جراحی
+                                </div>
+                            </div>
+                            <asp:Panel runat="server" class="panel-body" ID="pnlSurg02Body">
+                                <div runat="server" id="pnlSurg02MSG" class="alert alert-danger" role="alert" visible="False">
+                                    <asp:Label runat="server" ID="lblSurg02MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
+                                </div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:TextBox runat="server" ID="txtDuration13" PlaceHolder="زمان جراحی(چندماه‌پیش؟)" ToolTip="زمان جراحی(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label Text="* یا تاریخ جراحی:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label40" />
+                                        <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                            <cc1:DateTimePicker ID="dpLastSurg02" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ جراحی" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:Label Text="* محل جراحی پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label46" />
+                                        <asp:CheckBoxList runat="server" ID="CheckBoxList1" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="5">
+                                            <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;پاشنه" Value="4" Style="margin-right: 40px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;بالاترازمچ" Value="5" Style="margin-right: 40px;" />
+                                        </asp:CheckBoxList>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:Label Text="* محل جراحی پای‌راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label47" />
+                                        <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="CheckBoxList2" RepeatColumns="5">
+                                            <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;پاشنه" Value="4" Style="margin-right: 40px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;بالاترازمچ" Value="5" Style="margin-right: 40px;" />
+                                        </asp:CheckBoxList>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </asp:Panel>
+                            <div class="panel-footer text-left">
+                                <asp:Button runat="server" ID="btnCancelSurg02" Text="انصراف" CssClass="btn-danger" />
+                                <asp:Button runat="server" ID="btnOKSurg02" Text="ثبت" CssClass="btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+            <asp:Panel runat="server" ClientIDMode="Static" ID="pnlGang02" class="modal fade" role="dialog">
+                <asp:Panel runat="server" ID="pnlGang02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
+                <div class="modal-dialog media-middle">
+                    <div class="modal-content">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    مشخصات گانگرن
+                                </div>
+                            </div>
+                            <asp:Panel runat="server" class="panel-body" ID="pnlGang02Body">
+                                <div runat="server" id="pnlGang02MSG" class="alert alert-danger" role="alert" visible="False">
+                                    <asp:Label runat="server" ID="lblGang02MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
+                                </div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:TextBox runat="server" ID="txtDuration14" PlaceHolder="زمان گانگرن(چندماه‌پیش؟)" ToolTip="زمان گانگرن(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label Text="* یا تاریخ گانگرن:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label48" />
+                                        <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                            <cc1:DateTimePicker ID="dpLastGang02" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ گانگرن" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:Label Text=" محل گانگرن:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label49" />
+                                        <asp:CheckBoxList runat="server" ID="CheckBoxList3" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
+                                            <asp:ListItem Text="&nbsp;&nbsp;پای چپ" Value="1" Style="margin-right: 50px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;پای راست" Value="2" Style="margin-right: 50px;" />
+                                        </asp:CheckBoxList>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </asp:Panel>
+                            <div class="panel-footer text-left">
+                                <asp:Button runat="server" ID="btnCancelGang02" Text="انصراف" CssClass="btn-danger" />
+                                <asp:Button runat="server" ID="btnOKGang02" Text="ثبت" CssClass="btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+            <asp:Panel runat="server" ClientIDMode="Static" ID="pnlAmp02" class="modal fade" role="dialog">
+                <asp:Panel runat="server" ID="pnlAmp02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
+                <div class="modal-dialog media-middle">
+                    <div class="modal-content">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    مشخصات آمپوتاسیون
+                                </div>
+                            </div>
+                            <asp:Panel runat="server" class="panel-body" ID="pnlAmp02Body">
+                                <div runat="server" id="pnlAmp02MSG" class="alert alert-danger" role="alert" visible="False">
+                                    <asp:Label runat="server" ID="lblAmp02MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
+                                </div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:TextBox runat="server" ID="txtDuration15" PlaceHolder="زمان آمپوتاسیون(چندماه‌پیش؟)" ToolTip="زمان آمپوتاسیون(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label Text="*یا تاریخ آمپوتاسیون:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label50" />
+                                        <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                            <cc1:DateTimePicker ID="dpLastAmp02" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ آمپوتاسیون" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px;">
+                                    <div class="input-group">
+                                        <asp:Label Text="* محل آمپوتاسیون پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label51" />
+                                        <asp:CheckBoxList runat="server" ID="CheckBoxList4" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
+                                            <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;پاشنه" Value="4" Style="margin-right: 20px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;ساق" Value="5" Style="margin-right: 20px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;ران" Value="6" Style="margin-right: 20px;" />
+                                        </asp:CheckBoxList>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:Label Text="* محل آمپوتاسیون‌ پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label52" />
+                                        <asp:CheckBoxList runat="server" ID="CheckBoxList5" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
+                                            <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;پاشنه" Value="4" Style="margin-right: 20px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;ساق" Value="5" Style="margin-right: 20px;" />
+                                            <asp:ListItem Text="&nbsp;&nbsp;ران" Value="6" Style="margin-right: 20px;" />
+                                        </asp:CheckBoxList>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </asp:Panel>
+                            <div class="panel-footer text-left">
+                                <asp:Button runat="server" ID="btnCancelAmp02" Text="انصراف" CssClass="btn-danger" />
+                                <asp:Button runat="server" ID="btnOKAmp02" Text="ثبت" CssClass="btn-success" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel>
+            <asp:Panel runat="server" ClientIDMode="Static" ID="pnlInPatient02" class="modal fade" role="dialog">
+                <asp:Panel runat="server" ID="pnlInPatient02Back" Visible="false" class='modal-backdrop fade in' Style='height: 100%;'></asp:Panel>
+                <div class="modal-dialog media-middle">
+                    <div class="modal-content">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    مشخصات بستری
+                                </div>
+                            </div>
+                            <asp:Panel runat="server" class="panel-body" ID="pnlInPatient02Body">
+                                <div runat="server" id="pnlInPatient02MSG" class="alert alert-danger" role="alert" visible="False">
+                                    <asp:Label runat="server" ID="lblInPatient02MSG" Text="پیام مورد نظر در اینجا قرار میگیرد."></asp:Label>
+                                </div>
+                                <div class="col-xs-12 text-right" style="margin-bottom: 15px">
+                                    <div class="input-group">
+                                        <asp:TextBox runat="server" ID="txtDuration16" PlaceHolder="زمان بستری(چندماه‌پیش؟)" ToolTip="زمان بستری(چندماه‌پیش؟)" CssClass="form-control"></asp:TextBox>
+                                        <asp:Label Text="* یا تاریخ بستری:" CssClass="input-group-addon" runat="server" ID="Label53" />
+                                        <div class="col-xs-12 text-right" style="margin: 0; padding: 0;">
+                                            <cc1:DateTimePicker ID="dpLastInPatient02" runat="server" EnableTheming="true" CssClass="text-right" ShowControlDateTimeMode="DatePicker" Theme="blue" ToolTip="تاریخ بستری" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-12 text-left">
+                                    <div class="input-group">
+                                        <asp:Label Text="علت بستری:" CssClass="input-group-addon" runat="server" ID="Label54" Font-Bold="true" />
+                                        <asp:TextBox ID="txtSurg02Cause" runat="server" MaxLength="8" CssClass="text-right form-control"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </asp:Panel>
+                            <div class="panel-footer text-left">
+                                <asp:Button runat="server" ID="btnCancelInPatient02" Text="انصراف" CssClass="btn-danger" />
+                                <asp:Button runat="server" ID="btnOKInPatient02" Text="ثبت" CssClass="btn-success" />
                             </div>
                         </div>
                     </div>

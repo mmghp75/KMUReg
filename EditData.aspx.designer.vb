@@ -437,6 +437,60 @@ Partial Public Class EditData
     Protected WithEvents cbxAmp01 As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
+    '''cbxLaser02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxLaser02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxDebrid02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxDebrid02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxGang02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxGang02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxAmp02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxAmp02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxSurg02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxSurg02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxInPatient02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxInPatient02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''Label3 control.
     '''</summary>
     '''<remarks>

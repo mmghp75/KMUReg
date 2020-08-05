@@ -389,6 +389,8 @@ Public Class RegPatient
         UpdateDemographicData()
     End Sub
     Private Function CheckDemographicPanelData() As Boolean
+        If Session("Demographic") IsNot Nothing Then Return False
+
         If txtNationalCode.Text.Trim = "" Then
             pnlDemographicMessage.Visible = True
             lblDemographicMessage.Text = "کد ملی را وارد نکرده اید."
@@ -413,13 +415,13 @@ Public Class RegPatient
 
             rblGender.Focus()
             Return True
-        ElseIf txtAgeOf.Text = "" AndAlso Not dpBirthDateOf.GetMiladiValue.HasValue Then
+        ElseIf txtAgeOf.Text = "" AndAlso Not dpBirthDateOf.GetMiladiValue.HasValue AndAlso CType(dpBirthDateOf.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlDemographicMessage.Visible = True
             lblDemographicMessage.Text = "تاریخ تولد یا سن را تعیین نکرده اید."
 
             txtAgeOf.Focus()
             Return True
-        ElseIf isNotValidDateOf(Val(txtAgeOf.Text.Trim), 10, 150, dpBirthDateOf.GetMiladiValue, "Y") Then
+        ElseIf isNotValidDateOf(Val(txtAgeOf.Text.Trim), 10, 150, CType(dpBirthDateOf.Controls(3).Controls(0), TextBox).Text, "Y") Then
             pnlDemographicMessage.Visible = True
             lblDemographicMessage.Text = "مقدار نامناسبی برای تاریخ تولد یا سن ثبت کرده اید."
 
@@ -584,12 +586,17 @@ Public Class RegPatient
         cbxSore02.Checked = False
         cbxInfect01.Checked = False
         cbxSwell01.Checked = False
+        cbxAmp02.Checked = False
+        cbxDebrid02.Checked = False
+        cbxGang02.Checked = False
+        cbxInPatient02.Checked = False
+        cbxSurg02.Checked = False
+        cbxLaser02.Checked = False
         For Each oItem As ListItem In cblNeuropathy.Items
             oItem.Selected = False
         Next
         rblDry.SelectedIndex = -1
         rblTemp.SelectedIndex = -1
-
 
         'Modal Panels
         txtDuration08.Text = ""
@@ -735,6 +742,62 @@ Public Class RegPatient
         ElseIf (txtSystol.Text <> "" OrElse txtDyastol.Text <> "" OrElse txtHR.Text <> "" OrElse txtRR.Text <> "" OrElse txtO2.Text <> "") AndAlso Not dpDateOf03.GetMiladiValue.HasValue Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار تاریخ ثبت علائم حیاتی را وارد نکرده اید."
+
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
+            dpDateOf03.Focus()
+            Exit Sub
+        ElseIf val(txtFBS.Text) < 0 OrElse Val(txtFBS.Text) > 999 Then
+            pnlLabResultsMessage.Visible = True
+            lblLabResultsMessage.Text = "مقدار FBS باید عددی کوچکتر از 1000 باشد."
+
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
+            dpDateOf03.Focus()
+            Exit Sub
+        ElseIf val(txtA1C.Text) < 0 OrElse Val(txtA1C.Text) >= 10 Then
+            pnlLabResultsMessage.Visible = True
+            lblLabResultsMessage.Text = "مقدار Hb A1C باید عددی کوچکتر از 10 باشد."
+
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
+            dpDateOf03.Focus()
+            Exit Sub
+        ElseIf val(txtSystol.Text) < 0 OrElse Val(txtSystol.Text) > 300 Then
+            pnlLabResultsMessage.Visible = True
+            lblLabResultsMessage.Text = "مقدار فشارخون سیستولی باید عددی کوچکتر از 300 باشد."
+
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
+            dpDateOf03.Focus()
+            Exit Sub
+        ElseIf val(txtDyastol.Text) < 0 OrElse Val(txtDyastol.Text) > 300 Then
+            pnlLabResultsMessage.Visible = True
+            lblLabResultsMessage.Text = "مقدار فشارخون دیاستولی باید عددی کوچکتر از 300 باشد."
+
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
+            dpDateOf03.Focus()
+            Exit Sub
+        ElseIf val(txtO2.Text) < 0 OrElse Val(txtO2.Text) > 100 Then
+            pnlLabResultsMessage.Visible = True
+            lblLabResultsMessage.Text = "مقدار درصد اشباع اکسیژن خون حداکثر می‌تواند 100 باشد."
+
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
+            dpDateOf03.Focus()
+            Exit Sub
+        ElseIf val(txtHR.Text) < 0 OrElse Val(txtHR.Text) > 999 Then
+            pnlLabResultsMessage.Visible = True
+            lblLabResultsMessage.Text = "مقدار HR باید عددی کوچکتر از 999 باشد."
+
+            hfActivePanelId.Value = "LabResults"
+            SetActiveTab(hfActivePanelId.Value)
+            dpDateOf03.Focus()
+            Exit Sub
+        ElseIf val(txtrr.Text) < 0 OrElse Val(txtrr.Text) > 100 Then
+            pnlLabResultsMessage.Visible = True
+            lblLabResultsMessage.Text = "مقدار RR باید عددی کوچکتر از 100 باشد."
 
             hfActivePanelId.Value = "LabResults"
             SetActiveTab(hfActivePanelId.Value)
@@ -1317,13 +1380,13 @@ Public Class RegPatient
         Return False
     End Function
     Private Function CheckpnlSore01() As Boolean
-        If txtDuration01.Text = "" AndAlso Not dpLastSore01.GetMiladiValue.HasValue Then
+        If txtDuration01.Text = "" AndAlso Not dpLastSore01.GetMiladiValue.HasValue AndAlso CType(dpLastSore01.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlSore01MSG.Visible = True
             lblSore01MSG.Text = "زمان ابتلا یا تاریخ آخرین زخم را تعیین نکرده اید."
 
             txtDuration01.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration01.Text.Trim), 0, 2000, dpLastSore01.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration01.Text.Trim), 0, 2000, CType(dpLastSore01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlSore01MSG.Visible = True
             lblSore01MSG.Text = "مقدار نامناسبی برای تاریخ آخرین زخم یا زمان ابتلا ثبت کرده اید."
 
@@ -1341,13 +1404,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlLaser() As Boolean
-        If txtDuration02.Text = "" AndAlso Not dpLastLaser01.GetMiladiValue.HasValue Then
+        If txtDuration02.Text = "" AndAlso Not dpLastLaser01.GetMiladiValue.HasValue AndAlso CType(dpLastLaser01.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlLaser01MSG.Visible = True
             lblLaser01MSG.Text = "زمان درمان یا تاریخ درمان با لیزر را تعیین نکرده اید."
 
             txtAgeOf.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration02.Text.Trim), 0, 2000, dpLastLaser01.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration02.Text.Trim), 0, 2000, CType(dpLastLaser01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlLaser01MSG.Visible = True
             lblLaser01MSG.Text = "مقدار نامناسبی برای زمان درمان یا تاریخ آخرین درمان با لیزر را ثبت کرده اید."
 
@@ -1365,13 +1428,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlDebrid() As Boolean
-        If txtDuration03.Text = "" AndAlso Not dpLastDebrid01.GetMiladiValue.HasValue Then
+        If txtDuration03.Text = "" AndAlso Not dpLastDebrid01.GetMiladiValue.HasValue AndAlso CType(dpLastDebrid01.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlDebrid01MSG.Visible = True
             lblDebrid01MSG.Text = "زمان دبرید یا تاریخ آخرین دبریدمان را تعیین نکرده اید."
 
             txtDuration03.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration03.Text.Trim), 0, 2000, dpLastDebrid01.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration03.Text.Trim), 0, 2000, CType(dpLastDebrid01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlDebrid01MSG.Visible = True
             lblDebrid01MSG.Text = "مقدار نامناسبی برای زمان درمان یا تاریخ آخرین درمان با لیزر را ثبت کرده اید."
 
@@ -1389,13 +1452,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlSurg() As Boolean
-        If txtDuration04.Text = "" AndAlso Not dpLastSurg01.GetMiladiValue.HasValue Then
+        If txtDuration04.Text = "" AndAlso Not dpLastSurg01.GetMiladiValue.HasValue AndAlso CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlSurg01MSG.Visible = True
             lblSurg01MSG.Text = "زمان جراحی یا تاریخ آخرین جراحی را تعیین نکرده اید."
 
             txtDuration04.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration04.Text.Trim), 0, 2000, dpLastSurg01.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration04.Text.Trim), 0, 2000, CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlSurg01MSG.Visible = True
             lblSurg01MSG.Text = "مقدار نامناسبی برای زمان [جراحی یا تاریخ آخرین جراحی را ثبت کرده اید."
 
@@ -1413,13 +1476,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlGang() As Boolean
-        If txtDuration05.Text = "" AndAlso Not dpLastGang01.GetMiladiValue.HasValue Then
+        If txtDuration05.Text = "" AndAlso Not dpLastGang01.GetMiladiValue.HasValue AndAlso CType(dpLastGang01.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlGang01MSG.Visible = True
             lblGang01MSG.Text = "زمان گانگرن یا تاریخ آخرین گانگرن را تعیین نکرده اید."
 
             txtDuration05.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration05.Text.Trim), 0, 2000, dpLastGang01.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration05.Text.Trim), 0, 2000, CType(dpLastGang01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlGang01MSG.Visible = True
             lblGang01MSG.Text = "مقدار نامناسبی برای زمان [جراحی یا تاریخ آخرین جراحی را ثبت کرده اید."
 
@@ -1437,13 +1500,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlAmp() As Boolean
-        If txtDuration06.Text = "" AndAlso Not dpLastAmp01.GetMiladiValue.HasValue Then
+        If txtDuration06.Text = "" AndAlso Not dpLastAmp01.GetMiladiValue.HasValue AndAlso CType(dpLastAmp01.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlAmp01MSG.Visible = True
             lblAmp01MSG.Text = "زمان آمپوتاسیون یا تاریخ آخرین آمپوتاسیون را تعیین نکرده اید."
 
             txtDuration06.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration06.Text.Trim), 0, 2000, dpLastAmp01.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration06.Text.Trim), 0, 2000, CType(dpLastAmp01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlAmp01MSG.Visible = True
             lblAmp01MSG.Text = "مقدار نامناسبی برای زمان آمپوتاسیون یا تاریخ آخرین آمپوتاسیون را ثبت کرده اید."
 
@@ -1461,13 +1524,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlInPatient() As Boolean
-        If txtDuration07.Text = "" AndAlso Not dpLastInPatient01.GetMiladiValue.HasValue Then
+        If txtDuration07.Text = "" AndAlso Not dpLastInPatient01.GetMiladiValue.HasValue AndAlso CType(dpLastInPatient01.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlInPatient01MSG.Visible = True
             lblInPatient01MSG.Text = "زمان بستری یا تاریخ آخرین بستری را تعیین نکرده اید."
 
             txtDuration07.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration07.Text.Trim), 0, 2000, dpLastInPatient01.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration07.Text.Trim), 0, 2000, CType(dpLastInPatient01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlInPatient01MSG.Visible = True
             lblInPatient01MSG.Text = "مقدار نامناسبی برای زمان بستری یا تاریخ آخرین بستری را ثبت کرده اید."
 
@@ -1485,13 +1548,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlNewSore() As Boolean
-        If txtDuration08.Text = "" AndAlso Not dpNewSore.GetMiladiValue.HasValue Then
+        If txtDuration08.Text = "" AndAlso Not dpNewSore.GetMiladiValue.HasValue AndAlso CType(dpNewSore.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlSore02MSG.Visible = True
             lblSore02MSG.Text = "زمان زخم یا تاریخ ایجاد زخم را تعیین نکرده اید."
 
             txtDuration08.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration08.Text.Trim), 0, 2000, dpNewSore.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration08.Text.Trim), 0, 2000, CType(dpNewSore.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlSore02MSG.Visible = True
             lblSore02MSG.Text = "مقدار نامناسبی برای زمان زخم یا تاریخ ایجاد زخم را ثبت کرده اید."
 
@@ -1537,13 +1600,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlNewInfection() As Boolean
-        If txtDuration09.Text = "" AndAlso Not dpNewInfect.GetMiladiValue.HasValue Then
+        If txtDuration09.Text = "" AndAlso Not dpNewInfect.GetMiladiValue.HasValue AndAlso CType(dpNewInfect.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlInfect01MSG.Visible = True
             lblInfect01MSG.Text = "زمان عفونت یا تاریخ ایجاد عفونت را تعیین نکرده اید."
 
             txtDuration09.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration09.Text.Trim), 0, 2000, dpNewInfect.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration09.Text.Trim), 0, 2000, CType(dpNewInfect.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlInfect01MSG.Visible = True
             lblInfect01MSG.Text = "مقدار نامناسبی برای زمان عفونت یا تاریخ ایجاد عفونت را ثبت کرده اید."
 
@@ -1561,13 +1624,13 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlNewSwell() As Boolean
-        If txtDuration10.Text = "" AndAlso Not dpNewSwell.GetMiladiValue.HasValue Then
+        If txtDuration10.Text = "" AndAlso Not dpNewSwell.GetMiladiValue.HasValue AndAlso CType(dpNewSwell.Controls(3).Controls(0), TextBox).Text <> "" Then
             pnlSwell01MSG.Visible = True
             lblSwell01MSG.Text = "زمان تورم، تاول و قرمزی یا تاریخ آن‌ها را تعیین نکرده اید."
 
             txtDuration10.Focus()
             Return False
-        ElseIf isNotValidDateOf(Val(txtDuration10.Text.Trim), 0, 2000, dpNewSwell.GetMiladiValue, "M") Then
+        ElseIf isNotValidDateOf(Val(txtDuration10.Text.Trim), 0, 2000, CType(dpNewSwell.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlSwell01MSG.Visible = True
             lblSwell01MSG.Text = "مقدار نامناسبی برای زمان تورم، تاول و قرمزی یا تاریخ ایجاد آن‌ها را ثبت کرده اید."
 

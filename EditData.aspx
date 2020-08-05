@@ -217,8 +217,27 @@
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxAmp01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control"></asp:CheckBox>
                                 </div>
-                                <div class="clearfix">
+                                <div class="clearfix"></div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxLaser02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;لیزر" CssClass="form-control"></asp:CheckBox>
                                 </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxDebrid02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;دبریدمان" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxGang02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxAmp02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxSurg02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;جراحی" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxInPatient02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;بستری" CssClass="form-control"></asp:CheckBox>
+                                </div>
+                                <div class="clearfix"></div>
                                 <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="بیماری‌زمینه‌ای:" CssClass="input-group-addon" runat="server" ID="Label3" Font-Bold="true" />

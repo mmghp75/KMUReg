@@ -563,6 +563,60 @@ Partial Public Class RegPatient
     Protected WithEvents cbxSwell01 As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
+    '''cbxLaser02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxLaser02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxDebrid02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxDebrid02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxGang02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxGang02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxAmp02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxAmp02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxSurg02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxSurg02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cbxInPatient02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cbxInPatient02 As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
     '''Label9 control.
     '''</summary>
     '''<remarks>
@@ -2199,4 +2253,688 @@ Partial Public Class RegPatient
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnOKSwell01 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''pnlLaser02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlLaser02 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlLaser02Back control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlLaser02Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlLaser02Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlLaser02Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlLaser02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlLaser02MSG As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblLaser02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblLaser02MSG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtDuration11 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDuration11 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''dpLastLaser02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dpLastLaser02 As Global.Rayavaran.RWControls.DateTimePicker
+
+    '''<summary>
+    '''Label12 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label12 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''cblLaser02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cblLaser02 As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''btnCancelLaser02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelLaser02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnOKLaser02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnOKLaser02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''pnlDebrid02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlDebrid02 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlDebrid02Back control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlDebrid02Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlDebrid02Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlDebrid02Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlDebrid02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlDebrid02MSG As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblDebrid02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDebrid02MSG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtDuration12 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDuration12 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label13 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label13 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''dpLastDebrid02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dpLastDebrid02 As Global.Rayavaran.RWControls.DateTimePicker
+
+    '''<summary>
+    '''Label14 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label14 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''cblDebrid02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cblDebrid02 As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''btnCancelDebrid02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelDebrid02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnOKDebrid02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnOKDebrid02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''pnlSurg02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlSurg02 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlSurg02Back control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlSurg02Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlSurg02Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlSurg02Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlSurg02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlSurg02MSG As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblSurg02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblSurg02MSG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtDuration13 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDuration13 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label40 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label40 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''dpLastSurg02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dpLastSurg02 As Global.Rayavaran.RWControls.DateTimePicker
+
+    '''<summary>
+    '''Label46 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label46 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''CheckBoxList1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CheckBoxList1 As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''Label47 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label47 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''CheckBoxList2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CheckBoxList2 As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''btnCancelSurg02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelSurg02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnOKSurg02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnOKSurg02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''pnlGang02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlGang02 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlGang02Back control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlGang02Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlGang02Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlGang02Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlGang02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlGang02MSG As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblGang02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblGang02MSG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtDuration14 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDuration14 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label48 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label48 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''dpLastGang02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dpLastGang02 As Global.Rayavaran.RWControls.DateTimePicker
+
+    '''<summary>
+    '''Label49 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label49 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''CheckBoxList3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CheckBoxList3 As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''btnCancelGang02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelGang02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnOKGang02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnOKGang02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''pnlAmp02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlAmp02 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlAmp02Back control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlAmp02Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlAmp02Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlAmp02Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlAmp02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlAmp02MSG As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblAmp02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblAmp02MSG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtDuration15 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDuration15 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label50 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label50 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''dpLastAmp02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dpLastAmp02 As Global.Rayavaran.RWControls.DateTimePicker
+
+    '''<summary>
+    '''Label51 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label51 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''CheckBoxList4 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CheckBoxList4 As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''Label52 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label52 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''CheckBoxList5 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents CheckBoxList5 As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''btnCancelAmp02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelAmp02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnOKAmp02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnOKAmp02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''pnlInPatient02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlInPatient02 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlInPatient02Back control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlInPatient02Back As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlInPatient02Body control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlInPatient02Body As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlInPatient02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlInPatient02MSG As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblInPatient02MSG control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblInPatient02MSG As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtDuration16 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtDuration16 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Label53 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label53 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''dpLastInPatient02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents dpLastInPatient02 As Global.Rayavaran.RWControls.DateTimePicker
+
+    '''<summary>
+    '''Label54 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label54 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtSurg02Cause control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtSurg02Cause As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''btnCancelInPatient02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnCancelInPatient02 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''btnOKInPatient02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnOKInPatient02 As Global.System.Web.UI.WebControls.Button
 End Class
