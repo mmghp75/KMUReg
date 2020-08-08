@@ -6,7 +6,6 @@ Public Class RegPatient
         If Me.IsPostBack Then
             'hfActivePanelId.Value = Request.Form(hfActivePanelId.UniqueID)
             'MsgBox(hfActivePanelId.Value)
-            SetActiveTab(hfActivePanelId.Value)
 
             pnlDemographicMessage.Visible = False
             pnlHistoryMessage.Visible = False
@@ -33,7 +32,7 @@ Public Class RegPatient
     End Sub
     Private Sub SetActiveTab(tabId As String)
         If Not String.IsNullOrEmpty(tabId) Then
-            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "SecActiveTabServerSide", "$('#" & tabId & " > a[data-toggle=tab]').click();", True)
+            ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "SetActiveTabServerSide", "$('#" & tabId & " > a[data-toggle=tab]').click();", True)
         End If
     End Sub
     Private Sub cbxSore01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore01.CheckedChanged
@@ -49,6 +48,7 @@ Public Class RegPatient
 
             txtDuration01.Focus()
             hfActivePanelId.Value = "History"
+            SetActiveTab(hfActivePanelId.Value)
         End If
 
         'GetStep2Panels()
@@ -66,6 +66,7 @@ Public Class RegPatient
 
             txtDuration02.Focus()
             hfActivePanelId.Value = "History"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub cbxDebrid01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxDebrid01.CheckedChanged
@@ -81,6 +82,7 @@ Public Class RegPatient
 
             txtDuration03.Focus()
             hfActivePanelId.Value = "History"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub cbxGangrene01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGangrene01.CheckedChanged
@@ -96,6 +98,7 @@ Public Class RegPatient
 
             txtDuration04.Focus()
             hfActivePanelId.Value = "History"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub cbxSurgery01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurgery01.CheckedChanged
@@ -111,6 +114,7 @@ Public Class RegPatient
 
             txtDuration05.Focus()
             hfActivePanelId.Value = "History"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub cbxAmp01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxAmp01.CheckedChanged
@@ -126,6 +130,7 @@ Public Class RegPatient
 
             txtDuration06.Focus()
             hfActivePanelId.Value = "History"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub cbxInPatient01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxInPatient.CheckedChanged
@@ -140,16 +145,100 @@ Public Class RegPatient
             pnlInPatient01Back.Visible = True
             txtSurg01Cause.Focus()
             hfActivePanelId.Value = "History"
+            SetActiveTab(hfActivePanelId.Value)
+        End If
+    End Sub
+    Private Sub cbxLaser02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxLaser02.CheckedChanged
+        If cbxLaser02.Checked Then
+            ShowModalPopup(Me, "pnlLaser02")
+            hfNewPanelVisibility.Value = 1
+
+            pnlLaser02.Style.Item("display") = "block"
+            pnlLaser02.Attributes("aria-hidden") = "false"
+            pnlLaser02.CssClass = "modal fade in"
+            pnlLaser02Back.Visible = True
+
+            txtDuration02.Focus()
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
+        End If
+    End Sub
+    Private Sub cbxDebrid02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxDebrid02.CheckedChanged
+        If cbxDebrid02.Checked Then
+            ShowModalPopup(Me, "pnlDebrid02")
+            hfNewPanelVisibility.Value = 1
+
+            pnlDebrid02.Style.Item("display") = "block"
+            pnlDebrid02.Attributes("aria-hidden") = "false"
+            pnlDebrid02.CssClass = "modal fade in"
+            pnlDebrid02Back.Visible = True
+
+            txtDuration03.Focus()
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
+        End If
+    End Sub
+    Private Sub cbxGangrene02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGang02.CheckedChanged
+        If cbxGang02.Checked Then
+            ShowModalPopup(Me, "pnlGang02")
+            hfNewPanelVisibility.Value = 1
+
+            pnlGang02.Style.Item("display") = "block"
+            pnlGang02.Attributes("aria-hidden") = "false"
+            pnlGang02.CssClass = "modal fade in"
+            pnlGang02Back.Visible = True
+
+            txtDuration04.Focus()
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
+        End If
+    End Sub
+    Private Sub cbxSurgery02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurg02.CheckedChanged
+        If cbxSurg02.Checked Then
+            ShowModalPopup(Me, "pnlSurg02")
+            hfNewPanelVisibility.Value = 1
+
+            pnlSurg02.Style.Item("display") = "block"
+            pnlSurg02.Attributes("aria-hidden") = "false"
+            pnlSurg02.CssClass = "modal fade in"
+            pnlSurg02Back.Visible = True
+
+            txtDuration05.Focus()
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
+        End If
+    End Sub
+    Private Sub cbxAmp02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxAmp02.CheckedChanged
+        If cbxAmp02.Checked Then
+            ShowModalPopup(Me, "pnlAmp02")
+            hfNewPanelVisibility.Value = 1
+
+            pnlAmp02.Style.Item("display") = "block"
+            pnlAmp02.Attributes("aria-hidden") = "false"
+            pnlAmp02.CssClass = "modal fade in"
+            pnlAmp02Back.Visible = True
+
+            txtDuration06.Focus()
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
+        End If
+    End Sub
+    Private Sub cbxInPatient02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxInPatient.CheckedChanged
+        If cbxInPatient.Checked Then
+            ShowModalPopup(Me, "pnlInPatient02")
+            hfNewPanelVisibility.Value = 1
+
+            pnlInPatient02.Style.Item("display") = "block"
+            pnlInPatient02.Attributes("aria-hidden") = "false"
+            pnlInPatient02.CssClass = "modal fade in"
+            pnlInPatient02Back.Visible = True
+            txtSurg02Cause.Focus()
+            hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub btnOKSore01_Click(sender As Object, e As EventArgs) Handles btnOKSore01.Click
         If Not CheckpnlSore01() Then Exit Sub
-        If lblSore01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlSore01.Style.Item("display") = "none"
-            pnlSore01Back.Visible = False
-        End If
-
         btnCancelSore01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelSore01_Click(sender As Object, e As EventArgs) Handles btnCancelSore01.Click
@@ -161,23 +250,8 @@ Public Class RegPatient
 
         'GetStep2Panels()
     End Sub
-    'Private Sub GetStep2Panels()
-    '    Dim panels = {
-    '        New CollapsePanelGroup(pnlHistory, lblHistoryTitle, collapseHistoryMessage),
-    '        New CollapsePanelGroup(pnlPhysicalExam, lblPhysicalExamTitle, collapsePhysicalExam),
-    '        New CollapsePanelGroup(pnlLabResults, lblLabResultsTitle, collapseLabResults),
-    '        New CollapsePanelGroup(pnlPrescription, lblPrescriptionTitle, collapsePrescription)
-    '    }
-    '    ExpandPanel(Me, panels, hfExpanedPanelIds.Value.Split(" "))
-    'End Sub
     Private Sub btnOKLaser01_Click(sender As Object, e As EventArgs) Handles btnOKLaser01.Click
         If Not CheckpnlLaser() Then Exit Sub
-        If lblLaser01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlLaser01.Style.Item("display") = "none"
-            pnlLaser01Back.Visible = False
-        End If
-
         btnCancelLaser01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelLaser01_Click(sender As Object, e As EventArgs) Handles btnCancelLaser01.Click
@@ -189,12 +263,6 @@ Public Class RegPatient
     End Sub
     Private Sub btnOKDebrid01_Click(sender As Object, e As EventArgs) Handles btnOKDebrid01.Click
         If Not CheckpnlDebrid() Then Exit Sub
-        If lblDebrid01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlDebrid01.Style.Item("display") = "none"
-            pnlDebrid01Back.Visible = False
-        End If
-
         btnCancelDebrid01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelDebrid01_Click(sender As Object, e As EventArgs) Handles btnCancelDebrid01.Click
@@ -206,12 +274,6 @@ Public Class RegPatient
     End Sub
     Private Sub btnOKSurg01_Click(sender As Object, e As EventArgs) Handles btnOKSurg01.Click
         If Not CheckpnlSurg() Then Exit Sub
-        If lblSurg01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlSurg01.Style.Item("display") = "none"
-            pnlSurg01Back.Visible = False
-        End If
-
         btnCancelSurg01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelSurg01_Click(sender As Object, e As EventArgs) Handles btnCancelSurg01.Click
@@ -223,12 +285,6 @@ Public Class RegPatient
     End Sub
     Private Sub btnOKGang01_Click(sender As Object, e As EventArgs) Handles btnOKGang01.Click
         If Not CheckpnlGang() Then Exit Sub
-        If lblGang01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlGang01.Style.Item("display") = "none"
-            pnlGang01Back.Visible = False
-        End If
-
         btnCancelGang01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelGang01_Click(sender As Object, e As EventArgs) Handles btnCancelGang01.Click
@@ -240,12 +296,6 @@ Public Class RegPatient
     End Sub
     Private Sub btnOKAmp01_Click(sender As Object, e As EventArgs) Handles btnOKAmp01.Click
         If Not CheckpnlAmp() Then Exit Sub
-        If lblAmp01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlAmp01.Style.Item("display") = "none"
-            pnlAmp01Back.Visible = False
-        End If
-
         btnCancelAmp01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelAmp01_Click(sender As Object, e As EventArgs) Handles btnCancelAmp01.Click
@@ -255,6 +305,11 @@ Public Class RegPatient
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxAmp01.Checked = False
     End Sub
+    Private Sub btnOKInPatient01_Click(sender As Object, e As EventArgs) Handles btnOKInPatient01.Click
+        If Not CheckpnlInPatient() Then Exit Sub
+
+        btnCancelInPatient01_Click(Nothing, Nothing)
+    End Sub
     Private Sub btnCancelInPatient01_Click(sender As Object, e As EventArgs) Handles btnCancelInPatient01.Click
         hfNewPanelVisibility.Value = 0
         pnlInPatient01.Style.Item("display") = "none"
@@ -262,6 +317,7 @@ Public Class RegPatient
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxInPatient.Checked = False
     End Sub
+
     Private Sub cbxSore02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSore02.CheckedChanged
         If cbxSore02.Checked Then
             ShowModalPopup(Me, "pnlSore02")
@@ -273,6 +329,7 @@ Public Class RegPatient
             pnlSore02Back.Visible = True
 
             hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub cbxInfect01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxInfect01.CheckedChanged
@@ -286,6 +343,7 @@ Public Class RegPatient
             pnlInfect01Back.Visible = True
 
             hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub cbxSwell01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSwell01.CheckedChanged
@@ -299,16 +357,11 @@ Public Class RegPatient
             pnlSwell01Back.Visible = True
 
             hfActivePanelId.Value = "PhysicalExam"
+            SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
     Private Sub btnOKSore02_Click(sender As Object, e As EventArgs) Handles btnOKSore02.Click
         If Not CheckpnlNewSore() Then Exit Sub
-        If lblSore02MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlSore02.Style.Item("display") = "none"
-            pnlSore02Back.Visible = False
-        End If
-
         btnCancelSore02_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelSore02_Click(sender As Object, e As EventArgs) Handles btnCancelSore02.Click
@@ -320,12 +373,6 @@ Public Class RegPatient
     End Sub
     Private Sub btnOKInfect01_Click(sender As Object, e As EventArgs) Handles btnOKInfect01.Click
         If Not CheckpnlNewInfection() Then Exit Sub
-        If lblInfect01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlInfect01.Style.Item("display") = "none"
-            pnlInfect01Back.Visible = False
-        End If
-
         btnCancelInfect01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelInfect01_Click(sender As Object, e As EventArgs) Handles btnCancelInfect01.Click
@@ -337,12 +384,6 @@ Public Class RegPatient
     End Sub
     Private Sub btnOKSwell01_Click(sender As Object, e As EventArgs) Handles btnOKSwell01.Click
         If Not CheckpnlNewSwell() Then Exit Sub
-        If lblSwell01MSG.Text = "" Then
-            hfNewPanelVisibility.Value = 0
-            pnlSwell01.Style.Item("display") = "none"
-            pnlSwell01Back.Visible = False
-        End If
-
         btnCancelSwell01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelSwell01_Click(sender As Object, e As EventArgs) Handles btnCancelSwell01.Click
@@ -352,6 +393,74 @@ Public Class RegPatient
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing Then cbxSwell01.Checked = False
     End Sub
+    Private Sub btnOKLaser02_Click(sender As Object, e As EventArgs) Handles btnOKLaser02.Click
+        If Not CheckpnlLaser() Then Exit Sub
+        btnCancelLaser02_Click(Nothing, Nothing)
+    End Sub
+    Private Sub btnCancelLaser02_Click(sender As Object, e As EventArgs) Handles btnCancelLaser02.Click
+        hfNewPanelVisibility.Value = 0
+        pnlLaser02.Style.Item("display") = "none"
+        pnlLaser02Back.Visible = False
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxLaser02.Checked = False
+    End Sub
+    Private Sub btnOKDebrid02_Click(sender As Object, e As EventArgs) Handles btnOKDebrid02.Click
+        If Not CheckpnlDebrid() Then Exit Sub
+        btnCancelDebrid02_Click(Nothing, Nothing)
+    End Sub
+    Private Sub btnCancelDebrid02_Click(sender As Object, e As EventArgs) Handles btnCancelDebrid02.Click
+        hfNewPanelVisibility.Value = 0
+        pnlDebrid02.Style.Item("display") = "none"
+        pnlDebrid02Back.Visible = False
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxDebrid02.Checked = False
+    End Sub
+    Private Sub btnOKSurg02_Click(sender As Object, e As EventArgs) Handles btnOKSurg02.Click
+        If Not CheckpnlSurg() Then Exit Sub
+        btnCancelSurg02_Click(Nothing, Nothing)
+    End Sub
+    Private Sub btnCancelSurg02_Click(sender As Object, e As EventArgs) Handles btnCancelSurg02.Click
+        hfNewPanelVisibility.Value = 0
+        pnlSurg02.Style.Item("display") = "none"
+        pnlSurg02Back.Visible = False
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxSurg02.Checked = False
+    End Sub
+    Private Sub btnOKGang02_Click(sender As Object, e As EventArgs) Handles btnOKGang02.Click
+        If Not CheckpnlGang() Then Exit Sub
+        btnCancelGang02_Click(Nothing, Nothing)
+    End Sub
+    Private Sub btnCancelGang02_Click(sender As Object, e As EventArgs) Handles btnCancelGang02.Click
+        hfNewPanelVisibility.Value = 0
+        pnlGang02.Style.Item("display") = "none"
+        pnlGang02Back.Visible = False
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxGang02.Checked = False
+    End Sub
+    Private Sub btnOKAmp02_Click(sender As Object, e As EventArgs) Handles btnOKAmp02.Click
+        If Not CheckpnlAmp() Then Exit Sub
+        btnCancelAmp02_Click(Nothing, Nothing)
+    End Sub
+    Private Sub btnCancelAmp02_Click(sender As Object, e As EventArgs) Handles btnCancelAmp02.Click
+        hfNewPanelVisibility.Value = 0
+        pnlAmp02.Style.Item("display") = "none"
+        pnlAmp02Back.Visible = False
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxAmp02.Checked = False
+    End Sub
+    Private Sub btnOKInPatient02_Click(sender As Object, e As EventArgs) Handles btnOKInPatient02.Click
+        If Not CheckpnlInPatient() Then Exit Sub
+
+        btnCancelInPatient02_Click(Nothing, Nothing)
+    End Sub
+    Private Sub btnCancelInPatient02_Click(sender As Object, e As EventArgs) Handles btnCancelInPatient02.Click
+        hfNewPanelVisibility.Value = 0
+        pnlInPatient02.Style.Item("display") = "none"
+        pnlInPatient02Back.Visible = False
+        ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxInPatient.Checked = False
+    End Sub
+
     Private Sub btnCancelDemographic_Click(sender As Object, e As EventArgs) Handles btnCancelDemographic.Click
         txtFileNo.Text = ""
         txtNationalCode.Text = ""
@@ -386,6 +495,7 @@ Public Class RegPatient
         btnCancelPrescription_Click(Nothing, Nothing)
 
         hfActivePanelId.Value = "History"
+        'SetActiveTab(hfActivePanelId.Value)
         UpdateDemographicData()
     End Sub
     Private Function CheckDemographicPanelData() As Boolean
@@ -577,8 +687,6 @@ Public Class RegPatient
         txtDuration07.Text = ""
         dpLastInPatient01.Clear()
         txtSurg01Cause.Text = ""
-
-        hfActivePanelId.Value = "History"
     End Sub
     Private Sub btnCancelPhysicalExam_Click(sender As Object, e As EventArgs) Handles btnCancelPhysicalExam.Click
         'Physical Exam
@@ -628,8 +736,6 @@ Public Class RegPatient
         For Each oItem As ListItem In cblNewSwellR.Items
             oItem.Selected = False
         Next
-
-        hfActivePanelId.Value = "PhysicalExam"
     End Sub
     Private Sub btnCacelLabResults_Click(sender As Object, e As EventArgs) Handles btnCacelLabResults.Click
         'Lab Results
@@ -642,8 +748,6 @@ Public Class RegPatient
         txtHR.Text = ""
         txtRR.Text = ""
         dpDateOf03.Clear()
-
-        hfActivePanelId.Value = "LabResults"
     End Sub
     Private Sub btnCancelPrescription_Click(sender As Object, e As EventArgs) Handles btnCancelPrescription.Click
         'Prescriptions
@@ -659,15 +763,6 @@ Public Class RegPatient
             oItem.Selected = False
         Next
         txtFreeText.Text = ""
-
-        hfActivePanelId.Value = "Prescription"
-        'Dim oScript As String = "var selectedTab = $(""#<%=hfActivePanelId.ClientID%>"");" & vbCrLf &
-        '                        "var tabId = selectedTab.val() != """" ? selectedTab.val() : ""PhysicalExam"";" & vbCrLf &
-        '                        "$('#dvTab a[href=""#' + tabId + '""]').tab('show');" & vbCrLf &
-        '                        "$(""#dvTab a"").click(function () {" & vbCrLf &
-        '                        "    selectedTab.val($(this).attr(""href"").substring(1));" & vbCrLf &
-        '                        "});"
-        'ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "ActiveLastTab", oScript, True)
     End Sub
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
 
