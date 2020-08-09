@@ -47,7 +47,7 @@ Public Class RegPatient
             pnlSore01Back.Visible = True
 
             txtDuration01.Focus()
-            hfActivePanelId.Value = "History"
+            hfActivePanelId.Value = tabHistory.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
 
@@ -65,7 +65,7 @@ Public Class RegPatient
             pnlLaser01Back.Visible = True
 
             txtDuration02.Focus()
-            hfActivePanelId.Value = "History"
+            hfActivePanelId.Value = tabHistory.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -81,7 +81,7 @@ Public Class RegPatient
             pnlDebrid01Back.Visible = True
 
             txtDuration03.Focus()
-            hfActivePanelId.Value = "History"
+            hfActivePanelId.Value = tabHistory.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -97,7 +97,7 @@ Public Class RegPatient
             pnlGang01Back.Visible = True
 
             txtDuration04.Focus()
-            hfActivePanelId.Value = "History"
+            hfActivePanelId.Value = tabHistory.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -113,7 +113,7 @@ Public Class RegPatient
             pnlSurg01Back.Visible = True
 
             txtDuration05.Focus()
-            hfActivePanelId.Value = "History"
+            hfActivePanelId.Value = tabHistory.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -129,7 +129,7 @@ Public Class RegPatient
             pnlAmp01Back.Visible = True
 
             txtDuration06.Focus()
-            hfActivePanelId.Value = "History"
+            hfActivePanelId.Value = tabHistory.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -144,7 +144,7 @@ Public Class RegPatient
             pnlInPatient01.CssClass = "modal fade in"
             pnlInPatient01Back.Visible = True
             txtSurg01Cause.Focus()
-            hfActivePanelId.Value = "History"
+            hfActivePanelId.Value = tabHistory.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -159,7 +159,7 @@ Public Class RegPatient
             pnlLaser02Back.Visible = True
 
             txtDuration02.Focus()
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -174,7 +174,7 @@ Public Class RegPatient
             pnlDebrid02Back.Visible = True
 
             txtDuration03.Focus()
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -189,7 +189,7 @@ Public Class RegPatient
             pnlGang02Back.Visible = True
 
             txtDuration04.Focus()
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -204,7 +204,7 @@ Public Class RegPatient
             pnlSurg02Back.Visible = True
 
             txtDuration05.Focus()
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -219,7 +219,7 @@ Public Class RegPatient
             pnlAmp02Back.Visible = True
 
             txtDuration06.Focus()
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -233,7 +233,7 @@ Public Class RegPatient
             pnlInPatient02.CssClass = "modal fade in"
             pnlInPatient02Back.Visible = True
             txtSurg02Cause.Focus()
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -328,7 +328,7 @@ Public Class RegPatient
             pnlSore02.CssClass = "modal fade in"
             pnlSore02Back.Visible = True
 
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -342,7 +342,7 @@ Public Class RegPatient
             pnlInfect01.CssClass = "modal fade in"
             pnlInfect01Back.Visible = True
 
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -356,7 +356,7 @@ Public Class RegPatient
             pnlSwell01.CssClass = "modal fade in"
             pnlSwell01Back.Visible = True
 
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
@@ -494,7 +494,7 @@ Public Class RegPatient
         btnCacelLabResults_Click(Nothing, Nothing)
         btnCancelPrescription_Click(Nothing, Nothing)
 
-        hfActivePanelId.Value = "History"
+        hfActivePanelId.Value = tabHistory.ClientID
         'SetActiveTab(hfActivePanelId.Value)
         UpdateDemographicData()
     End Sub
@@ -771,7 +771,7 @@ Public Class RegPatient
                 pnlHistoryMessage.Visible = True
                 lbllHistoryMessage.Text = "نوع دیابت را تعیین نکرده اید."
 
-                hfActivePanelId.Value = "History"
+                hfActivePanelId.Value = tabHistory.ClientID
                 SetActiveTab(hfActivePanelId.Value)
                 rblDiabetTypeOf.Focus()
                 Exit Sub
@@ -779,7 +779,7 @@ Public Class RegPatient
                 pnlHistoryMessage.Visible = True
                 lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت را تعیین نکرده اید."
 
-                hfActivePanelId.Value = "History"
+                hfActivePanelId.Value = tabHistory.ClientID
                 SetActiveTab(hfActivePanelId.Value)
                 txtDateOf01.Focus()
                 Exit Sub
@@ -787,7 +787,7 @@ Public Class RegPatient
                 pnlHistoryMessage.Visible = True
                 lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت در محدوده‌ی قابل قبول نمی‌باشد."
 
-                hfActivePanelId.Value = "History"
+                hfActivePanelId.Value = tabHistory.ClientID
                 SetActiveTab(hfActivePanelId.Value)
                 txtDateOf01.Focus()
                 Exit Sub
@@ -798,7 +798,7 @@ Public Class RegPatient
             pnlPhysicalExamMessage.Visible = True
             lblPhysicalExamMessage.Text = "علت مراجعه را ثبت نکرده اید."
 
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
             txtCC.Focus()
             Exit Sub
@@ -806,7 +806,7 @@ Public Class RegPatient
             pnlPhysicalExamMessage.Visible = True
             lblPhysicalExamMessage.Text = "تاریخ مراجعه را تعیین نکرده اید."
 
-            hfActivePanelId.Value = "PhysicalExam"
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpContract.Focus()
             Exit Sub
@@ -814,7 +814,7 @@ Public Class RegPatient
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار FBS را ثبت نکرده اید."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             txtFBS.Focus()
             Exit Sub
@@ -822,7 +822,7 @@ Public Class RegPatient
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار A1C را ثبت نکرده اید."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             txtA1C.Focus()
             Exit Sub
@@ -830,7 +830,7 @@ Public Class RegPatient
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "تاریخ انجام آزمایشات را ثبت نکرده اید."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf02.Focus()
             Exit Sub
@@ -838,63 +838,63 @@ Public Class RegPatient
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار تاریخ ثبت علائم حیاتی را وارد نکرده اید."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
-        ElseIf val(txtFBS.Text) < 0 OrElse Val(txtFBS.Text) > 999 Then
+        ElseIf Val(txtFBS.Text) < 0 OrElse Val(txtFBS.Text) > 999 Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار FBS باید عددی کوچکتر از 1000 باشد."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
-        ElseIf val(txtA1C.Text) < 0 OrElse Val(txtA1C.Text) >= 10 Then
+        ElseIf Val(txtA1C.Text) < 0 OrElse Val(txtA1C.Text) >= 10 Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار Hb A1C باید عددی کوچکتر از 10 باشد."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
-        ElseIf val(txtSystol.Text) < 0 OrElse Val(txtSystol.Text) > 300 Then
+        ElseIf Val(txtSystol.Text) < 0 OrElse Val(txtSystol.Text) > 300 Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار فشارخون سیستولی باید عددی کوچکتر از 300 باشد."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
-        ElseIf val(txtDyastol.Text) < 0 OrElse Val(txtDyastol.Text) > 300 Then
+        ElseIf Val(txtDyastol.Text) < 0 OrElse Val(txtDyastol.Text) > 300 Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار فشارخون دیاستولی باید عددی کوچکتر از 300 باشد."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
-        ElseIf val(txtO2.Text) < 0 OrElse Val(txtO2.Text) > 100 Then
+        ElseIf Val(txtO2.Text) < 0 OrElse Val(txtO2.Text) > 100 Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار درصد اشباع اکسیژن خون حداکثر می‌تواند 100 باشد."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
-        ElseIf val(txtHR.Text) < 0 OrElse Val(txtHR.Text) > 999 Then
+        ElseIf Val(txtHR.Text) < 0 OrElse Val(txtHR.Text) > 999 Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار HR باید عددی کوچکتر از 999 باشد."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub
-        ElseIf val(txtrr.Text) < 0 OrElse Val(txtrr.Text) > 100 Then
+        ElseIf Val(txtRR.Text) < 0 OrElse Val(txtRR.Text) > 100 Then
             pnlLabResultsMessage.Visible = True
             lblLabResultsMessage.Text = "مقدار RR باید عددی کوچکتر از 100 باشد."
 
-            hfActivePanelId.Value = "LabResults"
+            hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
             dpDateOf03.Focus()
             Exit Sub

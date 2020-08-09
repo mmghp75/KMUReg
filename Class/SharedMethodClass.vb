@@ -1,6 +1,5 @@
 ﻿Imports System.Globalization
 Imports KMUReg.SharedConstantClasses
-Imports Telerik.Web.UI
 
 Public Class SharedMethodClass
 

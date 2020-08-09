@@ -125,9 +125,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Helal_HIS\Helal_HIS\Helal_HIS\bin\Telerik.ReportViewer.WebForms.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Web.UI">
-      <HintPath>..\Helal_HIS\Helal_HIS\Helal_HIS\bin\Telerik.Web.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
