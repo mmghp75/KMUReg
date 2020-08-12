@@ -1,4 +1,5 @@
-﻿Imports KMUReg.SharedMethodClass
+﻿Imports KMUReg.SharedConstantClasses
+Imports KMUReg.SharedMethodClass
 Public Class RegPatient
     Inherits System.Web.UI.Page
 
@@ -85,9 +86,9 @@ Public Class RegPatient
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
-    Private Sub cbxGangrene01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGangrene01.CheckedChanged
-        If Session("History") IsNot Nothing Then cbxGangrene01.Checked = Not cbxGangrene01.Checked
-        If cbxGangrene01.Checked Then
+    Private Sub cbxGang01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGang01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxGang01.Checked = Not cbxGang01.Checked
+        If cbxGang01.Checked Then
             ShowModalPopup(Me, "pnlGang01")
             hfNewPanelVisibility.Value = 1
 
@@ -101,9 +102,9 @@ Public Class RegPatient
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
-    Private Sub cbxSurgery01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurgery01.CheckedChanged
-        If Session("History") IsNot Nothing Then cbxSurgery01.Checked = Not cbxSurgery01.Checked
-        If cbxSurgery01.Checked Then
+    Private Sub cbxSurg01_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurg01.CheckedChanged
+        If Session("History") IsNot Nothing Then cbxSurg01.Checked = Not cbxSurg01.Checked
+        If cbxSurg01.Checked Then
             ShowModalPopup(Me, "pnlSurg01")
             hfNewPanelVisibility.Value = 1
 
@@ -178,7 +179,7 @@ Public Class RegPatient
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
-    Private Sub cbxGangrene02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGang02.CheckedChanged
+    Private Sub cbxGang02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxGang02.CheckedChanged
         If cbxGang02.Checked Then
             ShowModalPopup(Me, "pnlGang02")
             hfNewPanelVisibility.Value = 1
@@ -193,7 +194,7 @@ Public Class RegPatient
             SetActiveTab(hfActivePanelId.Value)
         End If
     End Sub
-    Private Sub cbxSurgery02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurg02.CheckedChanged
+    Private Sub cbxSurg02_CheckedChanged(sender As Object, e As EventArgs) Handles cbxSurg02.CheckedChanged
         If cbxSurg02.Checked Then
             ShowModalPopup(Me, "pnlSurg02")
             hfNewPanelVisibility.Value = 1
@@ -251,7 +252,7 @@ Public Class RegPatient
         'GetStep2Panels()
     End Sub
     Private Sub btnOKLaser01_Click(sender As Object, e As EventArgs) Handles btnOKLaser01.Click
-        If Not CheckpnlLaser() Then Exit Sub
+        If Not CheckpnlLaser01() Then Exit Sub
         btnCancelLaser01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelLaser01_Click(sender As Object, e As EventArgs) Handles btnCancelLaser01.Click
@@ -262,7 +263,7 @@ Public Class RegPatient
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxLaser01.Checked = False
     End Sub
     Private Sub btnOKDebrid01_Click(sender As Object, e As EventArgs) Handles btnOKDebrid01.Click
-        If Not CheckpnlDebrid() Then Exit Sub
+        If Not CheckpnlDebrid01() Then Exit Sub
         btnCancelDebrid01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelDebrid01_Click(sender As Object, e As EventArgs) Handles btnCancelDebrid01.Click
@@ -273,7 +274,7 @@ Public Class RegPatient
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxDebrid01.Checked = False
     End Sub
     Private Sub btnOKSurg01_Click(sender As Object, e As EventArgs) Handles btnOKSurg01.Click
-        If Not CheckpnlSurg() Then Exit Sub
+        If Not CheckpnlSurg01() Then Exit Sub
         btnCancelSurg01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelSurg01_Click(sender As Object, e As EventArgs) Handles btnCancelSurg01.Click
@@ -281,10 +282,10 @@ Public Class RegPatient
         pnlSurg01.Style.Item("display") = "none"
         pnlSurg01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxSurgery01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxSurg01.Checked = False
     End Sub
     Private Sub btnOKGang01_Click(sender As Object, e As EventArgs) Handles btnOKGang01.Click
-        If Not CheckpnlGang() Then Exit Sub
+        If Not CheckpnlGang01() Then Exit Sub
         btnCancelGang01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelGang01_Click(sender As Object, e As EventArgs) Handles btnCancelGang01.Click
@@ -292,10 +293,10 @@ Public Class RegPatient
         pnlGang01.Style.Item("display") = "none"
         pnlGang01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
-        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxGangrene01.Checked = False
+        If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxGang01.Checked = False
     End Sub
     Private Sub btnOKAmp01_Click(sender As Object, e As EventArgs) Handles btnOKAmp01.Click
-        If Not CheckpnlAmp() Then Exit Sub
+        If Not CheckpnlAmp01() Then Exit Sub
         btnCancelAmp01_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelAmp01_Click(sender As Object, e As EventArgs) Handles btnCancelAmp01.Click
@@ -306,7 +307,7 @@ Public Class RegPatient
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxAmp01.Checked = False
     End Sub
     Private Sub btnOKInPatient01_Click(sender As Object, e As EventArgs) Handles btnOKInPatient01.Click
-        If Not CheckpnlInPatient() Then Exit Sub
+        If Not CheckpnlInPatient01() Then Exit Sub
 
         btnCancelInPatient01_Click(Nothing, Nothing)
     End Sub
@@ -370,6 +371,8 @@ Public Class RegPatient
         pnlSore02Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing Then cbxSore02.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKInfect01_Click(sender As Object, e As EventArgs) Handles btnOKInfect01.Click
         If Not CheckpnlNewInfection() Then Exit Sub
@@ -381,6 +384,8 @@ Public Class RegPatient
         pnlInfect01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing Then cbxInfect01.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKSwell01_Click(sender As Object, e As EventArgs) Handles btnOKSwell01.Click
         If Not CheckpnlNewSwell() Then Exit Sub
@@ -392,9 +397,11 @@ Public Class RegPatient
         pnlSwell01Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing Then cbxSwell01.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKLaser02_Click(sender As Object, e As EventArgs) Handles btnOKLaser02.Click
-        If Not CheckpnlLaser() Then Exit Sub
+        If Not CheckpnlLaser02() Then Exit Sub
         btnCancelLaser02_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelLaser02_Click(sender As Object, e As EventArgs) Handles btnCancelLaser02.Click
@@ -403,9 +410,11 @@ Public Class RegPatient
         pnlLaser02Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxLaser02.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKDebrid02_Click(sender As Object, e As EventArgs) Handles btnOKDebrid02.Click
-        If Not CheckpnlDebrid() Then Exit Sub
+        If Not CheckpnlDebrid02() Then Exit Sub
         btnCancelDebrid02_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelDebrid02_Click(sender As Object, e As EventArgs) Handles btnCancelDebrid02.Click
@@ -414,9 +423,11 @@ Public Class RegPatient
         pnlDebrid02Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxDebrid02.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKSurg02_Click(sender As Object, e As EventArgs) Handles btnOKSurg02.Click
-        If Not CheckpnlSurg() Then Exit Sub
+        If Not CheckpnlSurg02() Then Exit Sub
         btnCancelSurg02_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelSurg02_Click(sender As Object, e As EventArgs) Handles btnCancelSurg02.Click
@@ -425,9 +436,11 @@ Public Class RegPatient
         pnlSurg02Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxSurg02.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKGang02_Click(sender As Object, e As EventArgs) Handles btnOKGang02.Click
-        If Not CheckpnlGang() Then Exit Sub
+        If Not CheckpnlGang02() Then Exit Sub
         btnCancelGang02_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelGang02_Click(sender As Object, e As EventArgs) Handles btnCancelGang02.Click
@@ -436,9 +449,11 @@ Public Class RegPatient
         pnlGang02Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxGang02.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKAmp02_Click(sender As Object, e As EventArgs) Handles btnOKAmp02.Click
-        If Not CheckpnlAmp() Then Exit Sub
+        If Not CheckpnlAmp02() Then Exit Sub
         btnCancelAmp02_Click(Nothing, Nothing)
     End Sub
     Private Sub btnCancelAmp02_Click(sender As Object, e As EventArgs) Handles btnCancelAmp02.Click
@@ -447,9 +462,11 @@ Public Class RegPatient
         pnlAmp02Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxAmp02.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOKInPatient02_Click(sender As Object, e As EventArgs) Handles btnOKInPatient02.Click
-        If Not CheckpnlInPatient() Then Exit Sub
+        If Not CheckpnlInPatient02() Then Exit Sub
 
         btnCancelInPatient02_Click(Nothing, Nothing)
     End Sub
@@ -459,6 +476,8 @@ Public Class RegPatient
         pnlInPatient02Back.Visible = False
         ScriptManager.RegisterClientScriptBlock(Me, Me.GetType, "RemoveModalClass", "$('body').removeClass('modal-open');", True)
         If sender IsNot Nothing AndAlso Session("History") Is Nothing Then cbxInPatient.Checked = False
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
 
     Private Sub btnCancelDemographic_Click(sender As Object, e As EventArgs) Handles btnCancelDemographic.Click
@@ -493,10 +512,15 @@ Public Class RegPatient
         btnCancelPhysicalExam_Click(Nothing, Nothing)
         btnCacelLabResults_Click(Nothing, Nothing)
         btnCancelPrescription_Click(Nothing, Nothing)
-
-        hfActivePanelId.Value = tabHistory.ClientID
-        'SetActiveTab(hfActivePanelId.Value)
         UpdateDemographicData()
+
+        If Session("Demographic") IsNot Nothing Then
+            hfActivePanelId.Value = tabHistory.ClientID
+        Else
+            hfActivePanelId.Value = tabPhysicalExam.ClientID
+        End If
+
+        SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Function CheckDemographicPanelData() As Boolean
         If Session("Demographic") IsNot Nothing Then Return False
@@ -627,6 +651,7 @@ Public Class RegPatient
         odb.SubmitChanges()
         Session("Demographic") = oDemographic
     End Sub
+
     Private Sub btnCancelHistory_Click(sender As Object, e As EventArgs) Handles btnCancelHistory.Click
         If Session("History") IsNot Nothing Then Exit Sub
         'History
@@ -636,8 +661,8 @@ Public Class RegPatient
         cbxSore01.Checked = False
         cbxLaser01.Checked = False
         cbxDebrid01.Checked = False
-        cbxSurgery01.Checked = False
-        cbxGangrene01.Checked = False
+        cbxSurg01.Checked = False
+        cbxGang01.Checked = False
         cbxAmp01.Checked = False
         cblDisease.SelectedIndex = -1
         cbxAlcohol.Checked = False
@@ -705,6 +730,12 @@ Public Class RegPatient
         Next
         rblDry.SelectedIndex = -1
         rblTemp.SelectedIndex = -1
+        cbxLaser02.Checked = False
+        cbxDebrid02.Checked = False
+        cbxSurg02.Checked = False
+        cbxGang02.Checked = False
+        cbxAmp02.Checked = False
+        cbxInPatient02.Checked = False
 
         'Modal Panels
         txtDuration08.Text = ""
@@ -736,6 +767,43 @@ Public Class RegPatient
         For Each oItem As ListItem In cblNewSwellR.Items
             oItem.Selected = False
         Next
+        txtDuration11.Text = ""
+        dpLastLaser02.Clear()
+        For Each oItem As ListItem In cblLaser02.Items
+            oItem.Selected = False
+        Next
+        txtDuration12.Text = ""
+        dpLastDebrid02.Clear()
+        For Each oItem As ListItem In cblDebrid02.Items
+            oItem.Selected = False
+        Next
+        txtDuration13.Text = ""
+        dpLastSurg02.Clear()
+        For Each oItem As ListItem In cblSurg02L.Items
+            oItem.Selected = False
+        Next
+        For Each oItem As ListItem In cblSurg02R.Items
+            oItem.Selected = False
+        Next
+        txtDuration14.Text = ""
+        dpLastGang02.Clear()
+        For Each oItem As ListItem In cblGang02.Items
+            oItem.Selected = False
+        Next
+        txtDuration15.Text = ""
+        dpLastAmp02.Clear()
+        For Each oItem As ListItem In cblAmp02L.Items
+            oItem.Selected = False
+        Next
+        For Each oItem As ListItem In cblAmp02R.Items
+            oItem.Selected = False
+        Next
+        txtDuration16.Text = ""
+        dpLastInPatient02.Clear()
+        txtSurg02Cause.Text = ""
+
+        hfActivePanelId.Value = tabPhysicalExam.ClientID
+        If sender IsNot Nothing Then SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnCacelLabResults_Click(sender As Object, e As EventArgs) Handles btnCacelLabResults.Click
         'Lab Results
@@ -748,6 +816,9 @@ Public Class RegPatient
         txtHR.Text = ""
         txtRR.Text = ""
         dpDateOf03.Clear()
+
+        hfActivePanelId.Value = tabLabResults.ClientID
+        If sender IsNot Nothing Then SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnCancelPrescription_Click(sender As Object, e As EventArgs) Handles btnCancelPrescription.Click
         'Prescriptions
@@ -763,6 +834,8 @@ Public Class RegPatient
             oItem.Selected = False
         Next
         txtFreeText.Text = ""
+        hfActivePanelId.Value = tabPrescription.ClientID
+        If sender IsNot Nothing Then SetActiveTab(hfActivePanelId.Value)
     End Sub
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
 
@@ -783,7 +856,7 @@ Public Class RegPatient
                 SetActiveTab(hfActivePanelId.Value)
                 txtDateOf01.Focus()
                 Exit Sub
-            ElseIf isNotValidDateOf(Val(txtDateOf01.Text.Trim), 0, 1000, dpDateOf01.GetMiladiValue, "Y") Then
+            ElseIf isNotValidDateOf(Val(txtDateOf01.Text.Trim), 0, 1000, CType(dpDateOf01.Controls(3).Controls(0), TextBox).Text, "Y") Then
                 pnlHistoryMessage.Visible = True
                 lbllHistoryMessage.Text = "مدت یا تاریخ ابتلا به دیابت در محدوده‌ی قابل قبول نمی‌باشد."
 
@@ -884,7 +957,7 @@ Public Class RegPatient
             Exit Sub
         ElseIf Val(txtHR.Text) < 0 OrElse Val(txtHR.Text) > 999 Then
             pnlLabResultsMessage.Visible = True
-            lblLabResultsMessage.Text = "مقدار HR باید عددی کوچکتر از 999 باشد."
+            lblLabResultsMessage.Text = "مقدار تعداد ضربان قلب در دقیقه باید عددی کوچکتر از 999 باشد."
 
             hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
@@ -892,7 +965,7 @@ Public Class RegPatient
             Exit Sub
         ElseIf Val(txtRR.Text) < 0 OrElse Val(txtRR.Text) > 100 Then
             pnlLabResultsMessage.Visible = True
-            lblLabResultsMessage.Text = "مقدار RR باید عددی کوچکتر از 100 باشد."
+            lblLabResultsMessage.Text = "مقدار تعداد تنفس در دقیقه باید عددی کوچکتر از 100 باشد."
 
             hfActivePanelId.Value = tabLabResults.ClientID
             SetActiveTab(hfActivePanelId.Value)
@@ -904,19 +977,23 @@ Public Class RegPatient
         End If
 
         SaveContract()
+        'ShowMessage(litMessage, "داده‌های مراجعه جدید ذخیره شد.", eMessageType.success, False)
+        Dim oScript = "alert('داده‌های مراجعه جدید ذخیره شد.');"
+        ScriptManager.RegisterStartupScript(Me, Me.GetType, "AlertScript", oScript, True)
 
         btnCancelReg_Click(Nothing, Nothing)
     End Sub
-    Private Function isNotValidDateOf(oNumber As Integer, oNMin As Integer, oNMax As Integer, oDateOf As DateTime?, oDatePart As String) As Boolean
-        If oDateOf IsNot Nothing Then
+
+    Private Function isNotValidDateOf(oNumber As Integer, oNMin As Integer, oNMax As Integer, ostrDateOf As String, oDatePart As String) As Boolean
+        If Not String.IsNullOrEmpty(ostrDateOf) Then
             Dim oNow = Getdate()
             Dim _Number As Long = 0
             If oDatePart.ToLower = "Y".ToLower Then
-                _Number = DateDiff(DateInterval.Year, oDateOf.Value, oNow)
+                _Number = DateDiff(DateInterval.Year, CType(ostrDateOf, Date), oNow)
             ElseIf oDatePart.ToLower = "M".ToLower Then
-                _Number = DateDiff(DateInterval.Month, oDateOf.Value, oNow)
+                _Number = DateDiff(DateInterval.Month, CType(ostrDateOf, Date), oNow)
             ElseIf oDatePart.ToLower = "D".ToLower Then
-                _Number = DateDiff(DateInterval.Day, oDateOf.Value, oNow)
+                _Number = DateDiff(DateInterval.Day, CType(ostrDateOf, Date), oNow)
             End If
             If (oNumber < oNMin OrElse oNumber > oNMax) AndAlso (_Number < oNMin OrElse _Number > oNMax) Then
                 Return True
@@ -956,6 +1033,7 @@ Public Class RegPatient
         txtPhoneNo.Enabled = _readonly
         rblEducation.Enabled = _readonly
         txtAddress.Enabled = _readonly
+        btnContinueDemographic.Focus()
     End Sub
     Private Function FillDemographic(oFieldName As String) As Boolean
         Dim odb As New dbDataContext(ConnectionStringDemographic)
@@ -1036,6 +1114,7 @@ Public Class RegPatient
         pnlInPatient01Body.Enabled = True
 
     End Sub
+
     Private Sub FillHistory()
         Dim _DemographicID As Integer = Session("Demographic").ID
         Dim odb As New dbDataContext(ConnectionStringDiabeticFoot)
@@ -1080,8 +1159,8 @@ Public Class RegPatient
                         oitem.Selected = _Location.Contains(oitem.Value)
                     Next
                 End If
-                cbxSurgery01.Checked = .Surgery
-                If cbxSurgery01.Checked Then
+                cbxSurg01.Checked = .Surgery
+                If cbxSurg01.Checked Then
                     txtDuration04.Text = DateDiff(DateInterval.Month, .SurgeryDateOf.Value, oNow)
                     dpLastSurg01.SetFromMiladiValue(.SurgeryDateOf)
                     Dim _LocationLeft = .SurgeryLocationLeft.Split(",")
@@ -1093,8 +1172,8 @@ Public Class RegPatient
                         oitem.Selected = _LocationRight.Contains(oitem.Value)
                     Next
                 End If
-                cbxGangrene01.Checked = .Gangrene
-                If cbxGangrene01.Checked Then
+                cbxGang01.Checked = .Gangrene
+                If cbxGang01.Checked Then
                     txtDuration05.Text = DateDiff(DateInterval.Month, .GangreneDateOf.Value, oNow)
                     dpLastGang01.SetFromMiladiValue(.GangreneDateOf)
                     Dim _Location = .GangreneLocation.Split(",")
@@ -1204,7 +1283,7 @@ Public Class RegPatient
                 End If
             Next
             .Diseases = _str
-            .Gangrene = cbxGangrene01.Checked
+            .Gangrene = cbxGang01.Checked
             If CType(dpLastGang01.Controls(3).Controls(0), TextBox).Text <> "" Then
                 .GangreneDateOf = dpLastGang01.GetMiladiValue
             Else
@@ -1280,7 +1359,7 @@ Public Class RegPatient
             Else
                 .StartDateOf = Getdate().AddMonths(-Val(txtDateOf01.Text.Trim))
             End If
-            .Surgery = cbxSurgery01.Checked
+            .Surgery = cbxSurg01.Checked
             If CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text <> "" Then
                 .SurgeryDateOf = dpLastSurg01.GetMiladiValue
             Else
@@ -1431,6 +1510,120 @@ Public Class RegPatient
                 Next
                 .SwellLocationRight = _str
             End If
+            .Amputation1 = cbxAmp02.Checked
+            If CType(dpLastAmp02.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .AmputationDateOf = dpLastAmp02.GetMiladiValue
+            Else
+                .AmputationDateOf = Getdate().AddMonths(-Val(txtDuration15.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblAmp02L.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .AmputationLocationLeft = _str
+            _str = ""
+            For Each oitem As ListItem In cblAmp02R.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .AmputationLocationRight = _str
+            .Debrid1 = cbxDebrid02.Checked
+            If CType(dpLastDebrid01.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .DebridDateOf = dpLastDebrid02.GetMiladiValue
+            Else
+                .DebridDateOf = Getdate().AddMonths(-Val(txtDuration12.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblDebrid02.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .DebridLocation = _str
+            .Gangrene = cbxGang02.Checked
+            If CType(dpLastGang02.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .GangreneDateOf = dpLastGang02.GetMiladiValue
+            Else
+                .GangreneDateOf = Getdate().AddMonths(-Val(txtDuration14.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblGang02.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .GangreneLocation = _str
+            .InPatient = cbxInPatient02.Checked
+            If CType(dpLastInPatient02.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .InPatientDateOf = dpLastInPatient02.GetMiladiValue
+            Else
+                .InPatientDateOf = Getdate().AddMonths(-Val(txtDuration16.Text.Trim))
+            End If
+            .InPatientReason = txtSurg02Cause.Text
+            .Laser = cbxLaser02.Checked
+            If CType(dpLastLaser02.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .LaserDateOf = dpLastLaser02.GetMiladiValue
+            Else
+                .LaserDateOf = Getdate().AddMonths(-Val(txtDuration11.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblLaser.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .LaserLocation = _str
+            .Surgery1 = cbxSurg02.Checked
+            If CType(dpLastSurg02.Controls(3).Controls(0), TextBox).Text <> "" Then
+                .SurgeryDateOf = dpLastSurg02.GetMiladiValue
+            Else
+                .SurgeryDateOf = Getdate().AddMonths(-Val(txtDuration13.Text.Trim))
+            End If
+            _str = ""
+            For Each oitem As ListItem In cblSurg02L.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .SurgeryLocationLeft = _str
+            For Each oitem As ListItem In cblSurg02R.Items
+                If oitem.Selected Then
+                    If _str = "" Then
+                        _str &= oitem.Value
+                    Else
+                        _str &= "," & oitem.Value
+                    End If
+                End If
+            Next
+            .SurgeryLocationRight = _str
+
 
             'Lab Results
             .FBS = Val(txtFBS.Text)
@@ -1475,7 +1668,7 @@ Public Class RegPatient
         Return False
     End Function
     Private Function CheckpnlSore01() As Boolean
-        If txtDuration01.Text = "" AndAlso Not dpLastSore01.GetMiladiValue.HasValue AndAlso CType(dpLastSore01.Controls(3).Controls(0), TextBox).Text <> "" Then
+        If txtDuration01.Text = "" AndAlso Not dpLastSore01.GetMiladiValue.HasValue AndAlso CType(dpLastSore01.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlSore01MSG.Visible = True
             lblSore01MSG.Text = "زمان ابتلا یا تاریخ آخرین زخم را تعیین نکرده اید."
 
@@ -1498,12 +1691,12 @@ Public Class RegPatient
 
         Return True
     End Function
-    Private Function CheckpnlLaser() As Boolean
-        If txtDuration02.Text = "" AndAlso Not dpLastLaser01.GetMiladiValue.HasValue AndAlso CType(dpLastLaser01.Controls(3).Controls(0), TextBox).Text <> "" Then
+    Private Function CheckpnlLaser01() As Boolean
+        If txtDuration02.Text = "" AndAlso Not dpLastLaser01.GetMiladiValue.HasValue AndAlso CType(dpLastLaser01.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlLaser01MSG.Visible = True
             lblLaser01MSG.Text = "زمان درمان یا تاریخ درمان با لیزر را تعیین نکرده اید."
 
-            txtAgeOf.Focus()
+            txtDuration02.Focus()
             Return False
         ElseIf isNotValidDateOf(Val(txtDuration02.Text.Trim), 0, 2000, CType(dpLastLaser01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlLaser01MSG.Visible = True
@@ -1522,8 +1715,8 @@ Public Class RegPatient
 
         Return True
     End Function
-    Private Function CheckpnlDebrid() As Boolean
-        If txtDuration03.Text = "" AndAlso Not dpLastDebrid01.GetMiladiValue.HasValue AndAlso CType(dpLastDebrid01.Controls(3).Controls(0), TextBox).Text <> "" Then
+    Private Function CheckpnlDebrid01() As Boolean
+        If txtDuration03.Text = "" AndAlso Not dpLastDebrid01.GetMiladiValue.HasValue AndAlso CType(dpLastDebrid01.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlDebrid01MSG.Visible = True
             lblDebrid01MSG.Text = "زمان دبرید یا تاریخ آخرین دبریدمان را تعیین نکرده اید."
 
@@ -1531,7 +1724,7 @@ Public Class RegPatient
             Return False
         ElseIf isNotValidDateOf(Val(txtDuration03.Text.Trim), 0, 2000, CType(dpLastDebrid01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlDebrid01MSG.Visible = True
-            lblDebrid01MSG.Text = "مقدار نامناسبی برای زمان درمان یا تاریخ آخرین درمان با لیزر را ثبت کرده اید."
+            lblDebrid01MSG.Text = "مقدار نامناسبی برای زمان درمان یا تاریخ آخرین دبریدمان را ثبت کرده اید."
 
             txtDuration03.Focus()
             Return False
@@ -1546,8 +1739,8 @@ Public Class RegPatient
 
         Return True
     End Function
-    Private Function CheckpnlSurg() As Boolean
-        If txtDuration04.Text = "" AndAlso Not dpLastSurg01.GetMiladiValue.HasValue AndAlso CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text <> "" Then
+    Private Function CheckpnlSurg01() As Boolean
+        If txtDuration04.Text = "" AndAlso Not dpLastSurg01.GetMiladiValue.HasValue AndAlso CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlSurg01MSG.Visible = True
             lblSurg01MSG.Text = "زمان جراحی یا تاریخ آخرین جراحی را تعیین نکرده اید."
 
@@ -1555,7 +1748,7 @@ Public Class RegPatient
             Return False
         ElseIf isNotValidDateOf(Val(txtDuration04.Text.Trim), 0, 2000, CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlSurg01MSG.Visible = True
-            lblSurg01MSG.Text = "مقدار نامناسبی برای زمان [جراحی یا تاریخ آخرین جراحی را ثبت کرده اید."
+            lblSurg01MSG.Text = "مقدار نامناسبی برای زمان جراحی یا تاریخ آخرین جراحی را ثبت کرده اید."
 
             txtDuration04.Focus()
             Return False
@@ -1570,8 +1763,8 @@ Public Class RegPatient
 
         Return True
     End Function
-    Private Function CheckpnlGang() As Boolean
-        If txtDuration05.Text = "" AndAlso Not dpLastGang01.GetMiladiValue.HasValue AndAlso CType(dpLastGang01.Controls(3).Controls(0), TextBox).Text <> "" Then
+    Private Function CheckpnlGang01() As Boolean
+        If txtDuration05.Text = "" AndAlso Not dpLastGang01.GetMiladiValue.HasValue AndAlso CType(dpLastGang01.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlGang01MSG.Visible = True
             lblGang01MSG.Text = "زمان گانگرن یا تاریخ آخرین گانگرن را تعیین نکرده اید."
 
@@ -1579,7 +1772,7 @@ Public Class RegPatient
             Return False
         ElseIf isNotValidDateOf(Val(txtDuration05.Text.Trim), 0, 2000, CType(dpLastGang01.Controls(3).Controls(0), TextBox).Text, "M") Then
             pnlGang01MSG.Visible = True
-            lblGang01MSG.Text = "مقدار نامناسبی برای زمان [جراحی یا تاریخ آخرین جراحی را ثبت کرده اید."
+            lblGang01MSG.Text = "مقدار نامناسبی برای زمان جراحی یا تاریخ آخرین گانگرن را ثبت کرده اید."
 
             txtDuration05.Focus()
             Return False
@@ -1594,8 +1787,8 @@ Public Class RegPatient
 
         Return True
     End Function
-    Private Function CheckpnlAmp() As Boolean
-        If txtDuration06.Text = "" AndAlso Not dpLastAmp01.GetMiladiValue.HasValue AndAlso CType(dpLastAmp01.Controls(3).Controls(0), TextBox).Text <> "" Then
+    Private Function CheckpnlAmp01() As Boolean
+        If txtDuration06.Text = "" AndAlso Not dpLastAmp01.GetMiladiValue.HasValue AndAlso CType(dpLastAmp01.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlAmp01MSG.Visible = True
             lblAmp01MSG.Text = "زمان آمپوتاسیون یا تاریخ آخرین آمپوتاسیون را تعیین نکرده اید."
 
@@ -1618,8 +1811,8 @@ Public Class RegPatient
 
         Return True
     End Function
-    Private Function CheckpnlInPatient() As Boolean
-        If txtDuration07.Text = "" AndAlso Not dpLastInPatient01.GetMiladiValue.HasValue AndAlso CType(dpLastInPatient01.Controls(3).Controls(0), TextBox).Text <> "" Then
+    Private Function CheckpnlInPatient01() As Boolean
+        If txtDuration07.Text = "" AndAlso Not dpLastInPatient01.GetMiladiValue.HasValue AndAlso CType(dpLastInPatient01.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlInPatient01MSG.Visible = True
             lblInPatient01MSG.Text = "زمان بستری یا تاریخ آخرین بستری را تعیین نکرده اید."
 
@@ -1643,7 +1836,7 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlNewSore() As Boolean
-        If txtDuration08.Text = "" AndAlso Not dpNewSore.GetMiladiValue.HasValue AndAlso CType(dpNewSore.Controls(3).Controls(0), TextBox).Text <> "" Then
+        If txtDuration08.Text = "" AndAlso Not dpNewSore.GetMiladiValue.HasValue AndAlso CType(dpNewSore.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlSore02MSG.Visible = True
             lblSore02MSG.Text = "زمان زخم یا تاریخ ایجاد زخم را تعیین نکرده اید."
 
@@ -1695,7 +1888,7 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlNewInfection() As Boolean
-        If txtDuration09.Text = "" AndAlso Not dpNewInfect.GetMiladiValue.HasValue AndAlso CType(dpNewInfect.Controls(3).Controls(0), TextBox).Text <> "" Then
+        If txtDuration09.Text = "" AndAlso Not dpNewInfect.GetMiladiValue.HasValue AndAlso CType(dpNewInfect.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlInfect01MSG.Visible = True
             lblInfect01MSG.Text = "زمان عفونت یا تاریخ ایجاد عفونت را تعیین نکرده اید."
 
@@ -1719,7 +1912,7 @@ Public Class RegPatient
         Return True
     End Function
     Private Function CheckpnlNewSwell() As Boolean
-        If txtDuration10.Text = "" AndAlso Not dpNewSwell.GetMiladiValue.HasValue AndAlso CType(dpNewSwell.Controls(3).Controls(0), TextBox).Text <> "" Then
+        If txtDuration10.Text = "" AndAlso Not dpNewSwell.GetMiladiValue.HasValue AndAlso CType(dpNewSwell.Controls(3).Controls(0), TextBox).Text = "" Then
             pnlSwell01MSG.Visible = True
             lblSwell01MSG.Text = "زمان تورم، تاول و قرمزی یا تاریخ آن‌ها را تعیین نکرده اید."
 
@@ -1742,4 +1935,149 @@ Public Class RegPatient
 
         Return True
     End Function
+    Private Function CheckpnlLaser02() As Boolean
+        If txtDuration11.Text = "" AndAlso Not dpLastLaser02.GetMiladiValue.HasValue AndAlso CType(dpLastLaser02.Controls(3).Controls(0), TextBox).Text = "" Then
+            pnlLaser02MSG.Visible = True
+            lblLaser02MSG.Text = "زمان یا تاریخ درمان با لیزر را تعیین نکرده اید."
+
+            txtDuration11.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration11.Text.Trim), 0, 2000, CType(dpLastLaser02.Controls(3).Controls(0), TextBox).Text, "M") Then
+            pnlLaser02MSG.Visible = True
+            lblLaser02MSG.Text = "مقدار نامناسبی برای زمان یا تاریخ درمان با لیزر را ثبت کرده اید."
+
+            txtDuration11.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblLaser02) Then
+            pnlLaser02MSG.Visible = True
+            lblLaser02MSG.Text = "محل لیزرتراپی را تعیین نکرده اید."
+
+            cblLaser02.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlDebrid02() As Boolean
+        If txtDuration12.Text = "" AndAlso Not dpLastDebrid02.GetMiladiValue.HasValue AndAlso CType(dpLastDebrid02.Controls(3).Controls(0), TextBox).Text = "" Then
+            pnlDebrid02MSG.Visible = True
+            lblDebrid02MSG.Text = "زمان یا تاریخ دبریدمان را تعیین نکرده اید."
+
+            txtDuration12.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration12.Text.Trim), 0, 2000, CType(dpLastDebrid02.Controls(3).Controls(0), TextBox).Text, "M") Then
+            pnlDebrid02MSG.Visible = True
+            lblDebrid02MSG.Text = "مقدار نامناسبی برای زمان یا تاریخ دبریدمان را ثبت کرده اید."
+
+            txtDuration12.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblDebrid02) Then
+            pnlDebrid02MSG.Visible = True
+            lblDebrid02MSG.Text = "محل دبریدمان را تعیین نکرده اید."
+
+            cblDebrid02.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlSurg02() As Boolean
+        If txtDuration13.Text = "" AndAlso Not dpLastSurg01.GetMiladiValue.HasValue AndAlso CType(dpLastSurg01.Controls(3).Controls(0), TextBox).Text = "" Then
+            pnlSurg02MSG.Visible = True
+            lblSurg02MSG.Text = "زمان یا تاریخ جراحی را تعیین نکرده اید."
+
+            txtDuration13.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration13.Text.Trim), 0, 2000, CType(dpLastSurg02.Controls(3).Controls(0), TextBox).Text, "M") Then
+            pnlSurg02MSG.Visible = True
+            lblSurg02MSG.Text = "مقدار نامناسبی برای زمان یا تاریخ جراحی را ثبت کرده اید."
+
+            txtDuration13.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblSurg02L) AndAlso Not CheckboxListisChecked(cblSurg02R) Then
+            pnlSurg02MSG.Visible = True
+            lblSurg02MSG.Text = "محل جراحی را تعیین نکرده اید."
+
+            cblSurg02L.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlGang02() As Boolean
+        If txtDuration14.Text = "" AndAlso Not dpLastGang02.GetMiladiValue.HasValue AndAlso CType(dpLastGang02.Controls(3).Controls(0), TextBox).Text = "" Then
+            pnlGang02MSG.Visible = True
+            lblGang02MSG.Text = "زمان یا تاریخ گانگرن را تعیین نکرده اید."
+
+            txtDuration14.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration14.Text.Trim), 0, 2000, CType(dpLastGang02.Controls(3).Controls(0), TextBox).Text, "M") Then
+            pnlGang02MSG.Visible = True
+            lblGang02MSG.Text = "مقدار نامناسبی برای زمان یا تاریخ گانگرن را ثبت کرده اید."
+
+            txtDuration14.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblGang02) Then
+            pnlGang02MSG.Visible = True
+            lblGang02MSG.Text = "محل گانگرن را تعیین نکرده اید."
+
+            cblGang02.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlAmp02() As Boolean
+        If txtDuration15.Text = "" AndAlso Not dpLastAmp02.GetMiladiValue.HasValue AndAlso CType(dpLastAmp02.Controls(3).Controls(0), TextBox).Text = "" Then
+            pnlAmp02MSG.Visible = True
+            lblAmp02MSG.Text = "زمان یا تاریخ آمپوتاسیون را تعیین نکرده اید."
+
+            txtDuration15.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration15.Text.Trim), 0, 2000, CType(dpLastAmp02.Controls(3).Controls(0), TextBox).Text, "M") Then
+            pnlAmp02MSG.Visible = True
+            lblAmp02MSG.Text = "مقدار نامناسبی برای زمان یا تاریخ آمپوتاسیون را ثبت کرده اید."
+
+            txtDuration15.Focus()
+            Return False
+        ElseIf Not CheckboxListisChecked(cblAmp02L) AndAlso Not CheckboxListisChecked(cblAmp02R) Then
+            pnlAmp02MSG.Visible = True
+            lblAmp02MSG.Text = "محل آمپوتاسیون را تعیین نکرده اید."
+
+            cblAmp02L.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+    Private Function CheckpnlInPatient02() As Boolean
+        If txtDuration16.Text = "" AndAlso Not dpLastInPatient02.GetMiladiValue.HasValue AndAlso CType(dpLastInPatient02.Controls(3).Controls(0), TextBox).Text = "" Then
+            pnlInPatient02MSG.Visible = True
+            lblInPatient02MSG.Text = "زمان یا تاریخ بستری را تعیین نکرده اید."
+
+            txtDuration16.Focus()
+            Return False
+        ElseIf isNotValidDateOf(Val(txtDuration16.Text.Trim), 0, 2000, CType(dpLastInPatient02.Controls(3).Controls(0), TextBox).Text, "M") Then
+            pnlInPatient02MSG.Visible = True
+            lblInPatient02MSG.Text = "مقدار نامناسبی برای زمان یا تاریخ بستری را ثبت کرده اید."
+
+            txtDuration16.Focus()
+            Return False
+        ElseIf txtSurg02Cause.Text.Trim = "" Then
+            pnlInPatient02MSG.Visible = True
+            lblInPatient02MSG.Text = "علت بستری را تعیین نکرده اید."
+
+            txtSurg02Cause.Focus()
+
+            Return False
+        End If
+
+        Return True
+    End Function
+
 End Class

@@ -69,6 +69,6 @@ Public Class Menu
         oUser = (From o In odb.tblUsers Where o.ID = oID).FirstOrDefault
 
         Dim _str = "EditData.aspx"
-        Response.Redirect(_str)
+        'Response.Redirect(_str)
     End Sub
 End Class

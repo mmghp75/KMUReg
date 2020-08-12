@@ -32,6 +32,15 @@ Partial Public Class RegPatient
     Protected WithEvents hfActivePanelId As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
+    '''litMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents litMessage As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
     '''pnlDemographic control.
     '''</summary>
     '''<remarks>
@@ -392,22 +401,22 @@ Partial Public Class RegPatient
     Protected WithEvents cbxDebrid01 As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''cbxSurgery01 control.
+    '''cbxSurg01 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cbxSurgery01 As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents cbxSurg01 As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
-    '''cbxGangrene01 control.
+    '''cbxGang01 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cbxGangrene01 As Global.System.Web.UI.WebControls.CheckBox
+    Protected WithEvents cbxGang01 As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''cbxAmp01 control.
@@ -2552,13 +2561,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label46 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''CheckBoxList1 control.
+    '''cblSurg02L control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList1 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents cblSurg02L As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''Label47 control.
@@ -2570,13 +2579,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label47 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''CheckBoxList2 control.
+    '''cblSurg02R control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList2 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents cblSurg02R As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''btnCancelSurg02 control.
@@ -2678,13 +2687,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label49 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''CheckBoxList3 control.
+    '''cblGang02 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList3 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents cblGang02 As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''btnCancelGang02 control.
@@ -2786,13 +2795,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label51 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''CheckBoxList4 control.
+    '''cblAmp02L control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList4 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents cblAmp02L As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''Label52 control.
@@ -2804,13 +2813,13 @@ Partial Public Class RegPatient
     Protected WithEvents Label52 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''CheckBoxList5 control.
+    '''cblAmp02R control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents CheckBoxList5 As Global.System.Web.UI.WebControls.CheckBoxList
+    Protected WithEvents cblAmp02R As Global.System.Web.UI.WebControls.CheckBoxList
 
     '''<summary>
     '''btnCancelAmp02 control.

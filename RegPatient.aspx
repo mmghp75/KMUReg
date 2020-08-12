@@ -36,6 +36,7 @@
 
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
+            <asp:Literal runat="server" ID="litMessage"></asp:Literal>
             <%--            <asp:HiddenField runat="server" ID="hfExpanedPanelIds" ClientIDMode="Static" />--%>
 
             <div class="panel panel-primary" runat="server" id="pnlDemographic" visible="true">
@@ -190,19 +191,19 @@
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxSore01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxSore01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxLaser01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;لیزر زخم" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxLaser01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;لیزر زخم" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxDebrid01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;دبریدمان" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxDebrid01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;دبریدمان" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxSurgery01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;جراحی" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxSurg01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;جراحی" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxGangrene01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxGang01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:CheckBox ID="cbxAmp01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control"></asp:CheckBox>
@@ -232,13 +233,13 @@
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxAlcohol" runat="server" MaxLength="10" Text="&nbsp;&nbsp;مصرف مشروبات الکلی" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxAlcohol" runat="server" MaxLength="10" Text="&nbsp;&nbsp;مصرف مشروبات الکلی" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxSigarret" runat="server" MaxLength="10" Text="&nbsp;&nbsp;سیگار و قلیان" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxSigarret" runat="server" MaxLength="10" Text="&nbsp;&nbsp;سیگار و قلیان" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxInPatient" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;سابقه بستری" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxInPatient" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;سابقه بستری" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                             </div>
                         </div>
@@ -281,33 +282,33 @@
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxSore02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxSore02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;زخم‌پا" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxInfect01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;عفونت" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxInfect01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;عفونت" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxSwell01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;تورم، تاول و قرمزی" CssClass="form-control"></asp:CheckBox>
-                                </div>
-                                <div class="clearfix"></div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxLaser02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;لیزر" CssClass="form-control"></asp:CheckBox>
-                                </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxDebrid02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;دبریدمان" CssClass="form-control"></asp:CheckBox>
-                                </div>
-                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxGang02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxSwell01" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;تورم، تاول و قرمزی" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxAmp02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxLaser02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;لیزر" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxSurg02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;جراحی" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxDebrid02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;دبریدمان" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxInPatient02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;بستری" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxGang02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;گانگرن" CssClass="form-control input-group-btn"></asp:CheckBox>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxAmp02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;آمپوتاسیون" CssClass="form-control input-group-btn"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxSurg02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;جراحی" CssClass="form-control input-group-btn"></asp:CheckBox>
+                                </div>
+                                <div class="col-xs-4 text-right" style="margin-bottom: 15px">
+                                    <asp:CheckBox ID="cbxInPatient02" runat="server" MaxLength="10" AutoPostBack="True" Text="&nbsp;&nbsp;بستری" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix"></div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
@@ -372,7 +373,7 @@
                                     <asp:TextBox ID="txtFBS" runat="server" MaxLength="10" Placeholder="* FBS" ToolTip="FBS" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox ID="txtA1C" runat="server" MaxLength="10" Placeholder="* Hb A1C" ToolTip="Hb A1C" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox ID="txtA1C" runat="server" MaxLength="10" Placeholder="* Hb A1C" ToolTip="Hb A1C" CssClass="form-control" TextMode="Number" step="any"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
@@ -386,10 +387,10 @@
                                 </div>
                                 <asp:Panel runat="server" ID="P03" Style="border-top-style: solid; border-top-color: brown; height: 1px; margin-bottom: 15px" CssClass="col-xs-12" />
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox runat="server" ID="txtSystol" PlaceHolder="فشارخون سیستولیک" ToolTip="فشارخون سیستولیک" CssClass="form-control" Style="margin-bottom: 15px" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtSystol" PlaceHolder="فشارخون سیستولیک mmHg" ToolTip="فشارخون سیستولیک mmHg" CssClass="form-control" Style="margin-bottom: 15px" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:TextBox runat="server" ID="txtDyastol" PlaceHolder="فشارخون دیاستولیک" ToolTip="فشارخون دیاستولیک" CssClass="form-control" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox runat="server" ID="txtDyastol" PlaceHolder="فشارخون دیاستولیک mmHg" ToolTip="فشارخون دیاستولیک mmHg" CssClass="form-control" TextMode="Number"></asp:TextBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
                                     <asp:TextBox runat="server" ID="txtO2" PlaceHolder="اشباع اکسیژن" ToolTip="اشباع اکسیژن" CssClass="form-control" TextMode="Number"></asp:TextBox>
@@ -438,32 +439,32 @@
                             </div>
                             <div class="panel col-xs-12">
                                 <div class="col-xs-4 text-right">
-                                    <asp:CheckBox ID="cbxNeedAmp" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به قطع عضو دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedAmp" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به قطع عضو دارد" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:CheckBox ID="cbxNeedSurg" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به جراحی دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedSurg" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به جراحی دارد" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxNeedDebrid" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به دبریدمان دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedDebrid" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به دبریدمان دارد" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxNeedShoe" runat="server" MaxLength="10" Text="&nbsp;&nbsp;تجویز کفش طبی دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedShoe" runat="server" MaxLength="10" Text="&nbsp;&nbsp;تجویز کفش طبی دارد" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:CheckBox ID="cbxNeedVisit" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به معاینه منظم و دوره‌ای توسط پزشک دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedVisit" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به معاینه منظم و دوره‌ای توسط پزشک دارد" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right">
-                                    <asp:CheckBox ID="cbxNeedCover" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به پانسمان و شست و شوی منظم زخم دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedCover" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به پانسمان و شست و شوی منظم زخم دارد" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxNeedEducation" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به مشاوره‌ی‌درمانی و آموزش خودمراقبتی دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedEducation" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به مشاوره‌ی‌درمانی و آموزش خودمراقبتی دارد" CssClass="form-control input-group-btn"></asp:CheckBox>
                                 </div>
                                 <div class="col-xs-4 text-right" style="margin-bottom: 15px">
-                                    <asp:CheckBox ID="cbxNeedRehab" runat="server" MaxLength="10" Text="&nbsp;&nbsp;نیاز به فرایندهای توان‌بخشی دارد" CssClass="form-control"></asp:CheckBox>
+                                    <asp:CheckBox ID="cbxNeedRehab" runat="server" Text="&nbsp;&nbsp;نیاز به فرایندهای توان‌بخشی دارد" MaxLength="10" CssClass="form-control input-group-addon"></asp:CheckBox>
                                 </div>
                                 <div class="clearfix">
                                 </div>
@@ -1199,7 +1200,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label46" />
-                                        <asp:CheckBoxList runat="server" ID="CheckBoxList1" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="5">
+                                        <asp:CheckBoxList runat="server" ID="cblSurg02L" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="5">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
@@ -1212,7 +1213,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل جراحی پای‌راست:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label47" />
-                                        <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="CheckBoxList2" RepeatColumns="5">
+                                        <asp:CheckBoxList runat="server" CssClass="form-control my-inline-table" RepeatLayout="Flow" ID="cblSurg02R" RepeatColumns="5">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" Style="margin-right: 40px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 40px;" />
@@ -1259,7 +1260,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text=" محل گانگرن:" CssClass="input-group-addon" Font-Bold="true" runat="server" ID="Label49" />
-                                        <asp:CheckBoxList runat="server" ID="CheckBoxList3" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
+                                        <asp:CheckBoxList runat="server" ID="cblGang02" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="2">
                                             <asp:ListItem Text="&nbsp;&nbsp;پای چپ" Value="1" Style="margin-right: 50px;" />
                                             <asp:ListItem Text="&nbsp;&nbsp;پای راست" Value="2" Style="margin-right: 50px;" />
                                         </asp:CheckBoxList>
@@ -1303,7 +1304,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 15px;">
                                     <div class="input-group">
                                         <asp:Label Text="* محل آمپوتاسیون پای‌چپ:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label51" />
-                                        <asp:CheckBoxList runat="server" ID="CheckBoxList4" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
+                                        <asp:CheckBoxList runat="server" ID="cblAmp02L" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
@@ -1317,7 +1318,7 @@
                                 <div class="col-xs-12 text-right" style="margin-bottom: 15px">
                                     <div class="input-group">
                                         <asp:Label Text="* محل آمپوتاسیون‌ پای‌راست:" Font-Bold="true" CssClass="input-group-addon" runat="server" ID="Label52" />
-                                        <asp:CheckBoxList runat="server" ID="CheckBoxList5" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
+                                        <asp:CheckBoxList runat="server" ID="cblAmp02R" CssClass="form-control my-inline-table" RepeatLayout="Flow" RepeatColumns="3" Style="height: auto">
                                             <asp:ListItem Text="&nbsp;&nbsp;انگشتان" Value="1" />
                                             <asp:ListItem Text="&nbsp;&nbsp;روی پا" Value="2" />
                                             <asp:ListItem Text="&nbsp;&nbsp;کف پا" Value="3" Style="margin-right: 20px;" />
